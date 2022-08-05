@@ -1,24 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import './login.css';
+import jpIMG from './assets/SemanaEng.jpg';
+import React, { useState, useContext, useEffect } from 'react';
+
+
 
 function App() {
+  const [email, setEmail] = useState(String)
+  const [senha, setSenha] = useState(String)
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="login">
+
+
+        <div className="lateral">
+          <img src={jpIMG} alt="semanaEng"></img>
+          <h1 id='sds'>Bem - Vindo !</h1>
+          <h2 id='sds2'>Acesse sua conta para criar novos eventos</h2>
+
+
+        </div>
+        <div className='formulario'>
+          <form>
+            <span className='titulo'>Acesse sua Conta</span>
+            <div className='input'>
+
+              <div className='email'>
+                <label>Email</label>
+                <input type='email' placeholder='Email' onChange={(event) => setEmail(event.target.value)}></input>
+              </div>
+              <div className='password'>
+                <label>Senha</label>
+                <input type='password' placeholder='Senha' onChange={(event) => setSenha(event.target.value)}></input>
+              </div>
+              <div className='button'>
+                <button >ENTRAR</button>
+              </div>
+
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+
     </div>
+
   );
 }
 

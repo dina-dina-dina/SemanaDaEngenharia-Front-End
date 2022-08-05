@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+
+
+}
+
+.container {
+    width: 100%;
+    margin-top: 115px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.login {
+    width: 997px;
+    height: 709px;
+    background: #FFFFFF;
+    box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    display: flex;
+
+}
+
+
+.lateral {
+    width: 268px;
+    background: #097828;
+    height: 710px;
+    border-bottom-left-radius: 16px;
+    border-top-left-radius: 16px;
+}
+
+.lateral img {
+    margin-top: 75px;
+    margin-bottom: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+    justify-content: center;
+    width: 239px;
+    height: 239px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    ;
+
+
+
+}
+
+.lateral #sds {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+    margin-left: 25px;
+    margin-bottom: 15px;
+
+    color: #FFFFFF;
+}
+
+.lateral #sds2 {
+    margin-left: 25px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 28px;
+
+    color: #FFFFFF;
+
+}
+
+.formulario {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.titulo {
+    width: 100%;
+    margin-left: 90px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+
+    color: #097828;
+}
+
+.email {
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+.email label {
+    position: absolute;
+    margin-left: 10px;
+    font-size: 20px;
+    color: #097828;
+    
+}
+
+
+.email input {
+    width: 523px;
+    height: 50px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 2px solid #097828;
+    border-radius: 16px;
+    text-indent: 10px;
+    font-size: 20px;
+    transition: all 400ms ease;
+    outline: 0;
+    margin-top: 25px;
+}
+
+.email input:focus {
+
+    background: 0, 0, 0, 0 #36a555;
+
+
+}
+
+.email input:hover {
+    background: 0, 0, 0, 0 #36a555;
+
+}
+
+.password input:hover {
+    background: 0, 0, 0, 0 #36a555;
+
+}
+
+.password input:focus {
+    background: 0, 0, 0, 0 #36a555;
+
+}
+
+
+
+.password {
+    margin-bottom: 68px;
+}
+.password label {
+    position: absolute;
+    margin-left: 10px;
+    font-size: 20px;
+    color: #097828;
+    
+}
+
+.password input {
+    width: 523px;
+    height: 50px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 2px solid #097828;
+    border-radius: 16px;
+    text-indent: 10px;
+    font-size: 20px;
+    font-family: 'Poppins';
+    outline: 0;
+    margin-top: 25px;
+}
+
+.password input::placeholder {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-indent: 10px;
+
+    color: #097828;
+
+
+}
+
+.email input::placeholder {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-indent: 10px;
+    transition: all 400ms ease;
+
+    color: #097828;
+
+
+}
+
+.button button {
+    box-sizing: border-box;
+    width: 263px;
+    height: 68px;
+    background: #097828;
+    border: 3px solid #FFFFFF;
+    border-radius: 30px;
+    margin-left: 130px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    transition: all 400ms ease;
+
+    color: #FFFFFF;
+
+}
+
+.button button:hover {
+    background: 0, 0, 0, 0 #36a555;
+
+}
