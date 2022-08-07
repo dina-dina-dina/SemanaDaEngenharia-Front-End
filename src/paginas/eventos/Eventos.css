@@ -25,13 +25,14 @@
     border-radius: 45px;
 }
 
-.container {
+.screen {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 0;
     background-color: aqua;
     margin-bottom: 70px;
+    width: 100%;
 
 
 

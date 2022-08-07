@@ -9,11 +9,13 @@ function Eventos() {
     const [senha, setSenha] = useState(String)
     const navigate = useNavigate();
 
-
+    function handleClick() {
+        navigate("/novoEvento");
+      }
 
     return (
         <div className='tudo'>
-            <div className="container">
+            <div className="screen">
 
                 <div className='acesso'>
 
@@ -26,7 +28,7 @@ function Eventos() {
                     </div>
                     <div className='novoEvento'>
 
-                        <button id='evento'>Novo Evento</button>
+                        <button id='evento' onClick={handleClick}>Novo Evento</button>
                     </div>
                     <div className='cadastrar'>
                         <button id='evento' >Cadastrar Professor</button>
