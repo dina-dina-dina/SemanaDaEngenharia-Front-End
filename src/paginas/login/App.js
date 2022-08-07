@@ -1,13 +1,20 @@
-import './login.css';
-import jpIMG from './assets/SemanaEng.jpg';
+import { useNavigate } from 'react-router-dom';
+import '../../paginas/login/login.css';
+import jpIMG from '../../assets/SemanaEng.jpg';
 import React, { useState, useContext, useEffect } from 'react';
 
 
 
-function App() {
+function Login() {
   const [email, setEmail] = useState(String)
   const [senha, setSenha] = useState(String)
-  
+  const navigate = useNavigate();
+
+  function handleClick() {
+    navigate("/eventos");
+  }
+
+
   return (
     <div className="container">
       <div className="login">
@@ -33,8 +40,8 @@ function App() {
                 <label>Senha</label>
                 <input type='password' placeholder='Senha' onChange={(event) => setSenha(event.target.value)}></input>
               </div>
-              <div className='button'>
-                <button >ENTRAR</button>
+              <div className='button' >
+                <button onClick={handleClick} >ENTRAR</button>
               </div>
 
             </div>
@@ -49,4 +56,4 @@ function App() {
   );
 }
 
-export default App;
+export default Login;
