@@ -4,7 +4,7 @@ import React, { useState, useContext, useEffect } from 'react';
 
 
 
-function NovoEvento() {
+function NovaPalestra() {
     const [nome, setNome] = useState(String)
     const [dataInicio, setDataInicio] = useState(Date)
     const [dataFinal, setDataFinal] = useState(Date)
@@ -32,15 +32,15 @@ function NovoEvento() {
                             <input id='inputStyle' onChange={(event) => setNome(event.target.value)}></input>
                         </div>
                         <div className='data'>
-                            <label id='labelStyle'>Data de Inicio</label>
-                            <input id='inputStyle' type={'date'} onChange={(event) => setDataInicio(event.target.value)}></input>
+                            <label id='labelStyle'>Palestrante</label>
+                            <input id='inputStyle' type={'text'} onChange={(event) => setDataInicio(event.target.value)}></input>
                         </div>
                         <div className='data'>
-                            <label id='labelStyle'>Data Final</label>
-                            <input id='inputStyle' type={'date'} onChange={(event) => setDataFinal(event.target.value)}></input>
+                            <label id='labelStyle'>Carga Horária</label>
+                            <input id='inputStyle' type={'number'} onChange={(event) => setDataFinal(event.target.value)}></input>
                         </div>
                         <div className='botao' onClick={handleClick}>
-                            <button>Criar Evento</button>
+                            <button>Criar Palestra</button>
                         </div>
                     </form>
                 </div>
@@ -53,4 +53,4 @@ function NovoEvento() {
     );
 }
 
-export default NovoEvento;
+export default NovaPalestra;

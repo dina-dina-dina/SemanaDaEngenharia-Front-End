@@ -4,25 +4,23 @@ import React, { useState, useContext, useEffect } from 'react';
 
 
 
-function NovoEvento() {
+function CadastrarProfessor() {
     const [nome, setNome] = useState(String)
-    const [dataInicio, setDataInicio] = useState(Date)
-    const [dataFinal, setDataFinal] = useState(Date)
+    const [email, setEmail] = useState(String)
+    const [turma, setTurma] = useState(String)
     const navigate = useNavigate();
     
-    console.log(nome)
-    console.log(dataInicio)
-    console.log(dataFinal)
+    
 
     function handleClick() {
-        navigate("/palestras");
+        navigate("/eventos");
       }
 
     return (
         <div className='containerNew'>
              
             <div className='formulario2'>
-                    <span id = 'tittle'>EVENTO</span>
+                    <span id = 'tittle'>PROFESSOR</span>
                 <div className='itensForms'>
                     <form>
 
@@ -32,15 +30,15 @@ function NovoEvento() {
                             <input id='inputStyle' onChange={(event) => setNome(event.target.value)}></input>
                         </div>
                         <div className='data'>
-                            <label id='labelStyle'>Data de Inicio</label>
-                            <input id='inputStyle' type={'date'} onChange={(event) => setDataInicio(event.target.value)}></input>
+                            <label id='labelStyle'>Email</label>
+                            <input id='inputStyle' type={'email'} onChange={(event) => setEmail(event.target.value)}></input>
                         </div>
                         <div className='data'>
-                            <label id='labelStyle'>Data Final</label>
-                            <input id='inputStyle' type={'date'} onChange={(event) => setDataFinal(event.target.value)}></input>
+                            <label id='labelStyle'>Turmas</label>
+                            <select id='inputStyle'  onChange={(event) => setTurma(event.target.value)}></select>
                         </div>
                         <div className='botao' onClick={handleClick}>
-                            <button>Criar Evento</button>
+                            <button>Cadastrar</button>
                         </div>
                     </form>
                 </div>
@@ -53,4 +51,4 @@ function NovoEvento() {
     );
 }
 
-export default NovoEvento;
+export default CadastrarProfessor;

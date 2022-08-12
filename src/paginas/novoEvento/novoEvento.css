@@ -1,0 +1,133 @@
+
+
+.containerNew {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   height: 100%;
+}
+
+.formulario2 {
+    margin-top: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 673px;
+    height: 810px;
+    flex-direction: column;
+
+    background: #FFFFFF;
+    border: 3px solid #097828;
+    border-radius: 45px;
+
+}
+
+.itensForms {
+    margin-bottom: 45px;
+}
+
+.nome {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+#inputStyle {
+    width: 523px;
+    height: 60px;
+
+    background: #FFFFFF;
+    border: 2px solid #097828;
+    border-radius: 16px;
+    box-sizing: border-box;
+
+    font-size: 25px;
+
+    text-indent: 10px;
+
+
+}
+
+#inputStyle:focus {
+    outline: none;
+    border:2px solid #064b19;
+
+}
+
+
+#labelStyle {
+    width: 319px;
+    height: 50px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 36px;
+
+    color: #097828;
+    
+}
+
+.botao {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.botao button {
+    box-sizing: border-box;
+
+    width: 263px;
+    height: 68px;
+
+    background: #097828;
+    border: 3px solid #FFFFFF;
+    border-radius: 30px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    transition: all 400ms ease;
+
+    color: #FFFFFF;
+}
+
+
+
+
+
+.botao button:hover {
+    background: 0, 0, 0, 0 #36a555;
+
+}
+
+#tittle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    width: 319px;
+    height: 50px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 36px;
+
+    color: #097828;
+    margin-bottom: 80px;
+
+
+}
