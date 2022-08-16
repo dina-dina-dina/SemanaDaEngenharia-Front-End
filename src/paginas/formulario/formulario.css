@@ -159,7 +159,7 @@ body {
 
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 450px) {
 .formulario22 {
     width: 400px;
     height: 1030px;
@@ -201,6 +201,7 @@ body {
    
     width: 233px;
     height: 68px;
+    color: blue;
 
    
 }
