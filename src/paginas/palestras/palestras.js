@@ -1,6 +1,9 @@
 import { useNavigate } from 'react-router-dom';
-import '../../paginas/eventos/Eventos.css';
+import '../../paginas/palestras/palestras.css';
 import React, { useState, useContext, useEffect } from 'react';
+import botaopesquisa from '../../assets/lupa.png'
+import botaoqrcode from '../../assets/qrcode.png'
+import botaodelete from '../../assets/delete.png'
 
 
 
@@ -17,6 +20,10 @@ function Palestras() {
     }
     function home() {
         navigate("/");
+    }
+
+    function Formulario() {
+        navigate("/formulario");
     }
 
     return (
@@ -46,13 +53,40 @@ function Palestras() {
 
             </div>
             <div className='visualização'>
-                <div className='layout'>
-                    <div className='pesquisar'>
+                <div className="tabela">
+                    <table className="rTableEntradasVisualizar">
+                        <thead>
+                            <tr>
+                                <th className="cabecalhoEntradasVisualizar">NOME</th>
+                                <th className="cabecalhoEntradasVisualizar">PALESTRANTE</th>
+                                <th className="cabecalhoEntradasVisualizar">DATA-INICIO</th>
+                                <th className="cabecalhoEntradasVisualizar">DATA-FINAL</th>
+                                <th className="cabecalhoEntradasVisualizar">DURAÇÃO</th>
+                                <th className="cabecalhoEntradasVisualizar">AÇÕES</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{'-'}</td>
+                                <td>{'-'}</td>
+                                <td>{'-'}</td>
+                                <td>{'-'}</td>
+                                <td>{'-'}</td>
 
-                    </div>
+                                <td>
 
+                                    <ul className="botoesTabEntradasVisualizar">
+                                        <li className="btn1EntradasVisualizar" id="hover"><button onClick={Formulario} ><img src={botaopesquisa} alt="botao" /></button></li>
+                                        <li className="btn2EntradasVisualizar" id="hover"><button><img src={botaoqrcode} alt="editar" /></button></li>
+                                        <li className="btn3EntradasVisualizar" id="hover"><button><img src={botaodelete} alt="deletar" /></button></li>
+                
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-
+               
             </div>
         </div>
 

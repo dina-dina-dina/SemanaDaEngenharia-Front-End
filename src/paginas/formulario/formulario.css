@@ -1,22 +1,29 @@
 
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+}
 
-.containerNew {
+
+.containerNew2 {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-   height: 100%;
+    width: 100vw;
+    padding: 2rem 4rem;
 }
 
-.formulario2 {
+.formulario22 {
     margin-top: 62px;
+    margin-bottom: 62px;
     display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
     width: 673px;
-    height: 810px;
+    height: 1210px;
     flex-direction: column;
 
     background: #FFFFFF;
@@ -25,24 +32,24 @@
 
 }
 
-.itensForms {
+.itensForms2 {
     margin-bottom: 45px;
 }
 
-.nome {
+.nome2 {
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
 
 }
 
-.data {
+.data2 {
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
 }
 
-#inputStyle {
+#inputStyle2 {
     width: 523px;
     height: 60px;
 
@@ -58,14 +65,14 @@
 
 }
 
-#inputStyle:focus {
+#inputStyle2:focus {
     outline: none;
-    border:2px solid #064b19;
+    border: 2px solid #064b19;
 
 }
 
 
-#labelStyle {
+#labelStyle2 {
     width: 319px;
     height: 50px;
 
@@ -76,16 +83,16 @@
     line-height: 36px;
 
     color: #097828;
-    
+
 }
 
-.botao {
+.botao2 {
     margin-top: 30px;
     display: flex;
     justify-content: center;
 }
 
-.botao button {
+.botao2 button {
     box-sizing: border-box;
 
     width: 263px;
@@ -108,29 +115,24 @@
 
 
 
-.botao button:hover {
+.botao2 button:hover {
     background: 0, 0, 0, 0 #36a555;
 
 }
 
-#tittle {
+#tittle2 {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
-    width: 319px;
-    height: 50px;
+    width: 200px;
+    height: 200px;
+    margin-top: 150px;
 
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 24px;
-    line-height: 36px;
-
-    color: #097828;
-    margin-bottom: 80px;
+   
 
 
 }
+
 .feedback {
     display: flex;
     flex-direction: column;
@@ -143,7 +145,7 @@
 
 #inputStyleFb {
     width: 523px;
-    height:200px;
+    height: 200px;
 
     background: #FFFFFF;
     border: 2px solid #097828;
@@ -153,6 +155,56 @@
     font-size: 25px;
 
     text-indent: 10px;
+
+
+}
+
+@media only screen and (max-width: 650px) {
+.formulario22 {
+    width: 400px;
+    height: 1030px;
+    margin-right: 12px;
+}
+.itensForms2{
+    width: 400px;
+}
+
+#inputStyle2 {
+    width: 360px;
+    height: 50px;
+    margin-left: 20px;
+}
+
+#tittle2 {
+    width: 130px;
+    height: 130px;
+    margin-top: 30px;
+}
+
+#labelStyle2 {
+    width: 319px;
+    height: 50px;
+    margin-left: 20px;
+
+    
+}
+
+#inputStyleFb {
+    margin-left: 20px;
+    width: 360px;
+    height: 100px;
+
+
+}
+
+.botao2 button {
+   
+    width: 233px;
+    height: 68px;
+
+   
+}
+
 
 
 }

@@ -6,6 +6,7 @@ import NovoEvento from './paginas/novoEvento/novoEvento';
 import CadastrarProfessor from './paginas/professor/cadastrarProfessor';
 import Palestras from './paginas/palestras/palestras';
 import NovaPalestra from './paginas/novaPalestra/novaPalestra';
+import Formulario from './paginas/formulario/formulario';
 
 function Rotas() {
     return (
@@ -17,6 +18,7 @@ function Rotas() {
                 <Route path="/professor" element={<CadastrarProfessor/>} />
                 <Route path="/palestras" element={<Palestras/>} />
                 <Route path="/novaPalestra" element={<NovaPalestra/>} />
+                <Route path="/formulario" element={<Formulario/>} />
 
             </Routes>
 
