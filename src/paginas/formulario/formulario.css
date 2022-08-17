@@ -161,19 +161,19 @@ body {
 
 @media only screen and (max-width: 650px) {
 .formulario22 {
-    width: 380px;
+    width: 400px;
     height: 1030px;
     /* margin-right: 12px; */
     margin-left: 20px;
 }
 .itensForms2{
-    width: 400px;
+    width: 300px;
 }
 
 #inputStyle2 {
-    width: 340px;
+    width: 280px;
     height: 50px;
-    margin-left: 30px;
+    margin-left: 10px;
 }
 
 #tittle2 {
@@ -185,14 +185,14 @@ body {
 #labelStyle2 {
     width: 319px;
     height: 50px;
-    margin-left: 30px;
+    margin-left: 10px;
 
     
 }
 
 #inputStyleFb {
-    margin-left: 30px;
-    width: 340px;
+    margin-left: 10px;
+    width: 280px;
     height: 100px;
 
 
