@@ -164,16 +164,16 @@ body {
     width: 400px;
     height: 1030px;
     /* margin-right: 12px; */
-    margin-left: 20px;
+    
 }
 .itensForms2{
-    width: 300px;
+    width: 330px;
 }
 
 #inputStyle2 {
     width: 280px;
-    height: 50px;
-    margin-left: 10px;
+    height: 40px;
+    margin-left: 20px;
 }
 
 #tittle2 {
@@ -184,16 +184,16 @@ body {
 
 #labelStyle2 {
     width: 319px;
-    height: 50px;
-    margin-left: 10px;
+    height: 40px;
+    margin-left: 20px;
 
     
 }
 
 #inputStyleFb {
-    margin-left: 10px;
+    margin-left: 20px;
     width: 280px;
-    height: 100px;
+    height: 130px;
 
 
 }
@@ -202,9 +202,14 @@ body {
    
     width: 233px;
     height: 68px;
-    color: blue;
 
    
+}
+#labelStyle2 {
+    width: 319px;
+    height: 40px;
+
+
 }
 
 
