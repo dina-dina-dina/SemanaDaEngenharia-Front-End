@@ -82,8 +82,10 @@ function Formulario() {
 
     return (
         <div className='containerNew2'>
+           
 
             <div className='formulario22'>
+
                 <img src={SemanaEng} id='tittle2'></img>
                 <div className='itensForms2'>
                     <form>
@@ -107,7 +109,7 @@ function Formulario() {
 
                             <select id='inputStyle2'
                                 className='inputBusca'
-                                style={{ width: '200px' }}
+                                style={{ width: '150px' }}
                                 onChange={(event) => setBuscaTipo(event.target.value)}
                                 defaultValue={''}
                                 value={buscaTipo}
