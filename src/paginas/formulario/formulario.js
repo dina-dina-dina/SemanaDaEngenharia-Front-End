@@ -43,7 +43,7 @@ function Formulario() {
 
                 }).catch(err => alert(err));
                 if (response) {
-                    alert("Cadastrado realizado com sucesso!")
+                    alert("Presença cadastrada com sucesso!")
                 }
 
             } else alert('Preencha todos os campos')
