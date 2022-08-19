@@ -1,24 +1,17 @@
 import { useNavigate } from 'react-router-dom';
 import '../../paginas/palestras/palestras.css';
-import React, { useState, useContext, useEffect, } from 'react';
-import { Modal } from 'react-bootstrap';
+import React, { useState, useContext, useEffect } from 'react';
 import botaopesquisa from '../../assets/lupa.png'
 import botaoqrcode from '../../assets/qrcode.png'
 import botaodelete from '../../assets/delete.png'
 import axios from '../../axios';
-import { Link } from 'react-router-dom';
 
 
-function Palestras() {
+
+function Alunos() {
     const [email, setEmail] = useState(String)
     const [senha, setSenha] = useState(String)
     const [response, setResponse] = useState(Array);
-
-
-    const [showFornecedor, setShowFornecedor] = useState(false);
-    const handleShowFornecedor = () => setShowFornecedor(true);
-
-    const handleCloseFornecedor = () => setShowFornecedor(false)
 
 
     const navigate = useNavigate();
@@ -38,13 +31,7 @@ function Palestras() {
         get();
     }, [])
 
-    async function testeqr(event) {
 
-
-
-
-
-    }
     function handleClick() {
         navigate("/novaPalestra");
     }
@@ -74,14 +61,13 @@ function Palestras() {
                     </div>
                     <div className='novoEvento'>
 
-                        <button id='evento' onClick={handleClick}>Nova Palestra</button>
+                        <button id='evento' onClick={handleClick}>Alunos</button>
                     </div>
                     <div className='cadastrar'>
                         <button onClick={professor} id='evento' >Encerrar Evento</button>
                     </div>
 
                 </div>
-
 
 
 
@@ -97,45 +83,24 @@ function Palestras() {
                                 <th className="cabecalhoEntradasVisualizar">AÇÕES</th>
                             </tr>
                         </thead>
-                        {!noResponse && response.map(function (response) {
+                        {!noResponse &&response.map(function (response) {
                             return (
                                 <>
                                     <tbody>
                                         <tr>
                                             <td>{response.nomePalestra ? response.nomePalestra : '-'}</td>
                                             <td>{response.palestrante ? response.palestrante : '-'}</td>
-                                            <td>{response.cargaHoraria ? response.cargaHoraria : '-'}</td>
-
+                                            <td>{response.cargaHoraria ? response.cargaHoraria :'-'}</td>
+                                            
 
                                             <td>
 
                                                 <ul className="botoesTabEntradasVisualizar">
-                                                    <Link className="btn1EntradasVisualizar" to={`/alunos?&id=${response.idPalestra}`}><img style={{ width: '42px' }} src={botaopesquisa} alt="visualizar" /></Link>
-                                                    <Link className="btn1EntradasVisualizar" to={`/qrcode?&id=${response.idPalestra}`}><img style={{ width: '42px' }} src={botaoqrcode} alt="visualizar" /></Link>
-
+                                                    <li className="btn1EntradasVisualizar" id="hover"><button onClick={Formulario} ><img src={botaopesquisa} alt="botao" /></button></li>
+                                                    <li className="btn2EntradasVisualizar" id="hover"><button><img src={botaoqrcode} alt="editar" /></button></li>
                                                     <li className="btn3EntradasVisualizar" id="hover"><button><img src={botaodelete} alt="deletar" /></button></li>
 
-
-
                                                 </ul>
-
-                                                <Modal
-                                                    show={showFornecedor}
-
-                                                    backdrop="static"
-                                                    keyboard={false}
-                                                >
-                                                    <Modal.Body>
-                                                        <img src={response.idPalestra ? `https://chart.googleapis.com/chart?cht=qr&chl=${response.idPalestra}&chs=100x100` : null}
-                                                            alt="qrCode"
-                                                            width='100'
-                                                            height='100'
-                                                            style={{ border: '1px solid #a0a0a0', marginLeft: '15px', marginRight: '15px' }}
-                                                        />
-                                                    </Modal.Body>
-
-                                                </Modal>
-
                                             </td>
                                         </tr>
                                     </tbody>
@@ -149,10 +114,10 @@ function Palestras() {
                 </div>
 
             </div>
-        </div >
+        </div>
 
 
     );
 }
 
-export default Palestras;
+export default Alunos;

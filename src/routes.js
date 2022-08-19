@@ -7,7 +7,8 @@ import CadastrarProfessor from './paginas/professor/cadastrarProfessor';
 import Palestras from './paginas/palestras/palestras';
 import NovaPalestra from './paginas/novaPalestra/novaPalestra';
 import Formulario from './paginas/formulario/formulario';
-
+import Alunos from './paginas/alunos/alunos';
+import Qrcode from './paginas/qrcode/qrcode';
 function Rotas() {
     return (
         <Router>
@@ -19,6 +20,8 @@ function Rotas() {
                 <Route path="/palestras" element={<Palestras/>} />
                 <Route path="/novaPalestra" element={<NovaPalestra/>} />
                 <Route path="/formulario" element={<Formulario/>} />
+                <Route path="/alunos" element={<Alunos/>} />
+                <Route path="/qrcode" element={<Qrcode/>} />
 
             </Routes>
 
