@@ -51,7 +51,7 @@ function Formulario() {
                     "feedback": feedback,
                     "email": email,
                     "ra": ra,
-                    "idTurma": idTurma,
+                    "idTurma": buscaTipo,
 
                 }).catch(err => alert(err));
                 if (response) {
