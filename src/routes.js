@@ -9,6 +9,9 @@ import NovaPalestra from './paginas/novaPalestra/novaPalestra';
 import Formulario from './paginas/formulario/formulario';
 import Alunos from './paginas/alunos/alunos';
 import Qrcode from './paginas/qrcode/qrcode';
+import Obrigado from './paginas/obrigado/obrigado';
+
+
 function Rotas() {
     return (
         <Router>
@@ -22,6 +25,7 @@ function Rotas() {
                 <Route path="/formulario" element={<Formulario/>} />
                 <Route path="/alunos" element={<Alunos/>} />
                 <Route path="/qrcode" element={<Qrcode/>} />
+                <Route path="/obrigado" element={<Obrigado/>} />
 
             </Routes>
 

@@ -6,6 +6,7 @@ import axios from '../../axios';
 
 
 
+
 function Formulario() {
     const [nome, setNome] = useState(String)
     const [email, setEmail] = useState(Number)
@@ -17,7 +18,7 @@ function Formulario() {
     const [responseTurma, setResponseTurma] = useState(Array);
     const [buscaTipo, setBuscaTipo] = useState(Number);
 
-
+   
     const getTurmas = async () => {
         const response = await axios.get('/turma')
             .catch(err => console.error('Error: ', err));
@@ -57,6 +58,7 @@ function Formulario() {
                 }).catch(err => alert(err));
                 if (response) {
                     alert("Presença cadastrada com sucesso!")
+                    navigate("/obrigado");
                 }
 
             } else alert('Preencha todos os campos')
@@ -129,7 +131,7 @@ function Formulario() {
                             <textarea id='inputStyleFb' onChange={(event) => setFeedback(event.target.value)}></textarea>
                         </div>
                         <div className='botao2'>
-                            <button type="button" className="salvar" onClick={() => Envio()} >SALVAR</button>
+                            <button type="button" className="salvar" onClick={() => Envio()} >Enviar</button>
                         </div>
                     </form>
                 </div>
