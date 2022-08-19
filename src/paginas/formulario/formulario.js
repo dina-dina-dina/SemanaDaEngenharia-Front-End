@@ -14,9 +14,21 @@ function Formulario() {
     const [turma, setTurma] = useState(String)
     const [feedback, setFeedback] = useState(String)
     const [idTurma, setIdTurma] = useState(Number)
+    const [responseTurma, setResponseTurma] = useState(Array);
+    const [buscaTipo, setBuscaTipo] = useState(String);
 
 
+    const getTurmas = async () => {
+        const response = await axios.get('/turma')
+            .catch(err => console.error('Error: ', err));
+        if (response) setResponseTurma(response.data);
+        console.log(response)
+    }
 
+    useEffect(() => {
+
+        getTurmas();
+    }, [])
 
 
 
@@ -33,7 +45,7 @@ function Formulario() {
         console.log(idUrl)
 
         try {
-            if (nome && email && ra && idTurma && feedback  ) {
+            if (nome && email && ra && idTurma && feedback) {
                 const response = await axios.post(`/formulario/${idUrl}`, {
                     "nomeAluno": nome,
                     "feedback": feedback,
@@ -90,7 +102,23 @@ function Formulario() {
                         </div>
                         <div className='nome2'>
                             <label id='labelStyle2'>Turma</label>
-                            <input id='inputStyle2' onChange={(event) => setIdTurma(event.target.value)}></input>
+                            {/* <input id='inputStyle2' onChange={(event) => setIdTurma(event.target.value)}></input> */}
+
+                            <select id='inputStyle2'
+                                className='inputBusca'
+                                style={{ width: '200px' }}
+                                onChange={(event) => setBuscaTipo(event.target.value)}
+                                defaultValue={''}
+                                value={buscaTipo}
+                            >
+                                <option value=''>Todos</option>
+                                {responseTurma && responseTurma.map(function (response) {
+                                    return (
+                                        <option value={response.idTurma}>{response.turma}</option>
+                                    );
+                                })}
+
+                            </select>
                         </div>
 
                         <div className='feedback'>
