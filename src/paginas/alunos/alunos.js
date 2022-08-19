@@ -19,12 +19,20 @@ function Alunos() {
     const noResponse = !response || (response && response.length === 0);
 
 
+    var stringUrl = window.location.href;
+    var positionInterrogation = stringUrl.indexOf("?");
+    var positionCommercialE = stringUrl.indexOf("&");
+    var idUrl = stringUrl.substring(positionCommercialE + 4);
+    idUrl = decodeURIComponent(idUrl);
+    console.log(idUrl)
+
     const get = async () => {
-        const response = await axios.get('/palestras')
+        const response = await axios.get(`/formulario/${idUrl}`)
             .catch(err => console.error('Error: ', err));
-        if (response) setResponse(response.data);
-        console.log(response)
+        if (response) setResponse(response.data[0].aluno);
+        console.log(response.data[0].aluno)
     }
+    
 
     useEffect(() => {
 
@@ -78,20 +86,22 @@ function Alunos() {
                         <thead>
                             <tr>
                                 <th className="cabecalhoEntradasVisualizar">NOME</th>
-                                <th className="cabecalhoEntradasVisualizar">PALESTRANTE</th>
-                                <th className="cabecalhoEntradasVisualizar">DURAÇÃO</th>
+                                <th className="cabecalhoEntradasVisualizar">RA</th>
+                                <th className="cabecalhoEntradasVisualizar">EMAIL</th>
+                                <th className="cabecalhoEntradasVisualizar">TURMA</th>
                                 <th className="cabecalhoEntradasVisualizar">AÇÕES</th>
                             </tr>
                         </thead>
-                        {!noResponse &&response.map(function (response) {
+                        {!noResponse && response.map(function (response) {
                             return (
                                 <>
                                     <tbody>
                                         <tr>
-                                            <td>{response.nomePalestra ? response.nomePalestra : '-'}</td>
-                                            <td>{response.palestrante ? response.palestrante : '-'}</td>
-                                            <td>{response.cargaHoraria ? response.cargaHoraria :'-'}</td>
-                                            
+                                            <td>{response.nomeAluno ? response.nomeAluno : '-'}</td>
+                                            <td>{response.ra ? response.ra : '-'}</td>
+                                            <td>{response.email ? response.email : '-'}</td>
+                                            <td>{response.idTurma ? response.idTurma : '-'}</td>
+
 
                                             <td>
 
