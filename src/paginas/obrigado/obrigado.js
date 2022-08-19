@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import '../../paginas/novoEvento/novoEvento.css'
 import React, { useState, useContext, useEffect } from 'react';
+import '../../paginas/obrigado/obrigado.css'
 
 
 
@@ -25,16 +26,14 @@ function Obrigado() {
         
         
     return (
-        <div className='containerNew'>
+        <div className='containerNew3'>
 
-            <div className='formulario2'>
+            
                 
-                <div className='itensForms'>
+                
                 <span id='tittle'>Obrigado</span>
                     
-                </div>
-
-            </div>
+    
 
         </div>
 
