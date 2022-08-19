@@ -33,7 +33,7 @@ function Qrcode() {
                 <span id='tittle'>EVENTO</span>
                 <div className='itensForms'>
                     <form>
-                        <img src={ `https://chart.googleapis.com/chart?cht=qr&chl=http://localhost:3000/formulario?${idUrl}&chs=100x100` }
+                        <img src={ `https://chart.googleapis.com/chart?cht=qr&chl=https://semanadaengenharia-frontend.herokuapp.com/formulario?${idUrl}&chs=100x100` }
                             alt="qrCode"
                             width='100'
                             height='100'

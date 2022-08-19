@@ -1,7 +1,7 @@
 import Axios from "axios";
 
 const axios = Axios.create({
-    baseURL: "http://localhost:8060",
+    baseURL: "https://semanadaengenharia-backend.herokuapp.com/",
     timeout: 10000
 })
 
