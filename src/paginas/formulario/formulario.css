@@ -16,8 +16,8 @@ body {
 }
 
 .formulario22 {
-    margin-top: 62px;
-    margin-bottom: 62px;
+    margin-top: 42px;
+    margin-bottom: 42px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,8 +27,8 @@ body {
     flex-direction: column;
 
     background: #FFFFFF;
-    border: 3px solid #097828;
-    border-radius: 45px;
+    /* border: 3px solid #097828;
+    border-radius: 20px; */
 
 }
 
@@ -172,7 +172,7 @@ body {
 
 #inputStyle2 {
     width: 280px;
-    height: 40px;
+    height: 60px;
     margin-left: 20px;
 }
 
@@ -184,7 +184,7 @@ body {
 
 #labelStyle2 {
     width: 319px;
-    height: 40px;
+    height: 60px;
     margin-left: 20px;
 
     
@@ -207,7 +207,7 @@ body {
 }
 #labelStyle2 {
     width: 319px;
-    height: 40px;
+    height: 60px;
 
 
 }

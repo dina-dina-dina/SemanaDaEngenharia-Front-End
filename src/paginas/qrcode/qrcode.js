@@ -30,17 +30,17 @@ function Qrcode() {
         <div className='containerNew'>
 
             <div className='formulario2'>
-                <span id='tittle'>EVENTO</span>
+                <span id='tittle'>QR-CODE</span>
                 <div className='itensForms'>
                     <form>
-                        <img src={ `https://chart.googleapis.com/chart?cht=qr&chl=https://semanadaengenharia-frontend.herokuapp.com/formulario?${idUrl}&chs=100x100` }
+                        <img src={ `https://chart.googleapis.com/chart?cht=qr&chl=https://semanadaengenharia-frontend.herokuapp.com/formulario?${idUrl}&chs=500x500` }
                             alt="qrCode"
-                            width='100'
-                            height='100'
-                            style={{ border: '1px solid #a0a0a0', marginLeft: '15px', marginRight: '15px' }}
+                            width='500'
+                            height='500'
+                            // style={{ border: '1px solid #a0a0a0', marginLeft: '15px', marginRight: '15px' }}
                             
                         />
-                        <button >url</button>
+                        
                     </form>
                 </div>
 

@@ -12,6 +12,7 @@ function Alunos() {
     const [email, setEmail] = useState(String)
     const [senha, setSenha] = useState(String)
     const [response, setResponse] = useState(Array);
+    const [responseTurmaFind, setResponseTurmaFind] = useState(Array);
 
 
     const navigate = useNavigate();
@@ -32,10 +33,23 @@ function Alunos() {
         if (response) setResponse(response.data[0].aluno);
         console.log(response.data[0].aluno)
     }
-    
+    function findTurma(id) {
+        let array = responseTurmaFind
+        const turmas = array.find(element => element.idTurma === id)
+        if (turmas) return turmas.turma
+    }
+
+
+    const getTurmas = async () => {
+        const response = await axios.get('/turma')
+            .catch(err => console.error('Error: ', err));
+        if (response) setResponseTurmaFind(response.data);
+        console.log(response)
+    }
+
 
     useEffect(() => {
-
+        getTurmas();
         get();
     }, [])
 
@@ -69,7 +83,7 @@ function Alunos() {
                     </div>
                     <div className='novoEvento'>
 
-                        <button id='evento' onClick={handleClick}>Alunos</button>
+                        <button id='evento' onClick={handleClick}>Formulario</button>
                     </div>
                     <div className='cadastrar'>
                         <button onClick={professor} id='evento' >Encerrar Evento</button>
@@ -100,10 +114,10 @@ function Alunos() {
                                             <td>{response.nomeAluno ? response.nomeAluno : '-'}</td>
                                             <td>{response.ra ? response.ra : '-'}</td>
                                             <td>{response.email ? response.email : '-'}</td>
-                                            <td>{response.idTurma ? response.idTurma : '-'}</td>
+                                            <td>{findTurma(response.idTurma) ? findTurma(response.idTurma) : '-'}</td>
 
 
-                                            <td>
+                                            <td style={{width: '30px'}}>
 
                                                 <ul className="botoesTabEntradasVisualizar">
                                                     <li className="btn1EntradasVisualizar" id="hover"><button onClick={Formulario} ><img src={botaopesquisa} alt="botao" /></button></li>

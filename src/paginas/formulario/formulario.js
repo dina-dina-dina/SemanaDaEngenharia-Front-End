@@ -15,7 +15,7 @@ function Formulario() {
     const [feedback, setFeedback] = useState(String)
     const [idTurma, setIdTurma] = useState(Number)
     const [responseTurma, setResponseTurma] = useState(Array);
-    const [buscaTipo, setBuscaTipo] = useState(String);
+    const [buscaTipo, setBuscaTipo] = useState(Number);
 
 
     const getTurmas = async () => {
@@ -43,6 +43,7 @@ function Formulario() {
         var idUrl = stringUrl.substring(positionInterrogation + 1);
         idUrl = decodeURIComponent(idUrl);
         console.log(idUrl)
+        console.log(buscaTipo)
 
         try {
             if (nome && email && ra && buscaTipo && feedback) {
