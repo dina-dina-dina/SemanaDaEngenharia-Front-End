@@ -45,7 +45,7 @@ function Formulario() {
         console.log(idUrl)
 
         try {
-            if (nome && email && ra && idTurma && feedback) {
+            if (nome && email && ra && buscaTipo && feedback) {
                 const response = await axios.post(`/formulario/${idUrl}`, {
                     "nomeAluno": nome,
                     "feedback": feedback,
