@@ -47,6 +47,13 @@ function Alunos() {
         console.log(response)
     }
 
+    const deleteAluno = async (id) => {
+        if (window.confirm("Tem certeza que deseja deletar esse Aluno?")) {
+            await axios.delete(`/formulario/${id}`).catch(err => alert(err));
+            await get();
+        }
+    }
+
 
     useEffect(() => {
         getTurmas();
@@ -122,7 +129,7 @@ function Alunos() {
                                                 <ul className="botoesTabEntradasVisualizar">
                                                     <li className="btn1EntradasVisualizar" id="hover"><button onClick={Formulario} ><img src={botaopesquisa} alt="botao" /></button></li>
                                                     <li className="btn2EntradasVisualizar" id="hover"><button><img src={botaoqrcode} alt="editar" /></button></li>
-                                                    <li className="btn3EntradasVisualizar" id="hover"><button><img src={botaodelete} alt="deletar" /></button></li>
+                                                    <li className="btn3EntradasVisualizar" id="hover"><button type ='button' onClick={() => deleteAluno(response.idAluno)}><img src={botaodelete} alt="deletar" /></button></li>
 
                                                 </ul>
                                             </td>

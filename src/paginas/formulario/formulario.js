@@ -116,7 +116,7 @@ function Formulario() {
                                 defaultValue={''}
                                 value={buscaTipo}
                             >
-                                <option value=''>Todos</option>
+                                <option value=''></option>
                                 {responseTurma && responseTurma.map(function (response) {
                                     return (
                                         <option value={response.idTurma}>{response.turma}</option>
@@ -128,7 +128,7 @@ function Formulario() {
 
                         <div className='feedback'>
                             <label id='labelStyle2'>Feedback</label>
-                            <textarea id='inputStyleFb' onChange={(event) => setFeedback(event.target.value)}></textarea>
+                            <textarea  type= 'text' id='inputStyleFb' onChange={(event) => setFeedback(event.target.value)}></textarea>
                         </div>
                         <div className='botao2'>
                             <button type="button" className="salvar" onClick={() => Envio()} >Enviar</button>

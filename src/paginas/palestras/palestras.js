@@ -33,6 +33,13 @@ function Palestras() {
         console.log(response)
     }
 
+    const deletePalestra = async (id) => {
+        if (window.confirm("Tem certeza que deseja deletar essa Palestra?")) {
+            await axios.delete(`/palestras/${id}`).catch(err => alert(err));
+            await get();
+        }
+    }
+
     useEffect(() => {
 
         get();
@@ -113,7 +120,7 @@ function Palestras() {
                                                     <Link className="btn1EntradasVisualizar" to={`/alunos?&id=${response.idPalestra}`}><img style={{ width: '42px' }} src={botaopesquisa} alt="visualizar" /></Link>
                                                     <Link className="btn1EntradasVisualizar" to={`/qrcode?&id=${response.idPalestra}`}><img style={{ width: '42px' }} src={botaoqrcode} alt="visualizar" /></Link>
 
-                                                    <li className="btn3EntradasVisualizar" id="hover"><button><img src={botaodelete} alt="deletar" /></button></li>
+                                                    <li className="btn3EntradasVisualizar" id="hover"><button type ='button' onClick={() => deletePalestra(response.idPalestra)}><img src={botaodelete} alt="deletar" /></button></li>
 
 
 
