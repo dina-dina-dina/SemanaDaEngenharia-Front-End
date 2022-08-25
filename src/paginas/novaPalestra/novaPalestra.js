@@ -1,19 +1,51 @@
 import { useNavigate } from 'react-router-dom';
 import '../../paginas/novoEvento/novoEvento.css'
 import React, { useState, useContext, useEffect } from 'react';
+import axios from '../../axios';
 
 
 
 function NovaPalestra() {
     const [nome, setNome] = useState(String)
-    const [dataInicio, setDataInicio] = useState(Date)
-    const [dataFinal, setDataFinal] = useState(Date)
+    const [palestrante, setPalestrante] = useState(Date)
+    const [cargaHoraria, setCargaHoraria] = useState(Date)
     const navigate = useNavigate();
     
-    console.log(nome)
-    console.log(dataInicio)
-    console.log(dataFinal)
+    
+    async function Envio() {
+        var stringUrl = window.location.href;
+        var positionInterrogation = stringUrl.indexOf("?");
+        var idUrl = stringUrl.substring(positionInterrogation + 5);
+        idUrl = decodeURIComponent(idUrl);
+        
 
+        try {
+            if (nome && palestrante && cargaHoraria) {
+                console.log(idUrl)
+                const response = await axios.post('/palestras', {
+                    "nomePalestra": nome,
+                    "palestrante": palestrante,
+                    "cargaHoraria": cargaHoraria,
+                    "idEvento": idUrl
+                }).catch(err => alert(err));
+                if (response) {
+                    console.log(response)
+                    alert("Palestra criada com sucesso!")
+                    navigate(`/palestras?&id=${response.data.idEvento}`);
+                }
+
+            } else alert('Preencha todos os campos')
+
+        } catch (err) {
+            alert(err)
+        }
+
+
+
+
+
+
+    }
     function handleClick() {
         navigate("/palestras");
       }
@@ -33,14 +65,14 @@ function NovaPalestra() {
                         </div>
                         <div className='data'>
                             <label id='labelStyle'>Palestrante</label>
-                            <input id='inputStyle' type={'text'} onChange={(event) => setDataInicio(event.target.value)}></input>
+                            <input id='inputStyle' type={'text'} onChange={(event) => setPalestrante(event.target.value)}></input>
                         </div>
                         <div className='data'>
                             <label id='labelStyle'>Carga Horária</label>
-                            <input id='inputStyle' type={'number'} onChange={(event) => setDataFinal(event.target.value)}></input>
+                            <input id='inputStyle' type={'number'} onChange={(event) => setCargaHoraria(event.target.value)}></input>
                         </div>
-                        <div className='botao' onClick={handleClick}>
-                            <button>Criar Palestra</button>
+                        <div className='botao' >
+                            <button  type = 'button' onClick={()=> Envio()}>Criar Palestra</button>
                         </div>
                     </form>
                 </div>

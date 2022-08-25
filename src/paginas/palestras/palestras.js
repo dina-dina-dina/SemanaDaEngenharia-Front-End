@@ -26,8 +26,15 @@ function Palestras() {
     const noResponse = !response || (response && response.length === 0);
 
 
+    var stringUrl = window.location.href;
+    var positionInterrogation = stringUrl.indexOf("?");
+    var idUrl = stringUrl.substring(positionInterrogation + 5);
+    idUrl = decodeURIComponent(idUrl);
+    console.log(idUrl)
+
+
     const get = async () => {
-        const response = await axios.get('/palestras')
+        const response = await axios.get(`/palestras/${idUrl}`)
             .catch(err => console.error('Error: ', err));
         if (response) setResponse(response.data);
         console.log(response)
@@ -53,7 +60,10 @@ function Palestras() {
 
     }
     function handleClick() {
-        navigate("/novaPalestra");
+       
+        
+
+        navigate(`/novaPalestra?&id=${idUrl}`);
     }
     function professor() {
         navigate("/professor");
@@ -81,7 +91,7 @@ function Palestras() {
                     </div>
                     <div className='novoEvento'>
 
-                        <button id='evento' onClick={handleClick}>Nova Palestra</button>
+                        <button id='evento' type='button' onClick={handleClick}>Nova Palestra</button>
                     </div>
                     <div className='cadastrar'>
                         <button onClick={professor} id='evento' >Encerrar Evento</button>

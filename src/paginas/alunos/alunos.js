@@ -90,7 +90,7 @@ function Alunos() {
                     </div>
                     <div className='novoEvento'>
 
-                        <button id='evento' onClick={handleClick}>Formulario</button>
+                        <button id='evento' onClick={Formulario}>Formulario</button>
                     </div>
                     <div className='cadastrar'>
                         <button onClick={professor} id='evento' >Encerrar Evento</button>
@@ -128,7 +128,7 @@ function Alunos() {
 
                                                 <ul className="botoesTabEntradasVisualizar">
                                                     <li className="btn1EntradasVisualizar" id="hover"><button onClick={Formulario} ><img src={botaopesquisa} alt="botao" /></button></li>
-                                                    <li className="btn2EntradasVisualizar" id="hover"><button><img src={botaoqrcode} alt="editar" /></button></li>
+                                                
                                                     <li className="btn3EntradasVisualizar" id="hover"><button type ='button' onClick={() => deleteAluno(response.idAluno)}><img src={botaodelete} alt="deletar" /></button></li>
 
                                                 </ul>

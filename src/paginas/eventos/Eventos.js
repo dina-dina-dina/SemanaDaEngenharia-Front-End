@@ -2,14 +2,16 @@ import { useNavigate } from 'react-router-dom';
 import '../../paginas/eventos/Eventos.css';
 import React, { useState, useContext, useEffect } from 'react';
 import axios from '../../axios';
+import fundo from '../../assets/teste.png'
 
 
 function Eventos() {
-    const [email, setEmail] = useState(String)
-    const [senha, setSenha] = useState(String)
-    const [alunos, setAlunos] = useState(String)
-    const navigate = useNavigate();
+    // const [email, setEmail] = useState(String)
+    // const [senha, setSenha] = useState(String)
+    const [eventos, setEventos] = useState(Array)
 
+    const navigate = useNavigate();
+    const noResponse = !eventos || (eventos && eventos.length === 0);
     function handleClick() {
         navigate("/novoEvento");
     }
@@ -19,18 +21,21 @@ function Eventos() {
     function home() {
         navigate("/");
     }
+    function redirecionar(id) {
+        navigate(`/palestras?&id=${id}`);
+    }
 
-    const getAlunos = async () => {
-        const response = await axios.get('/alunos')
+    const getEventos = async () => {
+        const response = await axios.get('/evento')
             .catch(err => console.error('Error: ', err));
-            if (response) setAlunos(response.data);
-            console.log(alunos)
+        if (response) setEventos(response.data);
+        console.log(response)
     }
 
     useEffect(() => {
-       
-       getAlunos();
-   }, [])
+
+        getEventos();
+    }, [])
 
     return (
         <div className='tudo'>
@@ -59,8 +64,99 @@ function Eventos() {
 
             </div>
             <div className='visualização'>
-                <div className='layout'>
+                <div className='ever' >
+
+
+                    <div className='cards'>
+                        <div className='tituloEvento'>
+                            <h1>Eventos Encerrados</h1>
+                        </div>
+
+                        {!noResponse && eventos.map(function (response) {
+                            return (
+                                <>
+                                    <ul className='ulCard'>
+
+                                        <li className='liCard'>
+                                            <div className='espaço' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                                                <div style={{ textAlign: 'center', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                                                    {/* <h1 style={{  width:'330px', backgroundColor:'red', height: '50px' ,overflow:'hidden', textOverflow:'ellipsis', fontSize:'50px'}}>
+                                                    {response.nomeEvento}
+                                                </h1> */}
+
+                                                    <button id='botaoCard' type='button' onClick={() => redirecionar(response.idEvento)} style={{ position: 'relative', background: fundo }} className='evento'> {response.nomeEvento}</button>
+                                                </div>
+
+
+
+
+
+                                            </div>
+
+
+                                        </li>
+
+
+
+
+
+
+                                    </ul>
+
+
+
+
+
+
+                                </>
+                            )
+                        })
+                        }
+                    </div>
                     <div className='pesquisar'>
+                        <div className='tituloEvento'>
+                            <h1>Eventos Atuais</h1>
+                        </div>
+                        {!noResponse && eventos.map(function (response) {
+                            return (
+                                <>
+                                    <ul className='ulCard'>
+
+                                        <li className='liCard'>
+                                            <div className='espaço' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                                                <div style={{ textAlign: 'center', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                                                    {/* <h1 style={{  width:'330px', backgroundColor:'red', height: '50px' ,overflow:'hidden', textOverflow:'ellipsis', fontSize:'50px'}}>
+                                                    {response.nomeEvento}
+                                                </h1> */}
+
+                                                    <button id='botaoCard' type='button' onClick={() => redirecionar(response.idEvento)} style={{ position: 'relative', background: fundo }} className='evento'> {response.nomeEvento}</button>
+                                                </div>
+
+
+
+
+
+                                            </div>
+
+
+                                        </li>
+
+
+
+
+
+
+                                    </ul>
+
+
+
+
+
+
+                                </>
+                            )
+                        })
+                        }
 
                     </div>
 
