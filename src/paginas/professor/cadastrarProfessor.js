@@ -24,7 +24,7 @@ function CadastrarProfessor() {
             const response = await axios.post("/professor", {
                 "email": email,
                 "nome": nome,
-                "chamada": turma,
+                "chamada": array,
 
 
             }).catch(err => alert(err));
@@ -64,12 +64,17 @@ function CadastrarProfessor() {
                     json.push(object)
                 }
                 setTurma(json)
-
+              
+               
             };
             reader.readAsArrayBuffer(e.target.files[0]);
         }
     }
 
+
+    var array = turma.reduce((list, sub) => list.concat(sub), [])
+    console.log(array)
+    
 
     // function handleClick() {
     //     navigate("/eventos");

@@ -128,7 +128,6 @@ function Alunos() {
 
                                                 <ul className="botoesTabEntradasVisualizar">
                                                     <li className="btn1EntradasVisualizar" id="hover"><button onClick={Formulario} ><img src={botaopesquisa} alt="botao" /></button></li>
-                                                
                                                     <li className="btn3EntradasVisualizar" id="hover"><button type ='button' onClick={() => deleteAluno(response.idAluno)}><img src={botaodelete} alt="deletar" /></button></li>
 
                                                 </ul>

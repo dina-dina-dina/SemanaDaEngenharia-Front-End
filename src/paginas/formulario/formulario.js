@@ -58,7 +58,7 @@ function Formulario() {
                 }).catch(err => alert(err));
                 if (response) {
                     alert("Presença cadastrada com sucesso!")
-                    // navigate("/obrigado");
+                    navigate("/obrigado");
                 }
 
             } else alert('Preencha todos os campos')
