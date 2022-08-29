@@ -49,7 +49,9 @@ function Alunos() {
 
     const deleteAluno = async (id) => {
         if (window.confirm("Tem certeza que deseja deletar esse Aluno?")) {
-            await axios.delete(`/formulario/${id}`).catch(err => alert(err));
+            await axios.delete(`/formulario/${id}`, { data: { idPalestra: idUrl } }
+                
+            ).catch(err => alert(err));
             await get();
         }
     }

@@ -67,7 +67,7 @@ function Eventos() {
                 <div className='ever' >
 
 
-                    <div className='cards'>
+                    {/* <div className='cards'>
                         <div className='tituloEvento'>
                             <h1>Eventos Encerrados</h1>
                         </div>
@@ -84,7 +84,7 @@ function Eventos() {
                                                     {response.nomeEvento}
                                                 </h1> */}
 
-                                                    <button id='botaoCard' type='button' onClick={() => redirecionar(response.idEvento)} style={{ position: 'relative', background: fundo }} className='evento'> {response.nomeEvento}</button>
+                                                    {/* <button id='botaoCard' type='button' onClick={() => redirecionar(response.idEvento)} style={{ position: 'relative', background: fundo }} className='evento'> {response.nomeEvento}</button>
                                                 </div>
 
 
@@ -101,18 +101,18 @@ function Eventos() {
 
 
 
-                                    </ul>
+                                    </ul> */}
 
 
 
 
 
 
-                                </>
+                                {/* </>
                             )
                         })
-                        }
-                    </div>
+                        } */}
+                    {/* </div> */} 
                     <div className='pesquisar'>
                         <div className='tituloEvento'>
                             <h1>Eventos Atuais</h1>
