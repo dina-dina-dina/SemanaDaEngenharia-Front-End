@@ -3,6 +3,8 @@ import '../../paginas/formulario/formulario.css'
 import React, { useState, useContext, useEffect } from 'react';
 import SemanaEng from '../../assets/SemanaEng.jpg'
 import axios from '../../axios';
+import InputMask from 'react-input-mask';
+
 
 
 
@@ -17,8 +19,13 @@ function Formulario() {
     const [idTurma, setIdTurma] = useState(Number)
     const [responseTurma, setResponseTurma] = useState(Array);
     const [buscaTipo, setBuscaTipo] = useState(Number);
+    const [estagio, setEstagio] = useState(Number);
+    const [telefone, setTelefone] = useState(String)
+    console.log(telefone)
+    console.log(estagio)
 
-   
+
+
     const getTurmas = async () => {
         const response = await axios.get('/turma')
             .catch(err => console.error('Error: ', err));
@@ -53,6 +60,8 @@ function Formulario() {
                     "feedback": feedback,
                     "email": email,
                     "ra": ra,
+                    "telefone": telefone,
+                    "estagio": estagio,
                     "idTurma": buscaTipo,
 
                 }).catch(err => alert(err));
@@ -84,7 +93,7 @@ function Formulario() {
 
     return (
         <div className='containerNew2'>
-           
+
 
             <div className='formulario22'>
 
@@ -100,6 +109,10 @@ function Formulario() {
                         <div className='data2'>
                             <label id='labelStyle2'>Email</label>
                             <input id='inputStyle2' onChange={(event) => setEmail(event.target.value)}></input>
+                        </div>
+                        <div className='data2'>
+                            <label id='labelStyle2'>Telefone</label>
+                            <InputMask value={telefone} mask='(99) 99999-9999' id='inputStyle2' onChange={(event) => setTelefone(event.target.value)}></InputMask>
                         </div>
                         <div className='data2'>
                             <label id='labelStyle2'>RA</label>
@@ -125,10 +138,29 @@ function Formulario() {
 
                             </select>
                         </div>
+                        <div className='data2'>
+                            <label id='labelStyle22'>Você está estagiando ?</label>
+                            {/* <input id='inputStyle2' onChange={(event) => setIdTurma(event.target.value)}></input> */}
+
+                            <select id='inputStyle2'
+                                className='inputBusca'
+                                style={{ width: '150px' }}
+                                onChange={(event) => setEstagio(event.target.value)}
+                                defaultValue=''
+                                value={estagio}
+                            >
+                                <option value=''></option>
+                                <option value={1}>Sim</option>
+                                <option value={2}>Não</option>
+
+
+                            </select>
+
+                        </div>
 
                         <div className='feedback'>
                             <label id='labelStyle2'>Feedback</label>
-                            <textarea  type= 'text' id='inputStyleFb' onChange={(event) => setFeedback(event.target.value)}></textarea>
+                            <textarea type='text' id='inputStyleFb' onChange={(event) => setFeedback(event.target.value)}></textarea>
                         </div>
                         <div className='botao2'>
                             <button type="button" className="salvar" onClick={() => Envio()} >Enviar</button>
