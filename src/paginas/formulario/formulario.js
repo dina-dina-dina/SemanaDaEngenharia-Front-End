@@ -54,23 +54,24 @@ function Formulario() {
         console.log(buscaTipo)
 
         try {
-            if (nome && email && ra && buscaTipo && feedback) {
-                const response = await axios.post(`/formulario/${idUrl}`, {
-                    "nomeAluno": nome,
-                    "feedback": feedback,
-                    "email": email,
-                    "ra": ra,
-                    "telefone": telefone,
-                    "estagio": estagio,
-                    "idTurma": buscaTipo,
+            navigate("/obrigado");
+            // if (nome && email && ra && buscaTipo && feedback) {
+            //     const response = await axios.post(`/formulario/${idUrl}`, {
+            //         "nomeAluno": nome,
+            //         "feedback": feedback,
+            //         "email": email,
+            //         "ra": ra,
+            //         "telefone": telefone,
+            //         "estagio": estagio,
+            //         "idTurma": buscaTipo,
 
-                }).catch(err => alert(err));
-                if (response) {
-                    alert("Presença cadastrada com sucesso!")
-                    navigate("/obrigado");
-                }
+            //     }).catch(err => alert(err));
+            //     if (response) {
+            //         alert("Presença cadastrada com sucesso!")
+                   
+            //     }
 
-            } else alert('Preencha todos os campos')
+            // } else alert('Preencha todos os campos')
 
         } catch (err) {
             alert(err)

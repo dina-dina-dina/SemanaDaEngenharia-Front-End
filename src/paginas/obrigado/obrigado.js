@@ -17,13 +17,7 @@ function Obrigado() {
 
     
    
-        var stringUrl = window.location.href;
-        var positionInterrogation = stringUrl.indexOf("?");
-        var positionCommercialE = stringUrl.indexOf("&");
-        var idUrl = stringUrl.substring(positionCommercialE + 4);
-        idUrl = decodeURIComponent(idUrl);
-        console.log(idUrl)
-        
+      
         
     return (
         <div className='containerNew3'>
@@ -31,7 +25,7 @@ function Obrigado() {
             
                 
                 
-                <span id='tittle'>Obrigado</span>
+                <span id='tittle5'>Obrigado! =)</span>
                     
     
 
