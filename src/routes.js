@@ -10,6 +10,7 @@ import Formulario from './paginas/formulario/formulario';
 import Alunos from './paginas/alunos/alunos';
 import Qrcode from './paginas/qrcode/qrcode';
 import Obrigado from './paginas/obrigado/obrigado';
+import VisualizarForms from './paginas/visualizarForms/visualizarForms';
 
 
 function Rotas() {
@@ -26,6 +27,7 @@ function Rotas() {
                 <Route path="/alunos" element={<Alunos/>} />
                 <Route path="/qrcode" element={<Qrcode/>} />
                 <Route path="/obrigado" element={<Obrigado/>} />
+                <Route path="/visualizarForms" element={<VisualizarForms/>} />
 
             </Routes>
 

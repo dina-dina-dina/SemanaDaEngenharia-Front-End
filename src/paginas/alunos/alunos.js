@@ -5,7 +5,7 @@ import botaopesquisa from '../../assets/lupa.png'
 import botaoqrcode from '../../assets/qrcode.png'
 import botaodelete from '../../assets/delete.png'
 import axios from '../../axios';
-
+import { Link } from 'react-router-dom';
 
 
 function Alunos() {
@@ -111,6 +111,7 @@ function Alunos() {
                                 <th className="cabecalhoEntradasVisualizar">NOME</th>
                                 <th className="cabecalhoEntradasVisualizar">RA</th>
                                 <th className="cabecalhoEntradasVisualizar">EMAIL</th>
+                                <th className="cabecalhoEntradasVisualizar">CURSO</th>
                                 <th className="cabecalhoEntradasVisualizar">TURMA</th>
                                 <th className="cabecalhoEntradasVisualizar">AÇÕES</th>
                             </tr>
@@ -123,13 +124,14 @@ function Alunos() {
                                             <td>{response.nomeAluno ? response.nomeAluno : '-'}</td>
                                             <td>{response.ra ? response.ra : '-'}</td>
                                             <td>{response.email ? response.email : '-'}</td>
+                                            <td>{response.curso ? response.curso : '-'}</td>
                                             <td>{findTurma(response.idTurma) ? findTurma(response.idTurma) : '-'}</td>
 
 
                                             <td style={{width: '30px'}}>
 
-                                                <ul className="botoesTabEntradasVisualizar">
-                                                    <li className="btn1EntradasVisualizar" id="hover"><button onClick={Formulario} ><img src={botaopesquisa} alt="botao" /></button></li>
+                                                <ul style={{width: '110px'}} className="botoesTabEntradasVisualizar">
+                                                <Link className="btn1EntradasVisualizar" to={`/visualizarForms?al=${response.idAluno}&id=${idUrl}`}><img style={{ width: '42px' }} src={botaopesquisa} alt="visualizar" /></Link>
                                                     <li className="btn3EntradasVisualizar" id="hover"><button type ='button' onClick={() => deleteAluno(response.idAluno)}><img src={botaodelete} alt="deletar" /></button></li>
 
                                                 </ul>
