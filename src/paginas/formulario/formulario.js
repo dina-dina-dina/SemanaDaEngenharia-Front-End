@@ -20,9 +20,10 @@ function Formulario() {
     const [responseTurma, setResponseTurma] = useState(Array);
     const [buscaTipo, setBuscaTipo] = useState(Number);
     const [estagio, setEstagio] = useState(Number);
+    const [curso, setCurso] = useState(String);
     const [telefone, setTelefone] = useState(String)
-    console.log(telefone)
-    console.log(estagio)
+    const [interesse, setInteresse] = useState(String)
+    console.log(interesse)
 
 
 
@@ -55,23 +56,24 @@ function Formulario() {
 
         try {
             navigate("/obrigado");
-            // if (nome && email && ra && buscaTipo && feedback) {
-            //     const response = await axios.post(`/formulario/${idUrl}`, {
-            //         "nomeAluno": nome,
-            //         "feedback": feedback,
-            //         "email": email,
-            //         "ra": ra,
-            //         "telefone": telefone,
-            //         "estagio": estagio,
-            //         "idTurma": buscaTipo,
+            if (nome && email && ra && buscaTipo && feedback) {
+                const response = await axios.post(`/formulario/${idUrl}`, {
+                    "nomeAluno": nome,
+                    "feedback": feedback,
+                    "email": email,
+                    "ra": ra,
+                    "telefone": telefone,
+                    "estagio": estagio,
+                    "curso": curso,
+                    "idTurma": buscaTipo,
 
-            //     }).catch(err => alert(err));
-            //     if (response) {
-            //         alert("Presença cadastrada com sucesso!")
+                }).catch(err => alert(err));
+                if (response) {
+                    alert("Presença cadastrada com sucesso!")
                    
-            //     }
+                }
 
-            // } else alert('Preencha todos os campos')
+            } else alert('Preencha todos os campos')
 
         } catch (err) {
             alert(err)
@@ -119,6 +121,26 @@ function Formulario() {
                             <label id='labelStyle2'>RA</label>
                             <input id='inputStyle2' type={'number'} onChange={(event) => setRa(event.target.value)}></input>
                         </div>
+                        <div className='data2'>
+                        <label id='labelStyle2'>Curso</label>
+                            {/* <input id='inputStyle2' onChange={(event) => setIdTurma(event.target.value)}></input> */}
+
+                            <select id='inputStyle2'
+                                className='inputBusca'
+                               
+                                onChange={(event) => setCurso(event.target.value)}
+                                defaultValue=''
+                                value={curso}
+                            >
+                                <option value=''></option>
+                                <option value={'Engenharia Ambiental'}>Engenharia Ambiental</option>
+                                <option value={'Engenharia de Controle e Automação'}>Engenharia de Controle e Automação</option>
+
+
+                            </select>
+                        </div>
+                        
+                        
                         <div className='nome2'>
                             <label id='labelStyle2'>Turma</label>
                             {/* <input id='inputStyle2' onChange={(event) => setIdTurma(event.target.value)}></input> */}
@@ -157,6 +179,27 @@ function Formulario() {
 
                             </select>
 
+                        </div>
+                        <div className='data2'>
+                        <label id='labelStyle23'>Como ficou sabendo do Evento ?</label>
+                            {/* <input id='inputStyle2' onChange={(event) => setIdTurma(event.target.value)}></input> */}
+
+                            <select id='inputStyle2'
+                                className='inputBusca'
+                               
+                                onChange={(event) => setInteresse(event.target.value)}
+                                defaultValue=''
+                                value={interesse}
+                            >
+                                <option value=''></option>
+                                <option value={'Facebook'}>Facebook</option>
+                                <option value={'Instagram'}>Instagram</option>
+                                <option value={'Amigos, parentes ou outras pessoas próximas'}>Amigos, parentes ou outras pessoas próximas</option>
+                                <option value={'Anúncios da Semana'}>Anúncios da Semana</option>
+                                <option value={'Outros'}>Outros</option>
+
+
+                            </select>
                         </div>
 
                         <div className='feedback'>
