@@ -55,8 +55,8 @@ function Formulario() {
         console.log(buscaTipo)
 
         try {
-            navigate("/obrigado");
-            if (nome && email && ra && buscaTipo && feedback) {
+            
+            if (nome && email && ra && buscaTipo && feedback &&estagio!=0 && interesse && telefone && curso) {
                 const response = await axios.post(`/formulario/${idUrl}`, {
                     "nomeAluno": nome,
                     "feedback": feedback,
@@ -65,12 +65,13 @@ function Formulario() {
                     "telefone": telefone,
                     "estagio": estagio,
                     "curso": curso,
+                    "interesse": interesse,
                     "idTurma": buscaTipo,
 
                 }).catch(err => alert(err));
                 if (response) {
                     alert("Presença cadastrada com sucesso!")
-                   
+                    navigate("/obrigado");
                 }
 
             } else alert('Preencha todos os campos')
