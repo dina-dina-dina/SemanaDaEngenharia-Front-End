@@ -116,7 +116,7 @@ function Formulario() {
                         </div>
                         <div className='data2'>
                             <label id='labelStyle2'>Telefone</label>
-                            <InputMask value={telefone} mask='(99) 99999-9999' id='inputStyle2' onChange={(event) => setTelefone(event.target.value)}></InputMask>
+                            <InputMask type={'number'} value={telefone} mask='(99) 99999-9999' id='inputStyle2' onChange={(event) => setTelefone(event.target.value)}></InputMask>
                         </div>
                         <div className='data2'>
                             <label id='labelStyle2'>RA</label>
