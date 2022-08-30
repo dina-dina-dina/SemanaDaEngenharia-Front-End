@@ -50,7 +50,7 @@ function Alunos() {
     const deleteAluno = async (id) => {
         if (window.confirm("Tem certeza que deseja deletar esse Aluno?")) {
             await axios.delete(`/formulario/${id}`, { data: { idPalestra: idUrl } }
-                
+
             ).catch(err => alert(err));
             await get();
         }
@@ -113,6 +113,8 @@ function Alunos() {
                                 <th className="cabecalhoEntradasVisualizar">EMAIL</th>
                                 <th className="cabecalhoEntradasVisualizar">CURSO</th>
                                 <th className="cabecalhoEntradasVisualizar">TURMA</th>
+                                <th className="cabecalhoEntradasVisualizar">CARGA TOTAL</th>
+                                <th className="cabecalhoEntradasVisualizar">FEEDBACK</th>
                                 <th className="cabecalhoEntradasVisualizar">AÇÕES</th>
                             </tr>
                         </thead>
@@ -126,13 +128,15 @@ function Alunos() {
                                             <td>{response.email ? response.email : '-'}</td>
                                             <td>{response.curso ? response.curso : '-'}</td>
                                             <td>{findTurma(response.idTurma) ? findTurma(response.idTurma) : '-'}</td>
+                                            <td>{response.cgTotal ? response.cgTotal : '-'}</td>
+                                            <td style={{ width: '350px' }}>{response.palestrasAlunos.feedback ? response.palestrasAlunos.feedback : '-'}</td>
 
 
-                                            <td style={{width: '30px'}}>
+                                            <td style={{ width: '30px' }}>
 
-                                                <ul style={{width: '110px'}} className="botoesTabEntradasVisualizar">
-                                                <Link className="btn1EntradasVisualizar" to={`/visualizarForms?al=${response.idAluno}&id=${idUrl}`}><img style={{ width: '42px' }} src={botaopesquisa} alt="visualizar" /></Link>
-                                                    <li className="btn3EntradasVisualizar" id="hover"><button type ='button' onClick={() => deleteAluno(response.idAluno)}><img src={botaodelete} alt="deletar" /></button></li>
+                                                <ul style={{ width: '110px' }} className="botoesTabEntradasVisualizar">
+                                                    <Link className="btn1EntradasVisualizar" to={`/visualizarForms?al=${response.idAluno}&id=${idUrl}`}><img style={{ width: '42px' }} src={botaopesquisa} alt="visualizar" /></Link>
+                                                    <li className="btn3EntradasVisualizar" id="hover"><button type='button' onClick={() => deleteAluno(response.idAluno)}><img src={botaodelete} alt="deletar" /></button></li>
 
                                                 </ul>
                                             </td>
