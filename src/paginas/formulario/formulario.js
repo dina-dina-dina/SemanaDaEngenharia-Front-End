@@ -68,7 +68,7 @@ function Formulario() {
                     "interesse": interesse,
                     "idTurma": buscaTipo,
 
-                }).catch(err => alert(err));
+                }).catch(err =>  alert(err.response.data));
                 if (response) {
                     alert("Presença cadastrada com sucesso!")
                     navigate("/obrigado");
@@ -77,7 +77,9 @@ function Formulario() {
             } else alert('Preencha todos os campos')
 
         } catch (err) {
-            alert(err)
+            if(err?.response?.data)
+            alert(err.response.data)
+            else alert(err.menssage)
         }
 
 
