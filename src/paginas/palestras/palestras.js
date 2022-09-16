@@ -66,7 +66,7 @@ function Palestras() {
         navigate(`/novaPalestra?&id=${idUrl}`);
     }
     function professor() {
-        navigate("/professor");
+        navigate("/allAlunos");
     }
     function home() {
         navigate("/");
