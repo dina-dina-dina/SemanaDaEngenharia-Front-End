@@ -35,6 +35,8 @@ function VisualizarForms() {
     console.log(idUrl)
     var positionCommercialE = stringUrl.indexOf("&");
 
+    
+
 
     const getTurmas = async () => {
         const response = await axios.get('/turma')
@@ -83,6 +85,8 @@ function VisualizarForms() {
     }
 
     useEffect(() => {
+
+        if (localStorage.getItem('authenticated') !== 'true') navigate('/');
         get();
         getTurmas();
     }, [])
@@ -164,7 +168,7 @@ function VisualizarForms() {
                         </div>
                         <div className='data2'>
                             <label id='labelStyle2'>Telefone</label>
-                            <InputMask  disabled={true} value={telefone} mask='(99) 99999-9999' id='inputStyle2' onChange={(event) => setTelefone(event.target.value)}>{(inputProps) => (
+                            <InputMask disabled={true} value={telefone} mask='(99) 99999-9999' id='inputStyle2' onChange={(event) => setTelefone(event.target.value)}>{(inputProps) => (
                                 <input
                                     {...inputProps}
                                     type="tel"
@@ -262,7 +266,7 @@ function VisualizarForms() {
 
                         <div className='feedback'>
                             <label id='labelStyle2'>Feedback</label>
-                            <textarea  disabled={true} value={feedback} type='text' id='inputStyleFb' onChange={(event) => setFeedback(event.target.value)}></textarea>
+                            <textarea disabled={true} value={feedback} type='text' id='inputStyleFb' onChange={(event) => setFeedback(event.target.value)}></textarea>
                         </div>
                         <div className='botao2'>
                             <button type="button" className="salvar" onClick={() => Voltar()} >Voltar</button>

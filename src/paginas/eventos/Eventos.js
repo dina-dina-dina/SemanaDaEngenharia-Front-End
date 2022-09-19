@@ -23,6 +23,16 @@ function Eventos() {
     }
     function redirecionar(id) {
         navigate(`/palestras?&id=${id}`);
+        
+    }
+
+    function logout() {
+        if( window.confirm("Tem certeza que deseja sair ?")){
+            localStorage.clear(); 
+            navigate("/") 
+    
+        }
+       
     }
 
     const getEventos = async () => {
@@ -33,6 +43,7 @@ function Eventos() {
     }
 
     useEffect(() => {
+        if (localStorage.getItem('authenticated') !== 'true') navigate('/');
 
         getEventos();
     }, [])
@@ -45,10 +56,10 @@ function Eventos() {
 
                     <div className="usuario">
                         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
-                        <button id='icone' class="material-symbols-outlined" onClick={home}>
+                        <button id='icone' class="material-symbols-outlined" type={'button'} onClick={() => logout()}>
                             account_circle
                         </button>
-                        <span>Usuario</span>
+                        <span>Sair</span>
                     </div>
                     <div className='novoEvento'>
 
@@ -84,7 +95,7 @@ function Eventos() {
                                                     {response.nomeEvento}
                                                 </h1> */}
 
-                                                    {/* <button id='botaoCard' type='button' onClick={() => redirecionar(response.idEvento)} style={{ position: 'relative', background: fundo }} className='evento'> {response.nomeEvento}</button>
+                    {/* <button id='botaoCard' type='button' onClick={() => redirecionar(response.idEvento)} style={{ position: 'relative', background: fundo }} className='evento'> {response.nomeEvento}</button>
                                                 </div>
 
 
@@ -108,11 +119,11 @@ function Eventos() {
 
 
 
-                                {/* </>
+                    {/* </>
                             )
                         })
                         } */}
-                    {/* </div> */} 
+                    {/* </div> */}
                     <div className='pesquisar'>
                         <div className='tituloEvento'>
                             <h1>Eventos Atuais</h1>

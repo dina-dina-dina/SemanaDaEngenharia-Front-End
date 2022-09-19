@@ -48,7 +48,7 @@ function Palestras() {
     }
 
     useEffect(() => {
-
+        if (localStorage.getItem('authenticated') !== 'true') navigate('/');
         get();
     }, [])
 
@@ -59,9 +59,20 @@ function Palestras() {
 
 
     }
-    function handleClick() {
-       
+
+
+    function logout() {
+        if( window.confirm("Tem certeza que deseja sair ?")){
+            localStorage.clear(); 
+            navigate("/") 
+    
+        }
         
+
+    }
+    function handleClick() {
+
+
 
         navigate(`/novaPalestra?&id=${idUrl}`);
     }
@@ -84,10 +95,10 @@ function Palestras() {
 
                     <div className="usuario">
                         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
-                        <button id='icone' class="material-symbols-outlined" onClick={home}>
+                        <button id='icone' class="material-symbols-outlined" type={'button'} onClick={() => logout()}>
                             account_circle
                         </button>
-                        <span>Usuario</span>
+                        <span>Sair</span>
                     </div>
                     <div className='novoEvento'>
 
@@ -124,13 +135,13 @@ function Palestras() {
                                             <td>{response.cargaHoraria ? response.cargaHoraria : '-'}</td>
 
 
-                                            <td style={{width: '30px'}}>
+                                            <td style={{ width: '30px' }}>
 
                                                 <ul className="botoesTabEntradasVisualizar">
                                                     <Link className="btn1EntradasVisualizar" to={`/alunos?&id=${response.idPalestra}`}><img style={{ width: '42px' }} src={botaopesquisa} alt="visualizar" /></Link>
                                                     <Link className="btn1EntradasVisualizar" to={`/qrcode?&id=${response.idPalestra}`}><img style={{ width: '42px' }} src={botaoqrcode} alt="visualizar" /></Link>
 
-                                                    <li className="btn3EntradasVisualizar" id="hover"><button type ='button' onClick={() => deletePalestra(response.idPalestra)}><img src={botaodelete} alt="deletar" /></button></li>
+                                                    <li className="btn3EntradasVisualizar" id="hover"><button type='button' onClick={() => deletePalestra(response.idPalestra)}><img src={botaodelete} alt="deletar" /></button></li>
 
 
 

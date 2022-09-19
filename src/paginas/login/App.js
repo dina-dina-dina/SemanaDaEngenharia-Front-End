@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import '../../paginas/login/login.css';
 import jpIMG from '../../assets/SemanaEng.jpg';
 import React, { useState, useContext, useEffect } from 'react';
+import axiosLogin from '../../axiosLogin';
 
 
 
@@ -13,6 +14,44 @@ function Login() {
   function handleClick() {
     navigate("/eventos");
   }
+
+
+  const RegisterUsuario = async () => {
+    if (email && senha) {
+        try {
+            const response = await axiosLogin.post('/authenticate', {
+                "email": email,
+                "senha": senha,
+
+            })
+            console.log(response)
+            const token = response.data.token
+            localStorage.setItem('authenticated', 'true')
+            localStorage.setItem('token', `${token}`)
+            if(response) {
+              
+              navigate("/eventos")
+            }
+            
+            
+
+        }
+        catch (err) {
+            alert('Senha e/ou Usuario incorreto!')
+        }
+
+    } else {
+        alert('Preencha todos os campos')
+    }
+
+  
+
+    
+
+
+}
+
+  
 
 
   return (
@@ -41,7 +80,7 @@ function Login() {
                 <input type='password' placeholder='Senha' onChange={(event) => setSenha(event.target.value)}></input>
               </div>
               <div className='button' >
-                <button onClick={handleClick} >ENTRAR</button>
+                <button  type = 'button' onClick={()=> RegisterUsuario()} >ENTRAR</button>
               </div>
 
             </div>

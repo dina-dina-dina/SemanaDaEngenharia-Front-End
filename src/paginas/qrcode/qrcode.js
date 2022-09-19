@@ -14,6 +14,11 @@ function Qrcode() {
     const navigate = useNavigate();
 
 
+    useEffect(() => {
+        if (localStorage.getItem('authenticated') !== 'true') navigate('/');
+    }, [])
+
+
     function handleClick() {
         navigate("/palestras");
     }

@@ -21,7 +21,7 @@ function NovoEvento() {
         // var idUrl = stringUrl.substring(positionInterrogation + 1);
         // idUrl = decodeURIComponent(idUrl);
         // console.log(idUrl)
-        
+
 
         try {
             if (nome && dataInicio && dataFinal) {
@@ -48,7 +48,11 @@ function NovoEvento() {
 
 
     }
+    useEffect(() => {
+        if (localStorage.getItem('authenticated') !== 'true') navigate('/');
 
+
+    }, [])
 
 
 
@@ -75,7 +79,7 @@ function NovoEvento() {
                             <input id='inputStyle' type={'date'} onChange={(event) => setDataFinal(event.target.value)}></input>
                         </div>
                         <div className='botao'>
-                            <button  type={'button'} onClick={() => Envio()}>Criar Evento</button>
+                            <button type={'button'} onClick={() => Envio()}>Criar Evento</button>
                         </div>
                     </form>
                 </div>

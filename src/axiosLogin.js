@@ -1,9 +1,9 @@
 import Axios from "axios";
 
-const token = localStorage.getItem('token')
+
 const axios = Axios.create({
     baseURL: "https://semanadaengenharia-backend.herokuapp.com/",
-    headers: { 'Authorization': 'Bearer ' + token },
+    headers: { Auth: 'Simple AUTH'},
     timeout: 10000
 })
 

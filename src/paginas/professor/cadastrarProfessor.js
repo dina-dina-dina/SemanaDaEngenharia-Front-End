@@ -74,7 +74,10 @@ function CadastrarProfessor() {
 
     var array = turma.reduce((list, sub) => list.concat(sub), [])
     console.log(array)
-    
+
+    useEffect(() => {
+        if (localStorage.getItem('authenticated') !== 'true') navigate('/');
+    }, [])
 
     // function handleClick() {
     //     navigate("/eventos");

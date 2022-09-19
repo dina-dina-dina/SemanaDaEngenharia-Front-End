@@ -58,10 +58,20 @@ function Alunos() {
 
 
     useEffect(() => {
+        if (localStorage.getItem('authenticated') !== 'true') navigate('/');
         getTurmas();
         get();
     }, [])
 
+    function logout() {
+        if( window.confirm("Tem certeza que deseja sair ?")){
+            localStorage.clear(); 
+            navigate("/") 
+    
+        }
+       
+
+    }
 
     function handleClick() {
         navigate("/novaPalestra");
@@ -85,10 +95,10 @@ function Alunos() {
 
                     <div className="usuario">
                         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
-                        <button id='icone' class="material-symbols-outlined" onClick={home}>
+                        <button id='icone' class="material-symbols-outlined" type={'button'} onClick={() => logout()}>
                             account_circle
                         </button>
-                        <span>Usuario</span>
+                        <span>Sair</span>
                     </div>
                     <div className='novoEvento'>
 

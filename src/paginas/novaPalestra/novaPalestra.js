@@ -50,6 +50,13 @@ function NovaPalestra() {
         navigate("/palestras");
       }
 
+      useEffect(() => {
+        if (localStorage.getItem('authenticated') !== 'true') navigate('/');
+
+       
+    }, [])
+      
+
     return (
         <div className='containerNew'>
              
