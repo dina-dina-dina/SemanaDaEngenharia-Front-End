@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import '../../paginas/palestras/palestras.css';
+import '../../paginas/allAlunos/allAluno.css';
 import React, { useState, useContext, useEffect } from 'react';
 import botaopesquisa from '../../assets/lupa.png'
 import botaoqrcode from '../../assets/qrcode.png'
@@ -16,7 +16,10 @@ function AlunosAll() {
     const [busca, setBusca] = useState(String);
     const [ordenar, setOrdenar] = useState(String);
     const [cursos, setCursos] = useState(String);
+    const [turma, setTurma] = useState(String);
+    const [estagio, setEstagio] = useState(String)
     const [teste, setTeste] = useState(0);
+
 
 
 
@@ -34,12 +37,37 @@ function AlunosAll() {
     idUrl = decodeURIComponent(idUrl);
     console.log(idUrl)
 
+
+
+
+
     const get = async () => {
         const response = await axios.get('/minHoras')
             .catch(err => console.error('Error: ', err));
-        if (response) setResponse(response.data);
+        if (response) setResponse(response.data.sort());
         console.log(response.data)
     }
+
+    function compare(a, b) {
+        if (a.nomeAluno < b.nomeAluno)
+            return -1;
+        if (a.nomeAluno > b.nomeAluno)
+            return 1;
+        return 0;
+    }
+
+    const getAll = async () => {
+        const response = await axios.get('/minHorasAll')
+            .catch(err => console.error('Error: ', err));
+
+
+
+        if (response) setResponse(response.data);
+
+        console.log(response.data)
+    }
+
+
     function findTurma(id) {
         let array = responseTurmaFind
         const turmas = array.find(element => element.idTurma === id)
@@ -78,10 +106,12 @@ function AlunosAll() {
     }
 
     useEffect(() => {
+        console.log(estagio)
         if (ordenar === "Engenharia de Controle e Automação") curso(response)
         getTurmas();
-        get();
-    }, [])
+        if (estagio === '1') get();
+        if (estagio === '2') getAll();
+    }, [estagio])
 
 
     function handleClick() {
@@ -100,9 +130,12 @@ function AlunosAll() {
 
     return (
         <div className='tudo'>
-            <div className="screen">
 
-                <div className='acesso'>
+            <div className="screen7" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+
+
+                <div className='acesso' >
+
 
                     <div className="usuario">
                         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
@@ -120,20 +153,57 @@ function AlunosAll() {
                     </div>
 
                 </div>
+                <span className='tituloFil' style={{ width: '79%', marginTop: '30px' }}>Ordernar por:</span>
+                <div className='testeTudo ' style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '80%', marginTop: '30px' }}>
+                    <div >
+                        <label className="tituloFiltro" >Curso:</label>
+                        <select
+                            className='inputBusca'
+                            onChange={(event) => setCursos(event.target.value)}
+                        >
+                            <option value="" data-defaultValue selected></option>
+                            <option value="Engenharia de Controle e Automação">Engenharia de Controle e Automação</option>
+                            <option value="Engenharia Ambiental">Engenharia Ambiental</option>
+                        </select>
+                    </div>
+                    <div >
+                        <label className="tituloFiltro" >Turma:</label>
+                        <select
+                            style={{ width: '100px' }}
+                            className='inputBusca'
 
-                <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '15px', width: '22.5%', minWidth: '150px' }}>
-                    <label className="tituloFiltro" >Ordenar por:</label>
-                    <select
-                        className='inputBusca'
-                        style={{ width: '100%', minWidth: '150px' }}
-                        onChange={(event) => setCursos(event.target.value)}
-                    >
-                        <option value="Engenharia de Controle e Automação" data-defaultValue selected>Enegenharia de Controle e Automação</option>
-                        <option value="Engenharia Ambiental">Engenharia Ambiental</option>
-                        <option value="3">Pessoa Física</option>
-                        <option value="4">Pessoa Jurídica</option>
-                    </select>
+                            onChange={(event) => setTurma(event.target.value)}
+                        >
+                            <option value="" data-defaultValue selected></option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                        </select>
+                    </div>
+
+                    <div >
+                        <label className="tituloFiltro" >Estagio:</label>
+                        <select
+                            style={{ width: '100px' }}
+                            className='inputBusca'
+                            onChange={(event) => setEstagio(event.target.value)}
+                        >
+                            <option value="" data-defaultValue selected></option>
+                            <option value="1">Sim</option>
+                            <option value="2">Não</option>
+
+
+                        </select>
+                    </div>
+
                 </div>
+
+
 
             </div>
             <div className='visualização'>
@@ -159,7 +229,7 @@ function AlunosAll() {
                                                 <>
 
 
-                                                    {!email || email.toUpperCase() == response.email.substr(0, email.length).toUpperCase() ?
+                                                    {!turma || turma.toUpperCase() == findTurma(response.idTurma).substr(0, turma.length).toUpperCase() ?
                                                         <>
                                                             <tbody>
                                                                 <tr>
