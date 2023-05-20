@@ -61,7 +61,7 @@ function NovaPalestra() {
         <div className='containerNew'>
              
             <div className='formulario2'>
-                    <span id = 'tittle'>EVENTO</span>
+                    <span id = 'title'>EVENTO</span>
                 <div className='itensForms'>
                     <form>
 

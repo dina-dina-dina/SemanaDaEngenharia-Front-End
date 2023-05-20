@@ -103,7 +103,7 @@ function Formulario() {
 
             <div className='formulario22'>
 
-                <img src={SemanaEng} id='tittle2'></img>
+                <img src={SemanaEng} id='title2'></img>
                 <div className='itensForms2'>
                     <form>
 
@@ -156,7 +156,7 @@ function Formulario() {
 
                             <select id='inputStyle2'
                                 className='inputBusca'
-                                style={{ width: '150px' }}
+                                
                                 onChange={(event) => setBuscaTipo(event.target.value)}
                                 defaultValue={''}
                                 value={buscaTipo}
@@ -176,7 +176,7 @@ function Formulario() {
 
                             <select id='inputStyle2'
                                 className='inputBusca'
-                                style={{ width: '150px' }}
+                                
                                 onChange={(event) => setEstagio(event.target.value)}
                                 defaultValue=''
                                 value={estagio}

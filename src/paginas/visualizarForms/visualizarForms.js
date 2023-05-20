@@ -153,7 +153,7 @@ function VisualizarForms() {
 
             <div className='formulario22'>
 
-                <img src={SemanaEng} id='tittle2'></img>
+                <img src={SemanaEng} id='title2'></img>
                 <div className='itensForms2'>
                     <form>
 

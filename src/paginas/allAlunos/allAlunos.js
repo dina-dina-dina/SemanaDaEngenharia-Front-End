@@ -74,13 +74,13 @@ function AlunosAll() {
         if (turmas) return turmas.turma
     }
     function logout() {
-        if( window.confirm("Tem certeza que deseja sair ?")){
-            localStorage.clear(); 
-            navigate("/") 
-    
+        if (window.confirm("Tem certeza que deseja sair ?")) {
+            localStorage.clear();
+            navigate("/")
+
         }
-       
-       
+
+
     }
 
     const getTurmas = async () => {

@@ -1,8 +1,5 @@
 
-body {
-    min-height: 100vh;
-    min-width: 100vw;
-}
+
 
 
 .containerNew2 {
@@ -13,6 +10,7 @@ body {
     align-items: center;
     width: 100vw;
     padding: 2rem 4rem;
+    min-width: 5px;
 }
 
 .formulario22 {
@@ -23,6 +21,7 @@ body {
     justify-content: center;
     box-sizing: border-box;
     width: 673px;
+    min-width: 5px;
     height: 1210px;
     flex-direction: column;
 
@@ -34,6 +33,8 @@ body {
 
 .itensForms2 {
     margin-bottom: 45px;
+    max-width: 1673px;
+    min-width: '5px'
 }
 
 .nome2 {
@@ -43,20 +44,27 @@ body {
 
 }
 
+
+
 .data2 {
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
 }
+.forms {
+    min-width: 5px;
+}
 
 #inputStyle2 {
-    width: 523px;
+    max-width: 1300px;
+    min-width: 5px;
     height: 60px;
 
     background: #FFFFFF;
     border: 2px solid #097828;
     border-radius: 16px;
     box-sizing: border-box;
+   
 
     font-size: 20px;
 
@@ -76,6 +84,7 @@ body {
 #labelStyle2 {
     width: 319px;
     height: 50px;
+    
 
     font-family: 'Poppins';
     font-style: normal;
@@ -151,7 +160,7 @@ margin-bottom: 30px;
 
 }
 
-#tittle2 {
+#title2 {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
@@ -191,61 +200,3 @@ margin-bottom: 30px;
 
 }
 
-@media only screen and (max-width: 650px) {
-.formulario22 {
-    width: 400px;
-    height: 1030px;
-    /* margin-right: 12px; */
-    
-}
-.itensForms2{
-    width: 330px;
-}
-
-#inputStyle2 {
-    width: 290px;
-    height: 60px;
-    margin-left: 20px;
-}
-
-#tittle2 {
-    width: 130px;
-    height: 130px;
-    margin-top: 30px;
-}
-
-#labelStyle2 {
-    width: 319px;
-    height: 60px;
-    margin-left: 20px;
-
-    
-}
-
-#inputStyleFb {
-    margin-left: 20px;
-    width: 290px;
-    height: 130px;
-    text-align: unset;
-    flex-wrap: nowrap;
-
-
-}
-
-.botao2 button {
-   
-    width: 233px;
-    height: 68px;
-
-   
-}
-#labelStyle2 {
-    width: 10px;
-    height: 40px;
-
-
-}
-
-
-
-}

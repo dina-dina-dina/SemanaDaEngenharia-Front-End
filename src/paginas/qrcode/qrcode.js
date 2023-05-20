@@ -35,7 +35,7 @@ function Qrcode() {
         <div className='containerNew'>
 
             <div className='formulario2'>
-                <span id='tittle'>QR-CODE</span>
+                <span id='title'>QR-CODE</span>
                 <div className='itensForms'>
                     <form>
                         <img src={ `https://chart.googleapis.com/chart?cht=qr&chl=https://semanadaengenharia-frontend.herokuapp.com/formulario?${idUrl}&chs=500x500` }

@@ -22,13 +22,13 @@ function Obrigado() {
 
     return (
 <div className = 'vaitudo'>
-<img src={SemanaEng} id='tittle45'></img>
+<img src={SemanaEng} id='title45'></img>
 <div className='containerNew3'>
             
 
 
 
-            <span id='tittle5'>Obrigado! =)</span>
+            <span id='title5'>Obrigado! =)</span>
 
 
 

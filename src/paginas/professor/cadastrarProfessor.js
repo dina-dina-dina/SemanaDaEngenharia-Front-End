@@ -87,7 +87,7 @@ function CadastrarProfessor() {
         <div className='containerNew'>
 
             <div className='formulario2'>
-                <span id='tittle'>PROFESSOR</span>
+                <span id='title'>PROFESSOR</span>
                 <div className='itensForms'>
                     <form>
 
