@@ -73,7 +73,7 @@ function Login() {
 
               <div className='email'>
                 <label>Email</label>
-                <input type='email' placeholder='Email' onChange={(event) => setEmail(event.target.value)}></input>
+                <input type='email' alt="Input de email" placeholder='Email' onChange={(event) => setEmail(event.target.value)}></input>
               </div>
               <div className='password'>
                 <label>Senha</label>
