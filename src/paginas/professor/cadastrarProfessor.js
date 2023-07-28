@@ -23,10 +23,7 @@ function CadastrarProfessor() {
 
             const response = await axios.post("/professor", {
                 "email": email,
-                "nome": nome,
-                "chamada": array,
-
-
+                "nome": nome
             }).catch(err => alert(err));
             if (response) {
                 alert("Professor cadastrado com sucesso!")
@@ -49,31 +46,31 @@ function CadastrarProfessor() {
 
 
 
-    const readUploadFile = (e) => {
-        e.preventDefault();
-        if (e.target.files) {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                const data = e.target.result;
-                const workbook = xlsx.read(data, { type: "array" });
-                const json = []
-                for (let i = 0; i < workbook.SheetNames.length; i++) {
-                    const sheetName = workbook.SheetNames[i];
-                    const worksheet = workbook.Sheets[sheetName];
-                    let object = xlsx.utils.sheet_to_json(worksheet);
-                    json.push(object)
-                }
-                setTurma(json)
+    // const readUploadFile = (e) => {
+    //     e.preventDefault();
+    //     if (e.target.files) {
+    //         const reader = new FileReader();
+    //         reader.onload = (e) => {
+    //             const data = e.target.result;
+    //             const workbook = xlsx.read(data, { type: "array" });
+    //             const json = []
+    //             for (let i = 0; i < workbook.SheetNames.length; i++) {
+    //                 const sheetName = workbook.SheetNames[i];
+    //                 const worksheet = workbook.Sheets[sheetName];
+    //                 let object = xlsx.utils.sheet_to_json(worksheet);
+    //                 json.push(object)
+    //             }
+    //             setTurma(json)
               
                
-            };
-            reader.readAsArrayBuffer(e.target.files[0]);
-        }
-    }
+    //         };
+    //         reader.readAsArrayBuffer(e.target.files[0]);
+    //     }
+    // }
 
 
-    var array = turma.reduce((list, sub) => list.concat(sub), [])
-    console.log(array)
+    // var array = turma.reduce((list, sub) => list.concat(sub), [])
+    // console.log(array)
 
     useEffect(() => {
         if (localStorage.getItem('authenticated') !== 'true') navigate('/');
@@ -99,11 +96,6 @@ function CadastrarProfessor() {
                         <div className='data'>
                             <label id='labelStyle'>Email</label>
                             <input id='inputStyle' type={'email'} onChange={(event) => setEmail(event.target.value)}></input>
-                        </div>
-                        <div className='data'>
-                            <label id='labelStyle'>Chamada</label>
-                            <input id='inputStyle' type='file' accept='.xlsx' onChange={readUploadFile} />
-                            {/* <input type='file' id='inputStyle'  onChange={(event) => setTurma(event.target.value)}></input> */}
                         </div>
                         <div className='botao' >
                             <button type='button' onClick={() => handleClick()}>Cadastrar</button>
