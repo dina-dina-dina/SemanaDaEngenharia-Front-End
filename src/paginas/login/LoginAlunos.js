@@ -6,7 +6,7 @@ import axiosLogin from '../../axiosLogin';
 
 
 
-function LoginAdmin() {
+function UserLogin() {
   const [email, setEmail] = useState(String)
   const [senha, setSenha] = useState(String)
   const navigate = useNavigate();
@@ -68,7 +68,7 @@ function LoginAdmin() {
         </div>
         <div className='formulario'>
           <form>
-            <span className='titulo'>ADMIN LOGIN</span>
+            <span className='titulo'>LOGIN ALUNOS</span>
             <div className='input'>
 
               <div className='email'>
@@ -95,4 +95,4 @@ function LoginAdmin() {
   );
 }
 
-export default LoginAdmin;
+export default UserLogin;

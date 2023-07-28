@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
-import Login from './paginas/login/App';
+import LoginAdmin from './paginas/login/App';
 import Eventos from './paginas/eventos/Eventos';
 import NovoEvento from './paginas/novoEvento/novoEvento';
 import CadastrarProfessor from './paginas/professor/cadastrarProfessor';
@@ -12,14 +12,18 @@ import Qrcode from './paginas/qrcode/qrcode';
 import Obrigado from './paginas/obrigado/obrigado';
 import VisualizarForms from './paginas/visualizarForms/visualizarForms';
 import AlunosAll from './paginas/allAlunos/allAlunos';
-
+import UserLogin from './paginas/login/LoginAlunos';
+import Cadastro from './paginas/login/cadastro'
 
 
 function Rotas() {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Login/>} />
+                
+                <Route path="/" element={<UserLogin/>} />
+                <Route path="/cadastro" element={<Cadastro/>} />
+                <Route path="/LoginAdmin" element={<LoginAdmin/>} />
                 <Route path="/eventos" element={<Eventos/>} />
                 <Route path="/novoEvento" element={<NovoEvento/>} />
                 <Route path="/professor" element={<CadastrarProfessor/>} />
