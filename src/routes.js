@@ -13,15 +13,15 @@ import Obrigado from './paginas/obrigado/obrigado';
 import VisualizarForms from './paginas/visualizarForms/visualizarForms';
 import AlunosAll from './paginas/allAlunos/allAlunos';
 import UserLogin from './paginas/login/LoginAlunos';
-import Cadastro from './paginas/login/cadastro'
-
+import Cadastro from './paginas/cadastro/cadastro'
+import NewHomeAlunos from './paginas/newHome/newHomeAlunos';
 
 function Rotas() {
     return (
         <Router>
             <Routes>
-                
                 <Route path="/" element={<UserLogin/>} />
+                <Route path="/AlunosHomePage" element={<NewHomeAlunos/>} />
                 <Route path="/cadastro" element={<Cadastro/>} />
                 <Route path="/LoginAdmin" element={<LoginAdmin/>} />
                 <Route path="/eventos" element={<Eventos/>} />

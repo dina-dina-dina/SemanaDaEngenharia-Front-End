@@ -28,9 +28,10 @@ function LoginAdmin() {
             const token = response.data.token
             localStorage.setItem('authenticated', 'true')
             localStorage.setItem('token', `${token}`)
-            if(response) {
-              
+            if(response.user.isAdmin == 1) {
               navigate("/eventos")
+            }else{
+              navigate("/paginaAlunos")
             }
             
             
