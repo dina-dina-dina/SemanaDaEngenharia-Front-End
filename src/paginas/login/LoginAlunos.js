@@ -19,7 +19,6 @@ function UserLogin() {
         const response = await axiosLogin.post('/authenticate', {
           "email": email,
           "senha": senha,
-
         })
         console.log(response)
         const token = response.data.token

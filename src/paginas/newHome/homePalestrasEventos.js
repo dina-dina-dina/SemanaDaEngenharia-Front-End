@@ -27,10 +27,6 @@ function UserLogin() {
         console.log(eventoresp.data)
     }
 
-    const getPalestras = async () => {
-
-    }
-
     useEffect(() => {
         getEvento();
     }, [])

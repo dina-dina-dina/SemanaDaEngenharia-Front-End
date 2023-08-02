@@ -2,7 +2,7 @@ import Axios from "axios";
 
 
 const axios = Axios.create({
-    baseURL: "http://localhost:8060/",
+    baseURL: "https://semanaback.onrender.com/",
     headers: { Auth: 'Simple AUTH'},
     timeout: 10000
 })
