@@ -15,6 +15,7 @@ import AlunosAll from './paginas/allAlunos/allAlunos';
 import UserLogin from './paginas/login/LoginAlunos';
 import Cadastro from './paginas/cadastro/cadastro'
 import NewHomeAlunos from './paginas/newHome/newHomeAlunos';
+import HomePalestraEventos from './paginas/newHome/homePalestrasEventos';
 
 function Rotas() {
     return (
@@ -22,6 +23,7 @@ function Rotas() {
             <Routes>
                 <Route path="/" element={<UserLogin/>} />
                 <Route path="/AlunosHomePage" element={<NewHomeAlunos/>} />
+                <Route path="/HomePalestraEventos" element={<HomePalestraEventos/>} />
                 <Route path="/cadastro" element={<Cadastro/>} />
                 <Route path="/LoginAdmin" element={<LoginAdmin/>} />
                 <Route path="/eventos" element={<Eventos/>} />

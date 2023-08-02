@@ -25,6 +25,7 @@ function UserLogin() {
         const token = response.data.token
         localStorage.setItem('authenticated', 'true')
         localStorage.setItem('token', `${token}`)
+        localStorage.setItem('user',response.data.user.idUsuarios)
         if (response.data.user.isAdmin == true) {
           navigate("/eventos")
         } else {

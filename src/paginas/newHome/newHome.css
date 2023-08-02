@@ -258,6 +258,7 @@
     border: 2px solid rgba(0, 0, 0, 0.1);
 }
 .TextCard{
+    margin-left: 10%;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
@@ -334,4 +335,37 @@
 .num{
     font-family: 'Poppins';
     text-shadow: 1px 1px 7px black ;
+}
+
+.card {
+    width: 70vw;
+    height: 10vh;
+    background-color: #FFFFFF;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    border-radius: 16px;
+    align-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: row;
+    display: flex;
+    margin-bottom: 10px;
+    box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.25);
+}
+.TextCard{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    text-align:center;
+    color: #097828;
+}
+
+.caixa{
+    margin: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inscricao{
+    margin-left: 10%;
 }

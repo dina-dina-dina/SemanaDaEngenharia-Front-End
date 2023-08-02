@@ -10,29 +10,39 @@ function NewHomeAlunos() {
   const navigate = useNavigate();
 
   function handleClick1() {
-    navigate("/");
+    navigate("/HomePalestraEventos");
   }
   function handleClick2() {
     navigate("/");
   }
 
+  const [evento, setEvento] = useState({})
 
-  
+
+  const getEvento = async () => {
+    const response = await axios.get('/checkData')
+        .catch(err => console.error('Error: ', err));
+    if (response) setEvento(response.data);
+    console.log(response)
+}
+
+  useEffect(() => {
+    getEvento();
+  }, [])
+
   return (
     <div className="container">
-        <div className='formulario'>
+      <div className='formulario'>
         <img src={image} alt="icon" width={"100%"}></img>
-
+        <div>Evento atual:</div>
+        <div>{evento.nomeEvento}</div>
         <div className='button'>
-                <button onClick={handleClick1} >Cadastrar em Palestras</button>
+          <button onClick={handleClick1} >Cadastrar em Palestras</button>
         </div>
         <div className='button'>
-                <button onClick={handleClick2}>Minhas Palestras</button>
+          <button onClick={handleClick2}>Minhas Palestras</button>
         </div>
-        </div>
-
-
-
+      </div>
     </div>
 
   );
