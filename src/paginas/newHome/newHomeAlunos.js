@@ -13,7 +13,7 @@ function NewHomeAlunos() {
     navigate("/HomePalestraEventos");
   }
   function handleClick2() {
-    navigate("/");
+    navigate("/minhasPalestras");
   }
 
   const [evento, setEvento] = useState({})
