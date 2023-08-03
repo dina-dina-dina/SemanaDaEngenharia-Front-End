@@ -39,7 +39,7 @@ function NewHomeAlunos() {
         <div>Evento atual:</div>
         <div>{evento.nomeEvento}</div>
         <div className='button'>
-          <button onClick={handleClick1} >Cadastrar em Palestras</button>
+          <button onClick={handleClick1} >Todas as Palestras</button>
         </div>
         <div className='button'>
           <button onClick={handleClick2}>Minhas Palestras</button>

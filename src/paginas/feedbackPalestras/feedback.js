@@ -20,7 +20,6 @@ function FeedbackPalestra() {
         const eventoresp = await axios.get(`/palestras/${evento}`)
             .catch(err => console.error('Error: ', err));
         if (eventoresp) setPalestras(eventoresp.data);
-        console.log(eventoresp.data)
     }
 
 
@@ -29,7 +28,6 @@ function FeedbackPalestra() {
     var positionCommercialE = stringUrl.indexOf("&");
     var idUrl = stringUrl.substring(positionCommercialE + 4);
     idUrl = decodeURIComponent(idUrl);
-    console.log(idUrl)
 
 
 
