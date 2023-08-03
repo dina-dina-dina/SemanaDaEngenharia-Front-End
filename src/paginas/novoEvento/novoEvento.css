@@ -116,9 +116,8 @@
 #title {
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
-    width: 319px;
-    height: 50px;
+    width: 100%;
+    height: 10%;
 
     font-family: 'Poppins';
     font-style: normal;
@@ -127,7 +126,6 @@
     line-height: 36px;
 
     color: #097828;
-    margin-bottom: 80px;
 
 
 }
@@ -155,4 +153,21 @@
     text-indent: 10px;
 
 
+}
+
+.texto {
+
+    font-family: 'Poppins';
+    font-size: 3vh;
+    text-align: center;
+    width: 80%;
+    margin-bottom: 5%;
+}
+
+.textpal{
+    font-family: 'Poppins';
+    font-size: 3vh;
+    text-align: center;
+    width: 80%;
+    margin-bottom: 5%;
 }

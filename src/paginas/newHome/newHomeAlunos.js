@@ -24,7 +24,7 @@ function NewHomeAlunos() {
         .catch(err => console.error('Error: ', err));
     if (response) setEvento(response.data);
     console.log(response)
-    localStorage.setItem('evento',response.data.idEvento)
+    await localStorage.setItem('evento',response.data.idEvento)
 
 }
 

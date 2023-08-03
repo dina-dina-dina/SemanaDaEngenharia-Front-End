@@ -5,11 +5,17 @@ import QRCode from 'react-qr-code';
 
 
 
-function Qrcode() {
+function Qrcode2() {
     const [nome, setNome] = useState(String)
     const [dataInicio, setDataInicio] = useState(Date)
     const [dataFinal, setDataFinal] = useState(Date)
     const location = useLocation();
+
+    const [back, setBack] = useState('#FFFFFF');
+    const [fore, setFore] = useState('#000000');
+    const [size, setSize] = useState(256);
+
+
 
     // const [idUrl, setIdUrl] = useState(String)
 
@@ -32,13 +38,29 @@ function Qrcode() {
         idUrl = decodeURIComponent(idUrl);
         console.log(idUrl)
         
-        
+        const object = JSON.stringify({
+            'idPalestraEvento':location.state.idPalestraEvento,
+            'idAluno':location.state.idUsuario,
+            'feedback':location.state.feedback
+        })
+
+
+
     return (
         <div className='containerNew'>
-            <div>{location.state.idPalestraEvento}</div>
 
             <div className='formulario2'>
-                <span id='title'>QR-CODE</span>
+
+                <span id='title'>APRESENTE PARA UM MONITOR!</span>
+                <span id='title'>{location.state.nome}</span>
+
+                <QRCode
+                        title=""
+                        value={object}
+                        bgColor={back}
+                        fgColor={fore}
+                        size={size === '' ? 0 : size}
+                    />
                 <div className='itensForms'>
                     <form>
                         
@@ -54,4 +76,4 @@ function Qrcode() {
     );
 }
 
-export default Qrcode;
+export default Qrcode2;

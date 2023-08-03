@@ -10,14 +10,16 @@ function NovaPalestra() {
     const [palestrante, setPalestrante] = useState(Date)
     const [cargaHoraria, setCargaHoraria] = useState(Date)
     const navigate = useNavigate();
-    
+    const [Dia, setDia] = useState(Date)
+
     
     async function Envio() {
         var stringUrl = window.location.href;
         var positionInterrogation = stringUrl.indexOf("?");
         var idUrl = stringUrl.substring(positionInterrogation + 5);
+
         idUrl = decodeURIComponent(idUrl);
-        
+           
 
         try {
             if (nome && palestrante && cargaHoraria) {
@@ -26,12 +28,13 @@ function NovaPalestra() {
                     "nomePalestra": nome,
                     "palestrante": palestrante,
                     "cargaHoraria": cargaHoraria,
+                    "dia":Dia,
                     "idEvento": idUrl
                 }).catch(err => alert(err));
                 if (response) {
                     console.log(response)
                     alert("Palestra criada com sucesso!")
-                    navigate(`/palestras?&id=${response.data.idEvento}`);
+                    navigate(`/palestras?&id=${idUrl}`);
                 }
 
             } else alert('Preencha todos os campos')
@@ -74,9 +77,14 @@ function NovaPalestra() {
                             <label id='labelStyle'>Palestrante</label>
                             <input id='inputStyle' type={'text'} onChange={(event) => setPalestrante(event.target.value)}></input>
                         </div>
+                        
                         <div className='data'>
                             <label id='labelStyle'>Carga Horária</label>
                             <input id='inputStyle' type={'number'} onChange={(event) => setCargaHoraria(event.target.value)}></input>
+                        </div>
+                        <div className='data'>
+                            <label id='labelStyle'>Data de Inicio</label>
+                            <input id='inputStyle' type={'date'} onChange={(event) => setDia(event.target.value)}></input>
                         </div>
                         <div className='botao' >
                             <button  type = 'button' onClick={()=> Envio()}>Criar Palestra</button>
