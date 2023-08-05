@@ -59,7 +59,7 @@ function FeedbackPalestra() {
                     <form>
                         <div className='data'>
                             <label id='labelStyle'>Feedback</label>
-                            <input id='inputStyle' type={'text'} onChange={(event) => setFeedback(event.target.value)}></input>
+                            <input id='inputStyle' placeholder='feedback'type={'text'} onChange={(event) => setFeedback(event.target.value)}></input>
                         </div>
                         
                         <div className='botao' >
