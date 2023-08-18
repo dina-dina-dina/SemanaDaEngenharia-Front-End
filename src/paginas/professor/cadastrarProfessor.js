@@ -14,6 +14,21 @@ function CadastrarProfessor() {
     const [turma, setTurma] = useState(Array)
     const navigate = useNavigate();
 
+    const [materiaList, setmateriaList] = useState([]);
+    const handleMateriaChange = (index, newValue) => {
+        const updatedList = [...materiaList];
+        updatedList[index] = newValue;
+        setmateriaList(updatedList);
+    };
+
+    const handleAddMateria = () => {
+        setmateriaList([...materiaList, '']);
+    };
+
+    const handleRemoveEmail = (index) => {
+        const updatedList = materiaList.filter((_, i) => i !== index);
+        setmateriaList(updatedList);
+    };
 
 
     async function handleClick() {
@@ -23,7 +38,8 @@ function CadastrarProfessor() {
 
             const response = await axios.post("/professor", {
                 "email": email,
-                "nome": nome
+                "nome": nome,
+                "materia":materiaList
             }).catch(err => alert(err));
             if (response) {
                 alert("Professor cadastrado com sucesso!")
@@ -43,6 +59,8 @@ function CadastrarProfessor() {
 
     }
 
+    useEffect(() => {
+    },)
 
 
 
@@ -61,8 +79,8 @@ function CadastrarProfessor() {
     //                 json.push(object)
     //             }
     //             setTurma(json)
-              
-               
+
+
     //         };
     //         reader.readAsArrayBuffer(e.target.files[0]);
     //     }
@@ -97,10 +115,34 @@ function CadastrarProfessor() {
                             <label id='labelStyle'>Email</label>
                             <input id='inputStyle' type={'email'} onChange={(event) => setEmail(event.target.value)}></input>
                         </div>
-                        <div className='botao' >
-                            <button type='button' onClick={() => handleClick()}>Cadastrar</button>
-                        </div>
+
+
                     </form>
+                    <div className='materias'>
+                        <div id="title">Materias</div>
+                        <div className='insert'>
+
+                        </div>
+                        {materiaList.map((email, index) => (
+                            <div key={index}>
+                                <input
+                                    id='inputStyle2'
+                                    type="email"
+                                    value={email}
+                                    onChange={(e) => handleMateriaChange(index, e.target.value)}
+                                />
+                                <div className='tatu'>
+                                    <button onClick={() => handleRemoveEmail(index)}>Remove</button>
+                                </div>
+                            </div>
+                        ))}
+                        <div className='tatu2'>
+                            <button onClick={handleAddMateria}>Adicionar Matéria</button>
+                        </div>
+                    </div>
+                    <div className='botao' >
+                        <button type='button' onClick={() => handleClick()}>Cadastrar</button>
+                    </div>
                 </div>
 
             </div>
