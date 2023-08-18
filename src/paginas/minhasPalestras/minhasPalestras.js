@@ -22,6 +22,7 @@ function MinhasPalestras() {
     const getMinhasPalestras = async () => {
         const queryParams = {
             param1: localStorage.getItem('user'),
+            param2: localStorage.getItem('evento')
         }
         const response = await axios.get('/contabilizar/minhas', { params: queryParams })
             .catch(err => console.error('Error: ', err));
@@ -53,7 +54,7 @@ function MinhasPalestras() {
                     </div>
                 </div>
             ) : (
-                <div>Loading...</div>
+                <div className='triste'>Nenhuma Palestra Encontrada 🙁</div>
             )}
         </div>
     );
