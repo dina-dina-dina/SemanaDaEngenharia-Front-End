@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
-import Login from './paginas/login/App';
+import LoginAdmin from './paginas/login/App';
 import Eventos from './paginas/eventos/Eventos';
 import NovoEvento from './paginas/novoEvento/novoEvento';
 import CadastrarProfessor from './paginas/professor/cadastrarProfessor';
@@ -12,14 +12,27 @@ import Qrcode from './paginas/qrcode/qrcode';
 import Obrigado from './paginas/obrigado/obrigado';
 import VisualizarForms from './paginas/visualizarForms/visualizarForms';
 import AlunosAll from './paginas/allAlunos/allAlunos';
-
+import UserLogin from './paginas/login/LoginAlunos';
+import Cadastro from './paginas/cadastro/cadastro'
+import NewHomeAlunos from './paginas/newHome/newHomeAlunos';
+import HomePalestraEventos from './paginas/newHome/homePalestrasEventos';
+import FeedbackPalestras from './paginas/feedbackPalestras/feedback';
+import QrCode2 from './paginas/feedbackPalestras/qrcode2'
+import MinhasPalestras from './paginas/minhasPalestras/minhasPalestras';
 
 
 function Rotas() {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Login/>} />
+                <Route path="/" element={<UserLogin/>} />
+                <Route path="/minhasPalestras" element={<MinhasPalestras/>}/>
+                <Route path="/feedbackPalestra" element={<FeedbackPalestras/>}/>
+                <Route path="/qrCode2" element={<QrCode2/>}/>
+                <Route path="/AlunosHomePage" element={<NewHomeAlunos/>} />
+                <Route path="/HomePalestraEventos" element={<HomePalestraEventos/>} />
+                <Route path="/cadastro" element={<Cadastro/>} />
+                <Route path="/LoginAdmin" element={<LoginAdmin/>} />
                 <Route path="/eventos" element={<Eventos/>} />
                 <Route path="/novoEvento" element={<NovoEvento/>} />
                 <Route path="/professor" element={<CadastrarProfessor/>} />

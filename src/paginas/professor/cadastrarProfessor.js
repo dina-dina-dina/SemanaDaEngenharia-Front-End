@@ -14,6 +14,21 @@ function CadastrarProfessor() {
     const [turma, setTurma] = useState(Array)
     const navigate = useNavigate();
 
+    const [materiaList, setmateriaList] = useState([]);
+    const handleMateriaChange = (index, newValue) => {
+        const updatedList = [...materiaList];
+        updatedList[index] = newValue;
+        setmateriaList(updatedList);
+    };
+
+    const handleAddMateria = () => {
+        setmateriaList([...materiaList, '']);
+    };
+
+    const handleRemoveEmail = (index) => {
+        const updatedList = materiaList.filter((_, i) => i !== index);
+        setmateriaList(updatedList);
+    };
 
 
     async function handleClick() {
@@ -24,9 +39,7 @@ function CadastrarProfessor() {
             const response = await axios.post("/professor", {
                 "email": email,
                 "nome": nome,
-                "chamada": array,
-
-
+                "materia":materiaList
             }).catch(err => alert(err));
             if (response) {
                 alert("Professor cadastrado com sucesso!")
@@ -46,34 +59,36 @@ function CadastrarProfessor() {
 
     }
 
+    useEffect(() => {
+    },)
 
 
 
-    const readUploadFile = (e) => {
-        e.preventDefault();
-        if (e.target.files) {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                const data = e.target.result;
-                const workbook = xlsx.read(data, { type: "array" });
-                const json = []
-                for (let i = 0; i < workbook.SheetNames.length; i++) {
-                    const sheetName = workbook.SheetNames[i];
-                    const worksheet = workbook.Sheets[sheetName];
-                    let object = xlsx.utils.sheet_to_json(worksheet);
-                    json.push(object)
-                }
-                setTurma(json)
-              
-               
-            };
-            reader.readAsArrayBuffer(e.target.files[0]);
-        }
-    }
+    // const readUploadFile = (e) => {
+    //     e.preventDefault();
+    //     if (e.target.files) {
+    //         const reader = new FileReader();
+    //         reader.onload = (e) => {
+    //             const data = e.target.result;
+    //             const workbook = xlsx.read(data, { type: "array" });
+    //             const json = []
+    //             for (let i = 0; i < workbook.SheetNames.length; i++) {
+    //                 const sheetName = workbook.SheetNames[i];
+    //                 const worksheet = workbook.Sheets[sheetName];
+    //                 let object = xlsx.utils.sheet_to_json(worksheet);
+    //                 json.push(object)
+    //             }
+    //             setTurma(json)
 
 
-    var array = turma.reduce((list, sub) => list.concat(sub), [])
-    console.log(array)
+    //         };
+    //         reader.readAsArrayBuffer(e.target.files[0]);
+    //     }
+    // }
+
+
+    // var array = turma.reduce((list, sub) => list.concat(sub), [])
+    // console.log(array)
 
     useEffect(() => {
         if (localStorage.getItem('authenticated') !== 'true') navigate('/');
@@ -100,15 +115,34 @@ function CadastrarProfessor() {
                             <label id='labelStyle'>Email</label>
                             <input id='inputStyle' type={'email'} onChange={(event) => setEmail(event.target.value)}></input>
                         </div>
-                        <div className='data'>
-                            <label id='labelStyle'>Chamada</label>
-                            <input id='inputStyle' type='file' accept='.xlsx' onChange={readUploadFile} />
-                            {/* <input type='file' id='inputStyle'  onChange={(event) => setTurma(event.target.value)}></input> */}
-                        </div>
-                        <div className='botao' >
-                            <button type='button' onClick={() => handleClick()}>Cadastrar</button>
-                        </div>
+
+
                     </form>
+                    <div className='materias'>
+                        <div id="title">Materias</div>
+                        <div className='insert'>
+
+                        </div>
+                        {materiaList.map((email, index) => (
+                            <div key={index}>
+                                <input
+                                    id='inputStyle2'
+                                    type="email"
+                                    value={email}
+                                    onChange={(e) => handleMateriaChange(index, e.target.value)}
+                                />
+                                <div className='tatu'>
+                                    <button onClick={() => handleRemoveEmail(index)}>Remove</button>
+                                </div>
+                            </div>
+                        ))}
+                        <div className='tatu2'>
+                            <button onClick={handleAddMateria}>Adicionar Matéria</button>
+                        </div>
+                    </div>
+                    <div className='botao' >
+                        <button type='button' onClick={() => handleClick()}>Cadastrar</button>
+                    </div>
                 </div>
 
             </div>

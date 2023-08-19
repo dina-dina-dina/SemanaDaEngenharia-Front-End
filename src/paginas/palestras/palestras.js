@@ -130,9 +130,9 @@ function Palestras() {
                                 <>
                                     <tbody>
                                         <tr>
-                                            <td>{response.nomePalestra ? response.nomePalestra : '-'}</td>
-                                            <td>{response.palestrante ? response.palestrante : '-'}</td>
-                                            <td>{response.cargaHoraria ? response.cargaHoraria : '-'}</td>
+                                            <td>{response.palestra.nomePalestra ? response.palestra?.nomePalestra : '-'}</td>
+                                            <td>{response.palestra.palestrante ? response.palestra?.palestrante : '-'}</td>
+                                            <td>{response.palestra.cargaHoraria ? response.palestra?.cargaHoraria : '-'}</td>
 
 
                                             <td style={{ width: '30px' }}>

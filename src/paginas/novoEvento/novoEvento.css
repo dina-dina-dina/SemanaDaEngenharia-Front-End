@@ -1,12 +1,11 @@
-
-
 .containerNew {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-   height: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 
 .formulario2 {
@@ -15,8 +14,8 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    width: 673px;
-    height: 810px;
+    width: 90vw;
+    height: 100vh;
     flex-direction: column;
 
     background: #FFFFFF;
@@ -43,8 +42,8 @@
 }
 
 #inputStyle {
-    width: 523px;
-    height: 60px;
+    width: 100%;
+    height: 10vh;
 
     background: #FFFFFF;
     border: 2px solid #097828;
@@ -60,14 +59,14 @@
 
 #inputStyle:focus {
     outline: none;
-    border:2px solid #064b19;
+    border: 2px solid #064b19;
 
 }
 
 
 #labelStyle {
-    width: 319px;
-    height: 50px;
+    width: 100%;
+    height: 100%;
 
     font-family: 'Poppins';
     font-style: normal;
@@ -76,7 +75,7 @@
     line-height: 36px;
 
     color: #097828;
-    
+
 }
 
 .botao {
@@ -116,10 +115,9 @@
 #title {
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
-    width: 319px;
-    height: 50px;
-
+    width: 100%;
+    height: 10%;
+    text-align: center;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 900;
@@ -127,10 +125,10 @@
     line-height: 36px;
 
     color: #097828;
-    margin-bottom: 80px;
 
 
 }
+
 .feedback {
     display: flex;
     flex-direction: column;
@@ -142,8 +140,8 @@
 
 
 #inputStyleFb {
-    width: 523px;
-    height:200px;
+    width: 100%;
+    height: 100%;
 
     background: #FFFFFF;
     border: 2px solid #097828;
@@ -155,4 +153,96 @@
     text-indent: 10px;
 
 
+}
+
+.texto {
+
+    font-family: 'Poppins';
+    font-size: 3vh;
+    text-align: center;
+    width: 80%;
+    margin-bottom: 5%;
+}
+
+.textpal {
+    font-family: 'Poppins';
+    font-size: 3vh;
+    text-align: center;
+    width: 80%;
+    margin-bottom: 5%;
+}
+
+
+#inputStyle2 {
+    width: 100%;
+    height: 10vh;
+
+    background: #FFFFFF;
+    border: 2px solid #097828;
+    border-radius: 16px;
+    box-sizing: border-box;
+
+    font-size: 25px;
+
+    text-indent: 10px;
+
+
+}
+
+#inputStyle2:focus {
+    outline: none;
+    border: 2px solid #064b19;
+
+}
+
+.tatu {
+    display: flex;
+    justify-content: center;
+}
+
+.tatu button {
+    box-sizing: border-box;
+    max-width: 20%;
+    width: fit-content;
+    height: fit-content;
+    flex-wrap: wrap;
+    background: #9e1616;
+    border: 3px solid #FFFFFF;
+    border-radius: 100vw;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-size: 80%;
+    transition: all 400ms ease;
+
+    color: #FFFFFF;
+}
+.tatu2 {
+    display: flex;
+    justify-content: center;
+}
+
+.tatu2 button {
+    box-sizing: border-box;
+    max-width:70%;
+    width: fit-content;
+    height: fit-content;
+    flex-wrap: wrap;
+    background: #097828;
+    border: 3px solid #FFFFFF;
+    border-radius: 100vw;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-size: 100%;
+    transition: all 400ms ease;
+
+    color: #FFFFFF;
+}
+.materias{
+    display: flex;
+    flex-direction: column;
+}
+
+.insert{
+    display: flex;
+    flex-direction: row;
 }

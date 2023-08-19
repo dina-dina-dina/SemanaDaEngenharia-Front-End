@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+
+
+}
+
+.container {
+    
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    
+}
+.formulario{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+
+}
+
+.titulo {
+    width: 100%;
+    margin-left: 90px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+
+    color: #097828;
+}
+
+.email {
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+.email label {
+    position: absolute;
+    margin-left: 10px;
+    font-size: 20px;
+    color: #097828;
+    
+}
+
+
+.email input {
+    width: 523px;
+    height: 50px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 2px solid #097828;
+    border-radius: 16px;
+    text-indent: 10px;
+    font-size: 20px;
+    transition: all 400ms ease;
+    outline: 0;
+    margin-top: 25px;
+}
+
+.email input:focus {
+
+    background: 0, 0, 0, 0 #36a555;
+
+
+}
+
+.email input:hover {
+    background: 0, 0, 0, 0 #36a555;
+
+}
+
+.password input:hover {
+    background: 0, 0, 0, 0 #36a555;
+
+}
+
+.password input:focus {
+    background: 0, 0, 0, 0 #36a555;
+
+}
+
+
+
+.password {
+    margin-bottom: 68px;
+}
+.password label {
+    position: absolute;
+    margin-left: 10px;
+    font-size: 20px;
+    color: #097828;
+    
+}
+
+.password input {
+    width: 523px;
+    height: 50px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 2px solid #097828;
+    border-radius: 16px;
+    text-indent: 10px;
+    font-size: 20px;
+    font-family: 'Poppins';
+    outline: 0;
+    margin-top: 25px;
+}
+
+.password input::placeholder {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-indent: 10px;
+
+    color: #097828;
+
+
+}
+
+.email input::placeholder {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-indent: 10px;
+    transition: all 400ms ease;
+
+    color: #097828;
+
+
+}
+
+.button button {
+    box-sizing: border-box;
+    width: 80%;
+    height: 60%;
+    background: #097828;
+    border: 3px solid #FFFFFF;
+    border-radius: 30px;
+    margin: 20px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    transition: all 400ms ease;
+    box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+
+}
+
+.button button:hover {
+    background: 0, 0, 0, 0 #e488a1;
+
+}
+.buttonVoltar button {
+    margin-top: 10px;
+    align-self: center;
+    box-sizing: border-box;
+    width: 30vw;
+    height: 100%;
+    background: #727071;
+    border: 3px solid #FFFFFF;
+    border-radius: 30px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    transition: all 400ms ease;
+    box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.25);
+    margin-bottom: 15px;
+    color: #FFFFFF;
+
+}
+
+.buttonVoltar button:hover {
+    background: 0, 0, 0, 0 #706a6c;
+
+}
+.email {
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+.email label {
+    position: absolute;
+    margin-left: 10px;
+    font-size: 20px;
+    color: #097828;
+    
+}
+
+
+.email input {
+    width: 40vw;
+    height: 50px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 2px solid #097828;
+    border-radius: 16px;
+    text-indent: 10px;
+    font-size: 20px;
+    transition: all 400ms ease;
+    outline: 0;
+    margin-top: 25px;
+    text-transform: uppercase   ;
+}
+
+.email input:focus {
+
+    background: 0, 0, 0, 0 #36a555;
+
+
+}
+
+.email input:hover {
+    background: 0, 0, 0, 0 #36a555;
+
+}
+
+
+
+.img {
+    margin-left: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    position: relative;
+    width:20vw;
+    height: 70px;
+    align-self: center;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+.TextCard{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    text-align:center;
+    color: #097828;
+    margin-bottom: 2%;
+    display: inline;
+}
+.cardfigS{
+    margin-top: 20px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    text-align:center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.308);
+    background-color: #7ea37e;
+    width: 34vw;
+    height: 140px;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.cardfigN{
+    margin-top: 20px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    text-align:center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.308);
+    background-color: #c95e5e;
+    width: 34vw;
+    height: 140px;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.Switch{
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    align-content: center;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70vw;
+    
+}
+
+.SwitchTextGreen{
+    color: green;
+    margin-right: 10px;
+    text-shadow:1px 1px 7px black;
+}
+.SwitchTextRed{
+    margin-left: 10px;
+    color: red;
+    text-shadow:1px 1px 7px black;
+}
+
+.contador{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.TemosFaltam{
+    font-family: 'Poppins';
+    text-shadow: 1px 1px 7px black ;
+}
+
+.num{
+    font-family: 'Poppins';
+    text-shadow: 1px 1px 7px black ;
+}
+
+.card {
+    width: fit-content;
+    max-width: 450px;
+    height: fit-content;
+    background-color: #FFFFFF;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    border-radius: 16px;
+    align-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: row;
+    display: inline-block;
+    box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.teste{
+    display: flex;
+    flex-direction: column;
+}
+
+.caixa{
+    margin: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+.confirmacao{
+    font-size: 2vh;
+    text-align: center;
+    font-family: 'Poppins';
+}

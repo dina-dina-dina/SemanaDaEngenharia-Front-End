@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+
+
+}
+
+.container {
+    width: 90vw;
+    height: 100vh;
+    margin-top: 5%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    margin-left: 5%;
+
+
+}
+
+.login {
+    width: 100vw;
+    height: 100%;
+    background: #FFFFFF;
+    box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+.lateral {
+    width: 30%;
+    background: #097828;
+    height: 100%;
+    border-bottom-left-radius: 16px;
+    border-top-left-radius: 16px;
+}
+
+.lateral img {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    justify-content: center;
+    width: 80%;
+    height: 20%;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+
+
+
+
+}
+
+.lateral #sds {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 100%;
+    line-height: 100%;
+    margin-left: 20%;
+    margin-bottom: 20%;
+
+    color: #FFFFFF;
+}
+
+.lateral #sds2 {
+    margin-left: 25px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 50%;
+    line-height: 100%;
+    margin-left: 20%;
+    margin-bottom: 20%;
+
+    color: #FFFFFF;
+
+}
+
+.formulario {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    height: 100%;
+}
+
+.titulo {
+    width: 100%;
+    margin-left: 20%;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 100%;
+    line-height: 100%;
+    text-align: justify;
+
+
+    color: #097828;
+}
+
+.email {
+    margin-top: 10%;
+    margin-bottom: 5%;
+    flex-direction: column;
+    display: flex;
+}
+
+.email label {
+    position: relative;
+    margin-left: 10%;
+    font-size: 70%;
+    color: #097828;
+
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.email input {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 2px solid #097828;
+    border-radius: 10vw;
+    text-align: start;
+    font-size: 100%;
+    transition: all 400ms ease;
+    outline: 0;
+    margin-top: 1%;
+}
+
+.email input:focus {
+
+    background: 0, 0, 0, 0 #36a555;
+
+
+}
+
+.email input:hover {
+    background: 0, 0, 0, 0 #36a555;
+
+}
+
+.password input:hover {
+    background: 0, 0, 0, 0 #36a555;
+
+}
+
+.password input:focus {
+    background: 0, 0, 0, 0 #36a555;
+
+}
+
+
+
+.password {
+    margin-top: 10%;
+    margin-bottom: 5%;
+    flex-direction: column;
+    display: flex;
+}
+
+.password label {
+    position: relative;
+    margin-left: 10px;
+    font-size: 10%;
+    color: #097828;
+
+}
+
+.password input {
+    width: 10%;
+    height: 10%;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 2px solid #097828;
+    border-radius: 10vw;
+    text-align: start;
+    font-size: 100%;
+    transition: all 400ms ease;
+    outline: 0;
+    margin-top: 1%;
+}
+
+.password input::placeholder {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100%;
+    line-height: 100%;
+    text-indent: 10px;
+
+    color: #097828;
+
+
+}
+
+.email input::placeholder {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100%;
+    line-height: 100%;
+    text-indent: 10px;
+    transition: all 400ms ease;
+
+    color: #097828;
+
+
+}
+
+.nome {
+    margin-top: 10%;
+    margin-bottom: 5%;
+    flex-direction: column;
+    display: flex;
+}
+
+.nome label {
+    position: relative;
+    margin-left: 10px;
+    font-size: 10%;
+    color: #097828;
+
+}
+
+.nome input {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 2px solid #097828;
+    border-radius: 10vw;
+    text-align: start;
+    font-size: 100%;
+    transition: all 400ms ease;
+    outline: 0;
+    margin-top: 1%;
+}
+
+.nome input::placeholder {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100%;
+    line-height: 100%;
+    text-indent: 10px;
+
+    color: #097828;
+
+
+}
+
+.button button {
+    box-sizing: border-box;
+    width: 150%;
+    height: 40%;
+    background: #097828;
+    border: 3px solid #FFFFFF;
+    border-radius: 100dvw;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-left: -10%;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 100%;
+    line-height: 150%;
+    transition: all 400ms ease;
+
+    color: #FFFFFF;
+
+}
+
+.button button:hover {
+    background: 0, 0, 0, 0 #36a555;
+
+}
+
+.ra {
+    margin-top: 10%;
+    margin-bottom: 5%;
+    flex-direction: column;
+    display: flex;
+}
+
+.ra label {
+    position: relative;
+    margin-left: 10px;
+    font-size: 10%;
+    color: #097828;
+
+}
+
+.ra input {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 2px solid #097828;
+    border-radius: 10vw;
+    text-align: start;
+    font-size: 100%;
+    transition: all 400ms ease;
+    outline: 0;
+    margin-top: 1%;
+}
+
+.ra input::placeholder {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100%;
+    line-height: 100%;
+    text-indent: 10px;
+
+    color: #097828;
+
+
+}
+
+.turma {
+    margin-top: 10%;
+    margin-bottom: 5%;
+    flex-direction: column;
+    display: flex;
+}
+
+.turma label {
+    position: relative;
+    margin-left: 10px;
+    font-size: 10%;
+    color: #097828;
+
+}
+
+.turma input {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 2px solid #097828;
+    border-radius: 10vw;
+    text-align: start;
+    font-size: 100%;
+    transition: all 400ms ease;
+    outline: 0;
+    margin-top: 1%;
+}
+
+.turma input::placeholder {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100%;
+    line-height: 100%;
+    text-indent: 10px;
+
+    color: #097828;
+
+
+}
+
+.estagio input[type="checkbox"] {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    /* creating a custom design */
+    width: 1.6em;
+    height: 1.6em;
+    border-radius: 0.15em;
+    margin-right: 0.5em;
+    border: 0.15em solid #007a7e;
+    outline: none;
+    cursor: pointer;
+}
+
+.estagio label {
+    position: relative;
+    margin-left: 10px;
+    font-size: 100%;
+    color: #097828;
+    margin-right: 2vw;
+
+}
+
+.estagio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.estagio input.checked {
+    background-color: #007a7e;
+    position: relative;
+}
+
+.estagio input.checked::before {
+    color: #fff;
+    content: "✓";
+    text-align: center;
+    font-size: large;
+    position: absolute;
+    right: 1px;
+    top: -5px;
+}
+
+.telefone {
+    margin-top: 10%;
+    margin-bottom: 5%;
+    flex-direction: column;
+    display: flex;
+}
+
+.telefone label {
+    position: relative;
+    margin-left: 10px;
+    font-size: 10%;
+    color: #097828;
+
+}
+
+.telefone input {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 2px solid #097828;
+    border-radius: 10vw;
+    text-align: start;
+    font-size: 100%;
+    transition: all 400ms ease;
+    outline: 0;
+    margin-top: 1%;
+}
+
+.telefone input::placeholder {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100%;
+    line-height: 100%;
+    text-indent: 10px;
+
+    color: #097828;
+
+
+}
+
+.curso {
+    margin-top: 10%;
+    margin-bottom: 5%;
+    flex-direction: column;
+    display: flex;
+}
+
+.curso label {
+    position: relative;
+    margin-left: 10px;
+    font-size: 10%;
+    color: #097828;
+
+}
+
+.curso select {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 2px solid #097828;
+    border-radius: 10vw;
+    text-align: start;
+    font-size: 100%;
+    transition: all 400ms ease;
+    outline: 0;
+    margin-top: 1%;
+}
+
+.curso select::placeholder {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100%;
+    line-height: 100%;
+    text-indent: 10px;
+    overflow-wrap: break-word;
+    color: #097828;
+
+
+}

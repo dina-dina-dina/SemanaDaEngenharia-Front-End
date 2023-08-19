@@ -6,7 +6,7 @@ import axiosLogin from '../../axiosLogin';
 
 
 
-function Login() {
+function LoginAdmin() {
   const [email, setEmail] = useState(String)
   const [senha, setSenha] = useState(String)
   const navigate = useNavigate();
@@ -28,9 +28,10 @@ function Login() {
             const token = response.data.token
             localStorage.setItem('authenticated', 'true')
             localStorage.setItem('token', `${token}`)
-            if(response) {
-              
+            if(response.user.isAdmin == 1) {
               navigate("/eventos")
+            }else{
+              navigate("/paginaAlunos")
             }
             
             
@@ -68,12 +69,12 @@ function Login() {
         </div>
         <div className='formulario'>
           <form>
-            <span className='titulo'>Acesse sua Conta</span>
+            <span className='titulo'>ADMIN LOGIN</span>
             <div className='input'>
 
               <div className='email'>
                 <label>Email</label>
-                <input type='email' placeholder='Email' onChange={(event) => setEmail(event.target.value)}></input>
+                <input type='email' alt="Input de email" placeholder='Email' onChange={(event) => setEmail(event.target.value)}></input>
               </div>
               <div className='password'>
                 <label>Senha</label>
@@ -95,4 +96,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginAdmin;
