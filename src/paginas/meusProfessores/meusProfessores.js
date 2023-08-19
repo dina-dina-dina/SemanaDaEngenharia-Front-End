@@ -3,6 +3,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from '../../axios'
 import image from '../../assets/logosemanaCentrr.png'
+import GoBackArrow from '../../components/backArrow';
 
 function MeusProfessores() {
 
@@ -99,6 +100,8 @@ function MeusProfessores() {
 
     return (
         <div className='geral'>
+            <GoBackArrow />
+
             <div className='foto'>
                 <img src={image} alt="icon" width={"100%"} style={{ alignSelf: 'center' }}></img>
             </div>

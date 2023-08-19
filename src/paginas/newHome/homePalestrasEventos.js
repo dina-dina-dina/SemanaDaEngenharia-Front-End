@@ -4,6 +4,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import axiosLogin from '../../axiosLogin';
 import image from '../../assets/logosemanaCentrr.png'
 import axios from '../../axios'
+import GoBackArrow from '../../components/backArrow';
 
 
 
@@ -59,6 +60,7 @@ function UserLogin() {
 
     return (
         <div>
+            <GoBackArrow />
             <div className='fotohome'>
                 <img src={image} alt="icon" width={"100%"} style={{ alignSelf: 'center' }}></img>
             </div>
