@@ -1,9 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import '../../paginas/login/login.css';
-import jpIMG from '../../assets/SemanaEng.jpg';
 import React, { useState, useContext, useEffect } from 'react';
 import axiosLogin from '../../axiosLogin';
-import image from '../../assets/SemanaEngCirc-removebg.png'
+import image from '../../assets/logosemanaCentrr.png'
 import axios from '../../axios'
 
 
@@ -60,7 +59,7 @@ function UserLogin() {
 
     return (
         <div>
-            <div className='foto'>
+            <div className='fotohome'>
                 <img src={image} alt="icon" width={"100%"} style={{ alignSelf: 'center' }}></img>
             </div>
             {Dias &&

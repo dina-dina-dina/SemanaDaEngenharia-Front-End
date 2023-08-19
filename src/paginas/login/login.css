@@ -224,7 +224,7 @@
 
 }
 
-.button button {
+.buttonlogin button {
     box-sizing: border-box;
     width: 150%;
     height: 40%;
@@ -245,15 +245,22 @@
 
 }
 
-.button button:hover {
+.buttonlogin button:hover {
     background: 0, 0, 0, 0 #36a555;
 
 }
 
-.foto{
-    margin-bottom: -20%;
-    margin-left: 5%;
-    height: 50%;
+.fotohome{
+    margin-top: 10%;
+    width: 50vw;
+    height: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.596);
+    padding: 2%;
+    border-radius: 100vh;
+    align-self: center;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 5%;
+    margin-left: 25%;
 }
 
 .dia{
