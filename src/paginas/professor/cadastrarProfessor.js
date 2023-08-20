@@ -51,12 +51,6 @@ function CadastrarProfessor() {
         } catch (err) {
             alert(err)
         }
-
-
-
-
-
-
     }
 
     useEffect(() => {

@@ -19,7 +19,7 @@ import HomePalestraEventos from './paginas/newHome/homePalestrasEventos';
 import FeedbackPalestras from './paginas/feedbackPalestras/feedback';
 import QrCode2 from './paginas/feedbackPalestras/qrcode2'
 import MinhasPalestras from './paginas/minhasPalestras/minhasPalestras';
-
+import MeusProfessores from './paginas/meusProfessores/meusProfessores';
 
 function Rotas() {
     return (
@@ -29,6 +29,7 @@ function Rotas() {
                 <Route path="/minhasPalestras" element={<MinhasPalestras/>}/>
                 <Route path="/feedbackPalestra" element={<FeedbackPalestras/>}/>
                 <Route path="/qrCode2" element={<QrCode2/>}/>
+                <Route path="/meusProfessores" element={<MeusProfessores/>}/>
                 <Route path="/AlunosHomePage" element={<NewHomeAlunos/>} />
                 <Route path="/HomePalestraEventos" element={<HomePalestraEventos/>} />
                 <Route path="/cadastro" element={<Cadastro/>} />

@@ -1,8 +1,9 @@
-import './eeee.css';
+import './minhaspalestras.css';
 import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from '../../axios'
-import image from '../../assets/SemanaEngCirc.png'
+import image from '../../assets/logosemanaCentrr.png'
+import GoBackArrow from '../../components/backArrow';
 
 function MinhasPalestras() {
 
@@ -37,7 +38,8 @@ function MinhasPalestras() {
 
     return (
         <div>
-            <div className='foto'>
+            <GoBackArrow />
+            <div className='fotomin'>
                 <img src={image} alt="icon" width={"100%"} style={{ alignSelf: 'center' }}></img>
             </div>
             {MinhasPalestras.length > 0 ? (

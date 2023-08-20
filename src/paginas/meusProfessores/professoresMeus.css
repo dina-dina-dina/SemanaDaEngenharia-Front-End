@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+
+
+}
+.geral{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.foto {
+    margin-top: 10%;
+    width: 50vw;
+    height: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.596);
+    padding: 2%;
+    border-radius: 100vh;
+    align-self: center;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 5%;
+}
+
+.entries{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.entrada {
+    font-family: 'Poppins';
+    text-align: center;
+    justify-content: space-between;
+    align-content: space-between;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    min-width: 25vw;
+    max-width: 25vw;
+    word-wrap: break-word;
+    min-height: 2vh;
+    height: fit-content;
+    background-color: rgb(136, 189, 150);
+    margin: 2%;
+    border-radius: 1vw;
+    padding: 4%;
+    -webkit-box-shadow: 7px 9px 36px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 7px 9px 36px -8px rgba(0, 0, 0, 0.75);
+    box-shadow: 7px 9px 36px -8px rgba(0, 0, 0, 0.75);
+}
+
+.topico {
+    flex: 1;
+    font-size: 2vh;
+}
+
+.todas {
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.total {
+    font-size: 2vh
+}
+
+.triste { 
+    display: flex;
+    margin-top: 10%;
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 5vh;
+}
+
+.profe{
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 3vh;
+    color: #097828;
+    text-shadow: 4px 3px 3px rgba(0, 0, 0, 0.171) ;
+
+}
