@@ -59,39 +59,44 @@ function UserLogin() {
     }
 
     return (
+        <>
         <div>
-            <GoBackArrow />
-            <div className='fotohome'>
-                <img src={image} alt="icon" width={"100%"} style={{ alignSelf: 'center' }}></img>
+            <GoBackArrow/>
             </div>
-            {Dias &&
-                Dias.map(function (array, index) {
-                    return (
-                        <div key={index} className='caixa'>
-                            <div className='dia'>{addHoursAndConvertToWeekday(array,3)}</div>
-                            {palestras &&
-                                palestras.map(function (item, innerIndex) {
-                                    // Check if item.palestra.dia is equal to the array value
-                                    if (item.palestra.dia === array) {
-                                        return (
-                                            <div key={innerIndex} className='card' onClick={() => { handleClick1(item.idPalestrasEvento, item.palestra.nomePalestra) }}>
-                                                <div className="TextCard">
-                                                    <div className='teste'>
-                                                        <h2 style={{ fontSize: '3vh' }}>Palestra: {item.palestra.nomePalestra}</h2>
-                                                        <h1 style={{ fontSize: '2vh', color: '#71a1f0' }}>Palestrante: {item.palestra.palestrante}</h1>
+            <div>
+                <div className='fotohome'>
+                    <img src={image} alt="icon" width={"100%"} style={{ alignSelf: 'center' }}></img>
+                </div>
+                {Dias &&
+                    Dias.map(function (array, index) {
+                        return (
+                            <div key={index} className='caixa'>
+                                <div className='dia'>{addHoursAndConvertToWeekday(array,3)}</div>
+                                {palestras &&
+                                    palestras.map(function (item, innerIndex) {
+                                        // Check if item.palestra.dia is equal to the array value
+                                        if (item.palestra.dia === array) {
+                                            return (
+                                                <div key={innerIndex} className='card' onClick={() => { handleClick1(item.idPalestrasEvento, item.palestra.nomePalestra) }}>
+                                                    <div className="TextCard">
+                                                        <div className='teste'>
+                                                            <h2 style={{ fontSize: '3vh' }}>Palestra: {item.palestra.nomePalestra}</h2>
+                                                            <h1 style={{ fontSize: '2vh', color: '#71a1f0' }}>Palestrante: {item.palestra.palestrante}</h1>
+                                                        </div>
                                                     </div>
+                                                    <div className='confirmacao'>Clique para realizar feedback de confirmação</div>
                                                 </div>
-                                                <div className='confirmacao'>Clique para realizar feedback de confirmação</div>
-                                            </div>
-                                        );
-                                    }
-                                    // If not, return null (or any other placeholder element)
-                                    return null;
-                                })}
-                        </div>
-                    );
-                })}
-        </div>
+                                            );
+                                        }
+                                        // If not, return null (or any other placeholder element)
+                                        return null;
+                                    })}
+                            </div>
+                        );
+                    })}
+            </div>
+        </>
+        
     );
 
 

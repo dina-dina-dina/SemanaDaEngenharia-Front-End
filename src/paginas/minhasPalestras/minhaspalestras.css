@@ -18,6 +18,7 @@
 
 
 .entrada {
+    font-family: 'Poppins';
     justify-content: space-between;
     align-content: space-between;
     display: flex;
@@ -39,6 +40,7 @@
 .topico {
     flex: 1;
     font-size: 2vh;
+    word-wrap: break-word;
 }
 
 .todas {

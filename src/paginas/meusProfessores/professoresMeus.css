@@ -32,7 +32,7 @@
     align-items: center;
 }
 
-.entrada {
+.entradaprofe {
     font-family: 'Poppins';
     text-align: center;
     justify-content: space-between;
@@ -54,7 +54,7 @@
     box-shadow: 7px 9px 36px -8px rgba(0, 0, 0, 0.75);
 }
 
-.topico {
+.topicoprofe {
     flex: 1;
     font-size: 2vh;
 }

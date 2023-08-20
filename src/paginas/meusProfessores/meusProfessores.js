@@ -99,8 +99,9 @@ function MeusProfessores() {
     }, [])
 
     return (
+        <><div><GoBackArrow /></div>
         <div className='geral'>
-            <GoBackArrow />
+            
 
             <div className='foto'>
                 <img src={image} alt="icon" width={"100%"} style={{ alignSelf: 'center' }}></img>
@@ -115,13 +116,13 @@ function MeusProfessores() {
                                     <div key={materia.idMateria}
                                         onClick={selectedMateriaIds.includes(materia.idMateria)
                                             ? () => handleClick2(materia.idMateria)
-                                            : () => handleClick3(materia.idMateria)} className='entrada'
+                                            : () => handleClick3(materia.idMateria)} className='entradaprofe'
                                         style={
                                             selectedMateriaIds.includes(materia.idMateria)
                                                 ? { backgroundColor: 'rgb(136, 189, 150)' }
                                                 : { backgroundColor: 'rgb(240, 77, 77)' }
                                         }>
-                                        <div className='topico'>{materia.titulo}</div>
+                                        <div className='topicoprofe'>{materia.titulo}</div>
                                     </div>
                                 ))}
                             </div>
@@ -133,6 +134,8 @@ function MeusProfessores() {
                 <div className='triste'>Nenhum Professor Encontrado 😴</div>
             )}
         </div>
+        </>
+        
     );
 
 }
