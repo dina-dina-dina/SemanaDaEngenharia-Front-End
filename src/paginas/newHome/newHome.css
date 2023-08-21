@@ -140,11 +140,13 @@
 
 }
 
-.button button {
+.buttonhome button {
     box-sizing: border-box;
     width: fit-content;
     height: fit-content;
-    max-width: 50vw;
+    min-height: 10vh;
+    max-width: 70vw;
+    min-width: 70vw;
     hyphens:auto;
     word-wrap:break-word;
     background: #097828;
@@ -162,7 +164,7 @@
 
 }
 
-.button button:hover {
+.buttonhome button:hover {
     background: 0, 0, 0, 0 #e488a1;
 
 }

@@ -76,10 +76,10 @@ function Cadastro() {
             )
                 
 
-                // if (response) {
-                //     alert("Aluno cadastrado com sucesso!")
-                //     // navigate("/obrigado");
-                // }
+                if (response) {
+                    alert("Aluno cadastrado com sucesso!")
+                    navigate("/");
+                }
 
             } catch (err) {
                 alert(err)
@@ -88,13 +88,13 @@ function Cadastro() {
         }
         return (
             <div className="container">
-                <div className="login">
+                <div className="logincadas">
 
 
 
-                    <div className='formulario'>
+                    <div className='formulariocadas'>
                         <form>
-                            <span className='turma'>Faça seu Cadastro!</span>
+                            <span className='turma' style={{textAlign:'center'}}>Faça seu Cadastro!</span>
                             <div className='input'>
                                 <div className='turma'>
                                     <label>Nome</label>
@@ -135,7 +135,7 @@ function Cadastro() {
                                     <input className={isChecked ? "checked" : ""} checked={isChecked} type='checkbox' onChange={clicker}></input>
                                 </div>
 
-                                <div className='button' >
+                                <div className='buttoncadas' >
                                     <button type='button' onClick={()=> handleClick()}>ENTRAR</button>
                                 </div>
 
