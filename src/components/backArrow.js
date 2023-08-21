@@ -7,7 +7,7 @@ const GoBackArrow = () => {
   const navigate = useNavigate();
 
   const goBack = () => {
-    navigate(-1);
+    navigate('/AlunosHomePage');
   };
 
   return (

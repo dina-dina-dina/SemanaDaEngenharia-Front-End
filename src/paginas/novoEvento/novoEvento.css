@@ -8,6 +8,11 @@
     height: 100vh;
 }
 
+.ajuste{
+    margin-left: 10%;
+}
+
+
 .formulario2 {
     margin-top: 62px;
     display: flex;

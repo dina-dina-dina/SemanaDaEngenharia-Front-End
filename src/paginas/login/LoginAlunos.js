@@ -12,6 +12,9 @@ function UserLogin() {
   const [senha, setSenha] = useState(String)
   const navigate = useNavigate();
 
+  function handleClick3() {
+    navigate("/cadastro");
+  }
 
   const RegisterUsuario = async () => {
     if (email && senha) {
@@ -24,7 +27,7 @@ function UserLogin() {
         const token = response.data.token
         localStorage.setItem('authenticated', 'true')
         localStorage.setItem('token', `${token}`)
-        localStorage.setItem('user',response.data.user.idUsuarios)
+        localStorage.setItem('user', response.data.user.idUsuarios)
         if (response.data.user.isAdmin == true) {
           navigate("/eventos")
         } else {
@@ -73,9 +76,13 @@ function UserLogin() {
               <label>Senha</label>
               <input type='password' placeholder='Senha' onChange={(event) => setSenha(event.target.value)}></input>
             </div>
+            <div className='buttonlogin2'>
+              <button onClick={handleClick3}>Cadastre-se!</button>
+            </div>
             <div className='buttonlogin' >
               <button type='button' onClick={() => RegisterUsuario()} >ENTRAR</button>
             </div>
+
 
           </div>
 

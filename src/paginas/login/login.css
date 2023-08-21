@@ -249,7 +249,31 @@
     background: 0, 0, 0, 0 #36a555;
 
 }
+.buttonlogin2 button {
+    box-sizing: border-box;
+    width: 150%;
+    height: 40%;
+    background: #93a356;
+    border: 3px solid #FFFFFF;
+    border-radius: 30px;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-left: -20%;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 100%;
+    line-height: 150%;
+    transition: all 400ms ease;
 
+    color: #FFFFFF;
+
+}
+
+.buttonlogin2 button:hover {
+    background: 0, 0, 0, 0 #93a356;
+
+}
 .fotohome{
     margin-top: 10%;
     width: 50vw;

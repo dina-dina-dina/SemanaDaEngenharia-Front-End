@@ -62,7 +62,6 @@ function MeusProfessores() {
                 "idUsuario": localStorage.getItem('user'),
             })
             if (response) {
-                alert("Materia cadastrada com sucesso!")
                 window.location.reload();
             }
 
@@ -82,7 +81,6 @@ function MeusProfessores() {
                 "idUsuario": localStorage.getItem('user'),
             })
             if (response) {
-                alert("Materia removida com sucesso!")
                 window.location.reload();
             }
 
