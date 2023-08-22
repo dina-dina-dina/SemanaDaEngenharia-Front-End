@@ -87,11 +87,8 @@ function Cadastro() {
     
         }
         return (
-            <div className="container">
+            <div className="containercadas">
                 <div className="logincadas">
-
-
-
                     <div className='formulariocadas'>
                         <form>
                             <span className='turma' style={{textAlign:'center'}}>Faça seu Cadastro!</span>

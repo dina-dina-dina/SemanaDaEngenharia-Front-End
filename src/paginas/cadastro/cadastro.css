@@ -8,13 +8,13 @@
 
 }
 
-.container {
-    width: 90vw;
+.containercadas {
+    width: 100vw;
     height: 100vh;
     display: flex;
     align-items: start;
     justify-content: center;
-
+    margin-top: -15%;
 
 }
 
