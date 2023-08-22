@@ -76,13 +76,12 @@ function UserLogin() {
               <label>Senha</label>
               <input type='password' placeholder='Senha' onChange={(event) => setSenha(event.target.value)}></input>
             </div>
-            <div className='buttonlogin2'>
-              <button onClick={handleClick3}>Cadastre-se!</button>
-            </div>
             <div className='buttonlogin' >
               <button type='button' onClick={() => RegisterUsuario()} >ENTRAR</button>
             </div>
-
+            <div className='buttonlogin2'>
+              <button onClick={() => handleClick3}>Cadastre-se!</button>
+            </div>
 
           </div>
 
