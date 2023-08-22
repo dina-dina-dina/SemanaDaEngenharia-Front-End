@@ -13,6 +13,8 @@ function UserLogin() {
   const navigate = useNavigate();
 
   function handleClick3() {
+    console.log("teste")
+
     navigate("/cadastro");
   }
 
@@ -80,7 +82,7 @@ function UserLogin() {
               <button type='button' onClick={() => RegisterUsuario()} >ENTRAR</button>
             </div>
             <div className='buttonlogin2'>
-              <button onClick={() => handleClick3}>Cadastre-se!</button>
+              <button onClick={() => handleClick3()}>Cadastre-se!</button>
             </div>
 
           </div>
