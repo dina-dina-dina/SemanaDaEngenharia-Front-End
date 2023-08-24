@@ -63,7 +63,7 @@ function UserLogin() {
         <div>
             <GoBackArrow/>
             </div>
-            <div>
+            <div className='tudo'>
                 <div className='fotohome'>
                     <img src={image} alt="icon" width={"100%"} style={{ alignSelf: 'center' }}></img>
                 </div>
