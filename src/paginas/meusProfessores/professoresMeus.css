@@ -27,9 +27,11 @@
 
 .entries{
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    word-wrap: break-word;
+
+    
 }
 
 .entradaprofe {
@@ -40,8 +42,8 @@
     display: flex;
     align-items: center;
     width: fit-content;
-    min-width: 25vw;
-    max-width: 25vw;
+    min-width: 20vw;
+    max-width: 20vw;
     word-wrap: break-word;
     min-height: 2vh;
     height: fit-content;
@@ -52,11 +54,16 @@
     -webkit-box-shadow: 7px 9px 36px -8px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 7px 9px 36px -8px rgba(0, 0, 0, 0.75);
     box-shadow: 7px 9px 36px -8px rgba(0, 0, 0, 0.75);
+    word-wrap: break-word;
+
+
 }
 
 .topicoprofe {
-    flex: 1;
+    width: 100%;
     font-size: 2vh;
+    word-wrap: break-word;
+
 }
 
 .todas {

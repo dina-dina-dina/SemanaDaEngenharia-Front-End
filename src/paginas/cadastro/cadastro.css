@@ -14,13 +14,11 @@
     display: flex;
     align-items: start;
     justify-content: center;
-    margin-top: -15%;
 
 }
 
 .logincadas {
     width: 100vw;
-    height: 100vh;
     background: #FFFFFF;
     display: flex;
     flex-direction: row;
@@ -122,7 +120,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
+    
 }
 
 .email input {
@@ -332,6 +330,7 @@
     margin-bottom: 5%;
     flex-direction: column;
     display: flex;
+    padding-left: 10%;
 }
 
 .turma label {
@@ -472,7 +471,7 @@
 
 .curso select {
     width: 100%;
-    height: 100%;
+    width: 100%;
     box-sizing: border-box;
     background: #FFFFFF;
     border: 2px solid #097828;
