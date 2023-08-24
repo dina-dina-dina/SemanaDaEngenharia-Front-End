@@ -59,36 +59,40 @@ function UserLogin() {
   return (
 
     <>
-      <div className='fotohome'>
-        <img src={jpIMG} alt="icon" width={"100%"} style={{ alignSelf: 'center' }}></img>
+      <div className='tudo'>
+        <div className='fotohome'>
+          <img src={jpIMG} alt="icon" width={"100%"} style={{ alignSelf: 'center' }}></img>
+
+        </div>
+        <div className='formulario'>
+
+          <form>
+
+            <div className='tituloide'>Login Semana da Engenharia</div>
+            <div className='input'>
+
+              <div className='logincamp'>
+                <label>Email</label>
+                <input type='text' alt="Input de nome" placeholder='Email' onChange={(event) => setEmail(event.target.value)}></input>
+              </div>
+              <div className='logincamp'>
+                <label>Senha</label>
+                <input type='password' placeholder='Senha' onChange={(event) => setSenha(event.target.value)}></input>
+              </div>
+              <div className='buttonlogin' >
+                <button type='button' onClick={() => RegisterUsuario()} >ENTRAR</button>
+              </div>
+              <div className='buttonlogin2'>
+                <button onClick={() => handleClick3()}>Cadastre-se!</button>
+              </div>
+
+            </div>
+
+          </form>
+        </div>
 
       </div>
-      <div className='formulario'>
 
-        <form>
-
-          <div className='tituloide'>Login Semana da Engenharia</div>
-          <div className='input'>
-
-            <div className='turma'>
-              <label>Email</label>
-              <input type='text' alt="Input de nome" placeholder='Email' onChange={(event) => setEmail(event.target.value)}></input>
-            </div>
-            <div className='turma'>
-              <label>Senha</label>
-              <input type='password' placeholder='Senha' onChange={(event) => setSenha(event.target.value)}></input>
-            </div>
-            <div className='buttonlogin' >
-              <button type='button' onClick={() => RegisterUsuario()} >ENTRAR</button>
-            </div>
-            <div className='buttonlogin2'>
-              <button onClick={() => handleClick3()}>Cadastre-se!</button>
-            </div>
-
-          </div>
-
-        </form>
-      </div>
 
     </>
 

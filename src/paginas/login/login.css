@@ -86,16 +86,59 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 10%;
+    margin-top: 2%;
     height: 100%;
 }
+
+.logincamp {
+    margin-top: 2%;
+    margin-bottom: 5%;
+    flex-direction: column;
+    display: flex;
+}
+
+.logincamp label {
+    position: relative;
+    margin-left: 10px;
+    font-size: 100%;
+    color: #097828;
+
+}
+
+.logincamp input {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 2px solid #097828;
+    border-radius: 10vw;
+    text-align: start;
+    font-size: 100%;
+    transition: all 400ms ease;
+    outline: 0;
+    margin-top: 1%;
+    padding-left: 5%;
+}
+
+.logincamp input::placeholder {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100%;
+    line-height: 100%;
+    text-indent: 0;
+
+    color: #097828;
+
+
+}
+
 
 .tituloide {
     align-items: center;
     text-align: center;
     font-size: 5vh;
     font-family: 'Poppins';
-    margin-bottom: -10%;
     color: #097828;
     text-shadow: 2px 1px 10px rgba(0, 0, 0, 0.171) ;
 }
@@ -128,7 +171,6 @@
 }
 
 .input {
-    margin-top: 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -226,19 +268,20 @@
 
 .buttonlogin button {
     box-sizing: border-box;
-    width: 150%;
-    height: 40%;
+    width: fit-content;
+    height: fit-content;
+    min-height: 10vh;
+    min-width: 20vw;
+    border: 10% solid rgba(0, 0, 0, 0.02);
+    box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.25);
     background: #097828;
     border: 3px solid #FFFFFF;
     border-radius: 30px;
-    padding-left: 10%;
-    padding-right: 10%;
-    margin-left: -10%;
+    margin-bottom: 5%;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
     font-size: 100%;
-    line-height: 150%;
     transition: all 400ms ease;
 
     color: #FFFFFF;
@@ -251,19 +294,21 @@
 }
 .buttonlogin2 button {
     box-sizing: border-box;
-    width: 150%;
-    height: 40%;
-    background: #93a356;
+    width: fit-content;
+    height: fit-content;
+    min-height: 10vh;
+    
+    min-width: 20vw;
+    border: 10% solid rgba(0, 0, 0, 0.02);
+    box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.25);
+    background: #a5a73b;
     border: 3px solid #FFFFFF;
     border-radius: 30px;
-    padding-left: 10%;
-    padding-right: 10%;
-    margin-left: -20%;
+    margin-bottom: 5%;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
     font-size: 100%;
-    line-height: 150%;
     transition: all 400ms ease;
 
     color: #FFFFFF;
@@ -274,8 +319,15 @@
     background: 0, 0, 0, 0 #93a356;
 
 }
+
+.tudo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .fotohome{
-    margin-top: 10%;
+    margin-top: 2%;
     width: 50vw;
     height: auto;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.596);
@@ -283,8 +335,6 @@
     border-radius: 100vh;
     align-self: center;
     border: 2px solid rgba(0, 0, 0, 0.1);
-    margin-bottom: 5%;
-    margin-left: 25%;
 }
 
 .dia{
