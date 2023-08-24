@@ -11,9 +11,12 @@ const GoBackArrow = () => {
   };
 
   return (
-    <button className='arrow' onClick={goBack} style={{ cursor: 'pointer' }}>
+    <>
+    {/* <button className='arrow' onClick={goBack} style={{ cursor: 'pointer' }}>
       {"<"}
-    </button>
+    </button> */}
+    </>
+    
   );
 };
 
