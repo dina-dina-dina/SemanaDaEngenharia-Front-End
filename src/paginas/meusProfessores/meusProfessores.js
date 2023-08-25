@@ -62,7 +62,7 @@ function MeusProfessores() {
                 "idUsuario": localStorage.getItem('user'),
             })
             if (response) {
-                window.location.reload();
+                getMinhas()
             }
 
 
