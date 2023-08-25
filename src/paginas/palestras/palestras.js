@@ -21,8 +21,9 @@ function Palestras() {
     const noResponse = !response || (response && response.length === 0);
 
     var stringUrl = window.location.href;
-    var positionInterrogation = stringUrl.indexOf("?");
-    var idUrl = stringUrl.substring(positionInterrogation + 5);
+    var positionInterrogation = stringUrl.indexOf("&");
+    console.log(positionInterrogation)
+    var idUrl = stringUrl.substring(positionInterrogation + 4);
     idUrl = decodeURIComponent(idUrl);
     console.log(idUrl)
 
