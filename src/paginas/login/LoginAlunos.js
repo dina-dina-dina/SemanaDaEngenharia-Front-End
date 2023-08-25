@@ -54,20 +54,21 @@ function UserLogin() {
             <div className='input'>
               <div className='logincamp'>
                 <label>Email</label>
-                <input type='text' alt="Input de nome" placeholder='Email' onChange={(event) => setEmail(event.target.value)}></input>
+                <input type='email' alt="Input de nome" placeholder='Email' onChange={(event) => setEmail(event.target.value)}></input>
               </div>
               <div className='logincamp'>
                 <label>Senha</label>
                 <input type='password' placeholder='Senha' onChange={(event) => setSenha(event.target.value)}></input>
               </div>
               <div className='buttonlogin' >
-                <button type='button' onClick={() => RegisterUsuario()}>ENTRAR</button>
+                <button onClick={() => RegisterUsuario()}>ENTRAR</button>
               </div>
-              <div className='buttonlogin2'>
-                <button onClick={() => handleClick3()}>Cadastre-se!</button>
-              </div>
+              
             </div>
           </form>
+          <div className='buttonlogin2'>
+                <button onClick={() => handleClick3()}>Cadastre-se!</button>
+              </div>
         </div>
       </div>
     </>
