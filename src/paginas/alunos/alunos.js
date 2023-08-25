@@ -28,10 +28,13 @@ function Alunos() {
     console.log(idUrl)
 
     const get = async () => {
-        const response = await axios.get(`/formulario/${idUrl}`)
+        const queryParams = {
+            param1:idUrl
+        }        
+        const response = await axios.get('/aluno/listapalestra', { params: queryParams })
             .catch(err => console.error('Error: ', err));
-        if (response) setResponse(response.data[0].aluno);
-        console.log(response.data[0].aluno)
+        if (response) setResponse(response);
+        console.log(response)
     }
     function findTurma(id) {
         let array = responseTurmaFind

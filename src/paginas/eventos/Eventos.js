@@ -137,7 +137,7 @@ function Eventos() {
                 </div>
             </div>
             <div className='phonediv'>
-                <div className='headerdiv' >
+                <div className='headerdivp' >
                     <div className='buttonhome2'  >
                         <button type='button' onClick={() => logout()} style={{ backgroundColor: '#737373' }}>LOGOUT</button>
                     </div>

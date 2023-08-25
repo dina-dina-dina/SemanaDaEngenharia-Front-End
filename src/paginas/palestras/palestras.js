@@ -33,6 +33,13 @@ function Palestras() {
         console.log(response)
     }
 
+    async function finalizar(){
+        const response = await axios.post('/contabilizar/gerarFinal',{
+            "idEvento":idUrl
+        })
+        alert(response.data)
+    }
+
     const deletePalestra = async (id) => {
         if (window.confirm("Tem certeza que deseja deletar essa Palestra?")) {
             await axios.delete(`/palestras/${id}`).catch(err => alert(err));
@@ -69,6 +76,7 @@ function Palestras() {
     }
 
     return (
+        <>
         <div className='Ptudo'>
             <div className="Pscreen">
 
@@ -128,6 +136,59 @@ function Palestras() {
                 </div>
             </div>
         </div >
+        <div className='phonediv'>
+                <div className='headerdiv' >
+                    <div className='buttonhome3'  >
+                        <button type='button' onClick={() => logout()} style={{ backgroundColor: '#737373' }}>LOGOUT</button>
+                    </div>
+                    <div className='buttonhome3' >
+                        <button type='button' style={{ backgroundColor: '#36a555', paddingRight: '5%', paddingLeft: '5%' }}  onClick={handleClick}>NOVA PALESTRA</button>
+                    </div>
+                    <div className='buttonhome3' >
+                        <button type='button' onClick={() => finalizar()}  style={{ backgroundColor: '#65BABB', paddingRight: '5%', paddingLeft: '5%' }}>FIN. EVENTO</button>
+                    </div>
+
+                </div>
+               
+                <div className="Ptabela">
+                    <table className="PrTableEntradasVisualizar">
+                        <thead>
+                            <tr>
+                                <th className="PcabecalhoEntradasVisualizar">NOME</th>
+                                <th className="PcabecalhoEntradasVisualizar">PALESTRANTE</th>
+                                <th className="PcabecalhoEntradasVisualizar">DURAÇÃO</th>
+                                <th className="PcabecalhoEntradasVisualizar">AÇÕES</th>
+                            </tr>
+                        </thead>
+                        {!noResponse && response.map(function (response) {
+                            return (
+                                <>
+                                    <tbody>
+                                        <tr>
+                                            <td>{response.palestra.nomePalestra ? response.palestra?.nomePalestra : '-'}</td>
+                                            <td>{response.palestra.palestrante ? response.palestra?.palestrante : '-'}</td>
+                                            <td>{response.palestra.cargaHoraria ? response.palestra?.cargaHoraria : '-'}</td>
+
+                                            <td>
+                                                <ul className="PbotoesTabEntradasVisualizar">
+                                                    <Link className="Pbtn1EntradasVisualizar" to={`/alunos?&id=${response.idPalestra}`}><img style={{ width: '15vw' }} src={botaopesquisa} alt="visualizar" /></Link>
+                                                    <li className="Pbtn3EntradasVisualizar" id="hover"><button type='button' onClick={() => deletePalestra(response.idPalestra)}><img style={{ width: '15vw' }} src={botaodelete} alt="deletar" /></button></li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </>
+                            )
+                        })
+                        }
+                    </table>
+                </div>
+
+              
+              
+            </div>
+        </>
+        
     );
 }
 

@@ -56,17 +56,20 @@ function FeedbackPalestra() {
             <div className='formulario2'>
                 <span id='title'>FEEDBACK DA PALESTRA:</span>
                 <div className='textpal'>{location.state.nome}</div>
+                {(idUrl == 20)
+                    ?<div className='texto'></div>
+                : <div className='texto'>Escreva o feedback e gere seu QRCode para verificação</div>
 
-                <div className='texto'>Escreva o feedback e gere seu QRCode para verificação</div>
+                }
                 <div className='itensForms'>
                     <form>
                         {
                             (idUrl == 20)
                                 ? <div style={{ fontFamily: 'Poppins', textAlign: 'center', fontWeight: 'bold' }}>Esse QR Code deve ser lido na entrada da Abertura</div>
 
-                                :<div className='data'>
-                                <label id='labelStyle'>Feedback</label>
-                                <input id='inputStyle' placeholder='feedback' type={'text'} onChange={(event) => setFeedback(event.target.value)}></input>
+                                : <div className='data'>
+                                    <label id='labelStyle'>Feedback</label>
+                                    <input id='inputStyle' placeholder='feedback' type={'text'} onChange={(event) => setFeedback(event.target.value)}></input>
                                 </div>}
 
 
