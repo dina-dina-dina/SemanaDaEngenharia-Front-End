@@ -5,7 +5,6 @@ import '../../paginas/obrigado/obrigado.css'
 import SemanaEng from '../../assets/SemanaEng.jpg'
 
 
-
 function Obrigado() {
     const [nome, setNome] = useState(String)
     const [dataInicio, setDataInicio] = useState(Date)
