@@ -8,30 +8,23 @@ import botaodelete from '../../assets/delete.png'
 import axios from '../../axios';
 import { Link } from 'react-router-dom';
 
-
 function Palestras() {
     const [email, setEmail] = useState(String)
     const [senha, setSenha] = useState(String)
     const [response, setResponse] = useState(Array);
-
-
     const [showFornecedor, setShowFornecedor] = useState(false);
     const handleShowFornecedor = () => setShowFornecedor(true);
-
     const handleCloseFornecedor = () => setShowFornecedor(false)
-
 
     const navigate = useNavigate();
 
     const noResponse = !response || (response && response.length === 0);
-
 
     var stringUrl = window.location.href;
     var positionInterrogation = stringUrl.indexOf("?");
     var idUrl = stringUrl.substring(positionInterrogation + 5);
     idUrl = decodeURIComponent(idUrl);
     console.log(idUrl)
-
 
     const get = async () => {
         const response = await axios.get(`/palestras/${idUrl}`)
@@ -52,33 +45,21 @@ function Palestras() {
         get();
     }, [])
 
-    async function testeqr(event) {
-
-
-
-
-
-    }
-
-
     function logout() {
         if( window.confirm("Tem certeza que deseja sair ?")){
             localStorage.clear(); 
             navigate("/") 
-    
         }
-        
-
     }
+
     function handleClick() {
-
-
-
         navigate(`/novaPalestra?&id=${idUrl}`);
     }
+
     function professor() {
         navigate("/allAlunos");
     }
+
     function home() {
         navigate("/");
     }
@@ -88,41 +69,38 @@ function Palestras() {
     }
 
     return (
-        <div className='tudo'>
-            <div className="screen">
+        <div className='Ptudo'>
+            <div className="Pscreen">
 
-                <div className='acesso'>
+                <div className='Pacesso'>
 
-                    <div className="usuario">
+                    <div className="Pusuario">
                         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
                         <button id='icone' class="material-symbols-outlined" type={'button'} onClick={() => logout()}>
                             account_circle
                         </button>
                         <span>Sair</span>
                     </div>
-                    <div className='novoEvento'>
+                    <div className='PnovoEvento'>
 
                         <button id='evento' type='button' onClick={handleClick}>Nova Palestra</button>
                     </div>
-                    <div className='cadastrar'>
+                    <div className='Pcadastrar'>
                         <button onClick={professor} id='evento' >Encerrar Evento</button>
                     </div>
 
                 </div>
-
-
-
-
             </div>
-            <div className='visualização'>
-                <div className="tabela">
-                    <table className="rTableEntradasVisualizar">
+
+            <div className='Pvisualização'>
+                <div className="Ptabela">
+                    <table className="PrTableEntradasVisualizar">
                         <thead>
                             <tr>
-                                <th className="cabecalhoEntradasVisualizar">NOME</th>
-                                <th className="cabecalhoEntradasVisualizar">PALESTRANTE</th>
-                                <th className="cabecalhoEntradasVisualizar">DURAÇÃO</th>
-                                <th className="cabecalhoEntradasVisualizar">AÇÕES</th>
+                                <th className="PcabecalhoEntradasVisualizar">NOME</th>
+                                <th className="PcabecalhoEntradasVisualizar">PALESTRANTE</th>
+                                <th className="PcabecalhoEntradasVisualizar">DURAÇÃO</th>
+                                <th className="PcabecalhoEntradasVisualizar">AÇÕES</th>
                             </tr>
                         </thead>
                         {!noResponse && response.map(function (response) {
@@ -134,20 +112,11 @@ function Palestras() {
                                             <td>{response.palestra.palestrante ? response.palestra?.palestrante : '-'}</td>
                                             <td>{response.palestra.cargaHoraria ? response.palestra?.cargaHoraria : '-'}</td>
 
-
                                             <td style={{ width: '30px' }}>
-
-                                                <ul className="botoesTabEntradasVisualizar">
-                                                    <Link className="btn1EntradasVisualizar" to={`/alunos?&id=${response.idPalestra}`}><img style={{ width: '42px' }} src={botaopesquisa} alt="visualizar" /></Link>
-                                                    <Link className="btn1EntradasVisualizar" to={`/qrcode?&id=${response.idPalestra}`}><img style={{ width: '42px' }} src={botaoqrcode} alt="visualizar" /></Link>
-
-                                                    <li className="btn3EntradasVisualizar" id="hover"><button type='button' onClick={() => deletePalestra(response.idPalestra)}><img src={botaodelete} alt="deletar" /></button></li>
-
-
-
+                                                <ul className="PbotoesTabEntradasVisualizar">
+                                                    <Link className="Pbtn1EntradasVisualizar" to={`/alunos?&id=${response.idPalestra}`}><img style={{ width: '42px' }} src={botaopesquisa} alt="visualizar" /></Link>
+                                                    <li className="Pbtn3EntradasVisualizar" id="hover"><button type='button' onClick={() => deletePalestra(response.idPalestra)}><img src={botaodelete} alt="deletar" /></button></li>
                                                 </ul>
-
-
                                             </td>
                                         </tr>
                                     </tbody>
@@ -155,15 +124,10 @@ function Palestras() {
                             )
                         })
                         }
-
-
                     </table>
                 </div>
-
             </div>
         </div >
-
-
     );
 }
 

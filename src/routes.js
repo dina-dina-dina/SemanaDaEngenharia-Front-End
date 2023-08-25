@@ -1,6 +1,5 @@
 import React from 'react';
 import { HashRouter as Router, Routes, Route, } from 'react-router-dom';
-import LoginAdmin from './paginas/login/App';
 import Eventos from './paginas/eventos/Eventos';
 import NovoEvento from './paginas/novoEvento/novoEvento';
 import CadastrarProfessor from './paginas/professor/cadastrarProfessor';
@@ -33,7 +32,6 @@ function Rotas() {
                 <Route path="/AlunosHomePage" element={<NewHomeAlunos/>} />
                 <Route path="/HomePalestraEventos" element={<HomePalestraEventos/>} />
                 <Route path="/cadastro" element={<Cadastro/>} />
-                <Route path="/LoginAdmin" element={<LoginAdmin/>} />
                 <Route path="/eventos" element={<Eventos/>} />
                 <Route path="/novoEvento" element={<NovoEvento/>} />
                 <Route path="/professor" element={<CadastrarProfessor/>} />
