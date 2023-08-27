@@ -37,7 +37,7 @@ function FeedbackPalestra() {
 
 
     function handleClick() {
-        if (idUrl == 20) {
+        if (idUrl == 20 || idUrl == 67) {
             setFeedback("Abertura")
         }
         navigate('/qrCode2', { state: { nome: location.state.nome, idUsuario: idUsuario, feedback: Feedback, idPalestraEvento: idUrl } });
@@ -64,8 +64,8 @@ function FeedbackPalestra() {
                 <div className='itensForms'>
                     <form>
                         {
-                            (idUrl == 20)
-                                ? <div style={{ fontFamily: 'Poppins', textAlign: 'center', fontWeight: 'bold' }}>Esse QR Code deve ser lido na entrada da Abertura</div>
+                            (idUrl == 20 || idUrl == 67)
+                                ? <div style={{ fontFamily: 'Poppins', textAlign: 'center', fontWeight: 'bold' }}>Gere o QRCode e apresente aos organizadores quando indicado</div>
 
                                 : <div className='data'>
                                     <label id='labelStyle'>Feedback</label>
