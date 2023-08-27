@@ -103,7 +103,7 @@ return (
                     <span className='tituloide' style={{ textAlign: 'center' }}>Faça seu Cadastro!</span>
                     <div className='input'>
                         <div className='turma'>
-                            <label>Nome</label>
+                            <label>Nome completo</label>
                             <input type='text' alt="Input de nome" placeholder='Nome' onChange={(event) => setNome(event.target.value)}></input>
                         </div>
                         <div className='turma'>
