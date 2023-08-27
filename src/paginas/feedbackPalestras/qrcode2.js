@@ -42,7 +42,7 @@ function Qrcode2() {
 
 
     function handleClick() {
-        navigate("/HomePalestraEventos");
+        navigate("/AlunosHomePage");
     }
 
     var stringUrl = window.location.href;
