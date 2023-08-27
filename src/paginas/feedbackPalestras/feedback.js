@@ -56,7 +56,7 @@ function FeedbackPalestra() {
             <div className='formulario2'>
                 <span id='title'>FEEDBACK DA PALESTRA:</span>
                 <div className='textpal'>{location.state.nome}</div>
-                {(idUrl == 20)
+                {(idUrl == 20 || idUrl == 67)
                     ?<div className='texto'></div>
                 : <div className='texto'>Escreva o feedback e gere seu QRCode para verificação</div>
 
