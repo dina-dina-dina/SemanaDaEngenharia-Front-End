@@ -71,6 +71,7 @@ function Qrcode2() {
                     <span id='title'>QR CODE GERADO POR:{nome}</span>
 
                     <QRCode
+                        style={{ background: 'white', color: 'black' }}
                         title=""
                         value={object}
                         bgColor={back}
