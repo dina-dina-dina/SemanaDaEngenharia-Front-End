@@ -66,7 +66,7 @@ function Qrcode2() {
             <div className='containerNew'>
                 <div className='formulario2'>
 
-                    <span id='title'>APRESENTE PARA UM MONITOR!</span>
+                    <span id='title'>APRESENTE PARA UM MONITORE!</span>
                     <span id='title'>{location.state.nome}</span>
                     <span id='title'>QR CODE GERADO POR:{nome}</span>
 
