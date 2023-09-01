@@ -106,7 +106,7 @@ function Palestras() {
                             <thead>
                                 <tr>
                                     <th className="PcabecalhoEntradasVisualizar">NOME</th>
-                                    <th className="PcabecalhoEntradasVisualizar">PALESTRANTE</th>
+                                    <th className="PcabecalhoEntradasVGisualizar">PALESTRANTE</th>
                                     <th className="PcabecalhoEntradasVisualizar">DURAÇÃO</th>
                                     <th className="PcabecalhoEntradasVisualizar">AÇÕES</th>
                                 </tr>
