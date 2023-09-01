@@ -73,7 +73,7 @@ function Palestras() {
     }
 
     function Formulario() {
-        navigate("/formulario");
+        navigate("/especial");
     }
 
     return (
@@ -90,6 +90,9 @@ function Palestras() {
                         </div>
                         <div className='PnovoEvento'>
                             <button id='evento' type='button' onClick={handleClick}>Nova Palestra</button>
+                        </div>
+                        <div className='PnovoEvento'>
+                            <button id='evento' type='button' onClick={Formulario}>VEN. NOS CONHECER</button>
                         </div>
                         <div className='Pcadastrar'>
                             <button onClick={professor} id='evento' >Encerrar Evento</button>
@@ -144,6 +147,9 @@ function Palestras() {
                     </div>
                     <div className='buttonhome3' >
                         <button type='button' onClick={() => finalizar()} style={{ backgroundColor: '#65BABB', paddingRight: '5%', paddingLeft: '5%' }}>FIN. EVENTO</button>
+                    </div>
+                    <div className='buttonhome3' >
+                        <button type='button' onClick={() => Formulario()} style={{ backgroundColor: '#e6a5d7', paddingRight: '5%', paddingLeft: '5%' }}>VENHA NOS CONHECER</button>
                     </div>
                 </div>
 
