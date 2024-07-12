@@ -15,8 +15,8 @@ function NovaPalestra() {
     
     async function Envio() {
         var stringUrl = window.location.href;
-        var positionInterrogation = stringUrl.indexOf("?");
-        var idUrl = stringUrl.substring(positionInterrogation + 5);
+        var positionInterrogation = stringUrl.indexOf("&");
+        var idUrl = stringUrl.substring(positionInterrogation + 4);
 
         idUrl = decodeURIComponent(idUrl);
            

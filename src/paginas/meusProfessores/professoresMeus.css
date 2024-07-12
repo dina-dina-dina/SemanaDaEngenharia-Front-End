@@ -7,12 +7,14 @@
 
 
 }
-.geral{
+
+.geral {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
+
 .foto {
     margin-top: 10%;
     width: 50vw;
@@ -25,14 +27,16 @@
     margin-bottom: 5%;
 }
 
-.entries{
+.entries {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    word-wrap: break-word;
+
+
 }
 
-.entrada {
+.entradaprofe {
     font-family: 'Poppins';
     text-align: center;
     justify-content: space-between;
@@ -40,10 +44,11 @@
     display: flex;
     align-items: center;
     width: fit-content;
-    min-width: 25vw;
-    max-width: 25vw;
+    min-width: 20vw;
+    max-width: 40vw;
     word-wrap: break-word;
-    min-height: 2vh;
+    min-height: 12vh;
+    max-height: 12vh;
     height: fit-content;
     background-color: rgb(136, 189, 150);
     margin: 2%;
@@ -52,11 +57,16 @@
     -webkit-box-shadow: 7px 9px 36px -8px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 7px 9px 36px -8px rgba(0, 0, 0, 0.75);
     box-shadow: 7px 9px 36px -8px rgba(0, 0, 0, 0.75);
+    word-wrap: break-word;
+
+
 }
 
-.topico {
-    flex: 1;
+.topicoprofe {
+    width: 100%;
     font-size: 2vh;
+    word-wrap: break-word;
+    height: 100%;
 }
 
 .todas {
@@ -71,7 +81,7 @@
     font-size: 2vh
 }
 
-.triste { 
+.triste {
     display: flex;
     margin-top: 10%;
     text-align: center;
@@ -79,11 +89,11 @@
     font-size: 5vh;
 }
 
-.profe{
+.profe {
     text-align: center;
     font-family: 'Poppins';
     font-size: 3vh;
     color: #097828;
-    text-shadow: 4px 3px 3px rgba(0, 0, 0, 0.171) ;
+    text-shadow: 4px 3px 3px rgba(0, 0, 0, 0.171);
 
 }

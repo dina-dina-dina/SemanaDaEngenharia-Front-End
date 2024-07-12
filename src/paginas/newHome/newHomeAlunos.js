@@ -40,13 +40,13 @@ function NewHomeAlunos() {
         <img className='img' src={image} alt="icon" ></img>
         <div className='title'>Evento atual:</div>
         <div className='subtitle'>{evento.nomeEvento}</div>
-        <div className='button'>
+        <div className='buttonhome'>
           <button onClick={handleClick1} >Todas as Palestras</button>
         </div>
-        <div className='button'>
+        <div className='buttonhome'>
           <button onClick={handleClick2}>Minhas Palestras</button>
         </div>
-        <div className='button'>
+        <div className='buttonhome'>
           <button onClick={handleClick3}>Minhas Matérias/Professores</button>
         </div>
       </div>

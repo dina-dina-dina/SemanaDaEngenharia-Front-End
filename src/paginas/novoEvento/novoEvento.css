@@ -8,6 +8,11 @@
     height: 100vh;
 }
 
+.ajuste{
+    margin-left: 10%;
+}
+
+
 .formulario2 {
     margin-top: 62px;
     display: flex;
@@ -123,7 +128,7 @@
     font-weight: 900;
     font-size: 24px;
     line-height: 36px;
-
+    margin-bottom: 5%;
     color: #097828;
 
 

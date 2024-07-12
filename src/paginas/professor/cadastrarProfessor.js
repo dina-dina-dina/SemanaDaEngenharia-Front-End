@@ -43,6 +43,8 @@ function CadastrarProfessor() {
             }).catch(err => alert(err));
             if (response) {
                 alert("Professor cadastrado com sucesso!")
+                const updatedList = []
+                window.location.reload();
                 // navigate("/obrigado");
             }
 

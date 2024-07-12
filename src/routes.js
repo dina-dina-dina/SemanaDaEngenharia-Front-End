@@ -1,6 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
-import LoginAdmin from './paginas/login/App';
+import { HashRouter as Router, Routes, Route, } from 'react-router-dom';
 import Eventos from './paginas/eventos/Eventos';
 import NovoEvento from './paginas/novoEvento/novoEvento';
 import CadastrarProfessor from './paginas/professor/cadastrarProfessor';
@@ -20,6 +19,7 @@ import FeedbackPalestras from './paginas/feedbackPalestras/feedback';
 import QrCode2 from './paginas/feedbackPalestras/qrcode2'
 import MinhasPalestras from './paginas/minhasPalestras/minhasPalestras';
 import MeusProfessores from './paginas/meusProfessores/meusProfessores';
+import Especial from './paginas/feedbackPalestras/especial';
 
 function Rotas() {
     return (
@@ -33,13 +33,13 @@ function Rotas() {
                 <Route path="/AlunosHomePage" element={<NewHomeAlunos/>} />
                 <Route path="/HomePalestraEventos" element={<HomePalestraEventos/>} />
                 <Route path="/cadastro" element={<Cadastro/>} />
-                <Route path="/LoginAdmin" element={<LoginAdmin/>} />
                 <Route path="/eventos" element={<Eventos/>} />
                 <Route path="/novoEvento" element={<NovoEvento/>} />
                 <Route path="/professor" element={<CadastrarProfessor/>} />
                 <Route path="/palestras" element={<Palestras/>} />
                 <Route path="/novaPalestra" element={<NovaPalestra/>} />
                 <Route path="/formulario" element={<Formulario/>} />
+                <Route path="/especial" element={<Especial/>} />
                 <Route path="/alunos" element={<Alunos/>} />
                 <Route path="/qrcode" element={<Qrcode/>} />
                 <Route path="/obrigado" element={<Obrigado/>} />

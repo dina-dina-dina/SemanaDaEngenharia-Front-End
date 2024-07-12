@@ -17,7 +17,6 @@ function Alunos() {
 
     const navigate = useNavigate();
 
-    const noResponse = !response || (response && response.length === 0);
 
 
     var stringUrl = window.location.href;
@@ -28,15 +27,27 @@ function Alunos() {
     console.log(idUrl)
 
     const get = async () => {
-        const response = await axios.get(`/formulario/${idUrl}`)
+        const queryParams = {
+            param1: idUrl
+        }
+        const response = await axios.get('/checkData/listapalestra', { params: queryParams })
             .catch(err => console.error('Error: ', err));
-        if (response) setResponse(response.data[0].aluno);
-        console.log(response.data[0].aluno)
+        if (response) setResponse(response.data);
+        console.log(response.data)
     }
-    function findTurma(id) {
-        let array = responseTurmaFind
-        const turmas = array.find(element => element.idTurma === id)
-        if (turmas) return turmas.turma
+
+    const noResponse = !response || (response && response.length === 0);
+
+    async function getFeedback(id){
+
+      const queryParams = {
+            param1:id
+        }
+        const response = await axios.get('/checkData/feedback', { params: queryParams })
+            .catch(err => console.error('Error: ', err));
+        if (response) setResponseTurmaFind(response.data);
+        console.log(response)
+        return (response.data)
     }
 
 
@@ -64,12 +75,12 @@ function Alunos() {
     }, [])
 
     function logout() {
-        if( window.confirm("Tem certeza que deseja sair ?")){
-            localStorage.clear(); 
-            navigate("/") 
-    
+        if (window.confirm("Tem certeza que deseja sair ?")) {
+            localStorage.clear();
+            navigate("/")
+
         }
-       
+
 
     }
 
@@ -88,74 +99,68 @@ function Alunos() {
     }
 
     return (
-        <div className='tudo'>
-            <div className="screen">
+        <>
+        <div className='Ptudo'>
+            <div className="Pscreen">
 
-                <div className='acesso'>
+                <div className='Pacesso'>
 
-                    <div className="usuario">
+                    <div className="Pusuario">
                         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
                         <button id='icone' class="material-symbols-outlined" type={'button'} onClick={() => logout()}>
                             account_circle
                         </button>
                         <span>Sair</span>
                     </div>
-                    <div className='novoEvento'>
-
-                        <button id='evento' onClick={Formulario}>Formulario</button>
-                    </div>
-                    <div className='cadastrar'>
-                        <button onClick={professor} id='evento' >Encerrar Evento</button>
-                    </div>
+                    
+                    
 
                 </div>
 
 
 
             </div>
-            <div className='visualização'>
-                <div className="tabela">
-                    <table className="rTableEntradasVisualizar">
+            <div className='Pvisualização'>
+                <div className="Ptabela">
+                    <table className="PrTableEntradasVisualizar">
                         <thead>
                             <tr>
-                                <th className="cabecalhoEntradasVisualizar">NOME</th>
-                                <th className="cabecalhoEntradasVisualizar">RA</th>
-                                <th className="cabecalhoEntradasVisualizar">EMAIL</th>
-                                <th className="cabecalhoEntradasVisualizar">CURSO</th>
-                                <th className="cabecalhoEntradasVisualizar">TURMA</th>
-                                <th className="cabecalhoEntradasVisualizar">CARGA TOTAL</th>
-                                <th className="cabecalhoEntradasVisualizar">FEEDBACK</th>
-                                <th className="cabecalhoEntradasVisualizar">AÇÕES</th>
+                                <th className="PcabecalhoEntradasVisualizar">NOME</th>
+                                <th className="PcabecalhoEntradasVisualizar">RA</th>
+                                <th className="PcabecalhoEntradasVisualizar">EMAIL</th>
+                                <th className="PcabecalhoEntradasVisualizar">CURSO</th>
+                                <th className="PcabecalhoEntradasVisualizar">TURMA</th>
+                                <th className="PcabecalhoEntradasVisualizar">RA</th>
+                                <th className="PcabecalhoEntradasVisualizar">FEEDBACK</th>
+                                <th className="PcabecalhoEntradasVisualizar">AÇÕES</th>
                             </tr>
                         </thead>
-                        {!noResponse && response.map(function (response) {
+                        {!noResponse && Array.isArray(response) && response.map(function (entry) {
+                            console.log(entry)
+
                             return (
-                                <>
-                                    <tbody>
-                                        <tr>
-                                            <td>{response.nomeAluno ? response.nomeAluno : '-'}</td>
-                                            <td>{response.ra ? response.ra : '-'}</td>
-                                            <td>{response.email ? response.email : '-'}</td>
-                                            <td>{response.curso ? response.curso : '-'}</td>
-                                            <td>{findTurma(response.idTurma) ? findTurma(response.idTurma) : '-'}</td>
-                                            <td>{response.cgTotal ? response.cgTotal : '-'}</td>
-                                            <td style={{ width: '350px' }}>{response.palestrasAlunos.feedback ? response.palestrasAlunos.feedback : '-'}</td>
+                                <tbody key={entry.idAluno}>
+                                    <tr>
+                                        <td>{entry.nome ? entry.nome : '-'}</td>
+                                        <td>{entry.ra ? entry.ra : '-'}</td>
+                                        <td>{entry.email ? entry.email : '-'}</td>
+                                        <td>{entry.curso ? entry.curso : '-'}</td>
+                                        <td>{entry.idTurma ? entry.idTurma : '-'}</td>
 
+                                        <td>{entry.ra ? entry.ra : '-'}</td>
+                                        <td>{entry.feedback ? entry.feedback : '-'}</td>
 
-                                            <td style={{ width: '30px' }}>
+                                        <td style={{ width: '30px' }}>
+                                            <ul style={{ width: '110px' }} className="PbotoesTabEntradasVisualizar">
+                                                <Link className="Pbtn1EntradasVisualizar" to={`/visualizarForms?al=${entry.idAluno}&id=${idUrl}`}><img style={{ width: '42px' }} src={botaopesquisa} alt="visualizar" /></Link>
+                                                <li className="Pbtn3EntradasVisualizar" id="hover"><button type='button' onClick={() => deleteAluno(entry.idAluno)}><img src={botaodelete} alt="deletar" /></button></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            );
+                        })}
 
-                                                <ul style={{ width: '110px' }} className="botoesTabEntradasVisualizar">
-                                                    <Link className="btn1EntradasVisualizar" to={`/visualizarForms?al=${response.idAluno}&id=${idUrl}`}><img style={{ width: '42px' }} src={botaopesquisa} alt="visualizar" /></Link>
-                                                    <li className="btn3EntradasVisualizar" id="hover"><button type='button' onClick={() => deleteAluno(response.idAluno)}><img src={botaodelete} alt="deletar" /></button></li>
-
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </>
-                            )
-                        })
-                        }
 
 
                     </table>
@@ -163,8 +168,65 @@ function Alunos() {
 
             </div>
         </div>
+        <div className='phonediv'>
+                <div className='headerdiv' >
+                    <div className='buttonhome3'  >
+                        <button type='button' onClick={() => logout()} style={{ backgroundColor: '#737373' }}>LOGOUT</button>
+                    </div>
+                    
+                    {/* <div className='buttonhome3' >
+                        <button type='button'  style={{ backgroundColor: '#65BABB', paddingRight: '5%', paddingLeft: '5%' }}>FIN. EVENTO</button>
+                    </div> */}
 
+                </div>
+               <h1 style={{fontFamily:'Poppins',color:'#097828'}}>Lista de Presença</h1>
+                <div className="Ptabela">
+                    <table className="PrTableEntradasVisualizar">
+                        <thead>
+                            <tr>
+                            <th className="PcabecalhoEntradasVisualizar">NOME</th>
+                                <th className="PcabecalhoEntradasVisualizar">RA</th>
+                                <th className="PcabecalhoEntradasVisualizar">EMAIL</th>
+                                <th className="PcabecalhoEntradasVisualizar">CURSO</th>
+                                <th className="PcabecalhoEntradasVisualizar">TURMA</th>
+                                <th className="PcabecalhoEntradasVisualizar">RA</th>
+                                <th className="PcabecalhoEntradasVisualizar">FEEDBACK</th>
+                                <th className="PcabecalhoEntradasVisualizar">AÇÕES</th>
+                            </tr>
+                        </thead>
+                        {!noResponse && Array.isArray(response) && response.map(function (entry) {
+                            return (
+                                <>
+                                    <tbody>
+                                        <tr>
+                                        <td>{entry.nome ? entry.nome : '-'}</td>
+                                        <td>{entry.ra ? entry.ra : '-'}</td>
+                                        <td>{entry.email ? entry.email : '-'}</td>
+                                        <td>{entry.curso ? entry.curso : '-'}</td>
+                                        <td>{entry.idTurma ? entry.idTurma : '-'}</td>
 
+                                        <td>{entry.ra ? entry.ra : '-'}</td>
+                                        <td>{entry.feedback ? entry.feedback : '-'}</td>
+
+                                        <td style={{ width: '30px' }}>
+                                            <ul style={{ width: '110px' }} className="PbotoesTabEntradasVisualizar">
+                                                <Link className="Pbtn1EntradasVisualizar" to={`/visualizarForms?al=${entry.idAluno}&id=${idUrl}`}><img style={{ width: '42px' }} src={botaopesquisa} alt="visualizar" /></Link>
+                                                <li className="Pbtn3EntradasVisualizar" id="hover"><button type='button' onClick={() => deleteAluno(entry.idAluno)}><img src={botaodelete} alt="deletar" /></button></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </>
+                            )
+                        })
+                        }
+                    </table>
+                </div>
+
+              
+              
+            </div>
+        </>
     );
 }
 

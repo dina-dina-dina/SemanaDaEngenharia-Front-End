@@ -2,29 +2,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-
 }
 
-.tudo {
+.tudoaqui {
     display: flex;
     flex-direction: column;
     height: 100%;
     margin: 0;
     justify-content: center;
     align-items: center;
-
 }
 
 .ever {
-    width: 1713px;
-    height: 704px;
-
+    width: 90vw;
+    height: 90vh;
     background-color: #0d9e36;
     border: 3px solid #000000;
     border-radius: 45px;
     display: flex;
     flex-direction: initial;
+    margin-bottom: 7vh;
 }
 
 .screen {
@@ -33,9 +30,8 @@
     justify-content: space-between;
     margin: 0;
     background-color: aqua;
-    margin-bottom: 70px;
+    margin-bottom: 5vh;
     width: 100%;
-    
 }
 
 .acesso {
@@ -67,19 +63,15 @@
 #evento {
     width: 263px;
     height: 68px;
-
     background: #097828;
     border: 3px solid #FFFFFF;
     border-radius: 30px;
-
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
     line-height: 30px;
-
     color: #FFFFFF;
-
     transition: all 400ms ease;
 }
 
@@ -94,7 +86,6 @@
     border: 0;
     margin-right: 10px;
     border-radius: 50%;
-
 }
 
 #icone:hover {
@@ -103,45 +94,38 @@
 
 .evento {
     box-sizing: border-box;
-
     position: absolute;
     width: 268px;
     height: 109px;
-
     /* background: blue; */
     border: 3px solid #097828;
     border-radius: 21px;
 }
 
 .cards {
-
     height: 100%;
     width: 800px;
     /* background-color: #097828; */
     overflow-y: scroll;
     margin-left: 80px;
 }
-.pesquisar {
 
+.pesquisar {
     height: 100%;
     width: 800px;
     /* background-color: #097828; */
     overflow-y: scroll;
-   margin-left: 72px;
+    margin-left: 72px;
 }
-
 
 /* ul {
     background-color: #097828;
     width: 900px;
     height: 100px;
     display: inline-flex;
-    
-    
 } */
 
 .ulCard li {
-
     width: 300px;
     height: 240px;
     margin: 0;
@@ -150,12 +134,9 @@
     margin-right: 80px;
     /* background: #999; */
     overflow: hidden;
-
-
 }
 
 .liCard {
-
     width: 330px;
     height: 240px;
     margin: 0;
@@ -164,8 +145,6 @@
     margin-right: 80px;
     /* background: #999; */
     overflow: hidden;
-
-
 }
 
 
@@ -191,8 +170,6 @@
     font-size: 20px;
     line-height: 30px;
     border: 3px solid #000000;
-
-
     color: #097828;
     transition: all 400ms ease;
 }
@@ -207,16 +184,88 @@
     margin-right: 80px;
     margin-top: 30px;
     margin-bottom: 20px;
-
-
-    
-   
-
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 900;
     font-size: 18px;
     line-height: 36px;
-
     color: #ffffff;
+}
+
+@media(max-width: 820px) {
+
+    .tudoaqui {
+        display: none;
+    }
+
+    .phonediv {
+        display: flex;
+        width: 100vw;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .headerdivp {
+        margin-top: 2vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 80%;
+    }
+
+    .buttonhome2 button {
+        min-height: 10vh;
+        min-width: 20vw;
+        padding: 5%;
+        box-sizing: border-box;
+        background: #097828;
+        border: 3px solid #FFFFFF;
+        border-radius: 30px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        transition: all 400ms ease;
+        box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.25);
+        color: #FFFFFF;
+    }
+
+    .titulinho {
+        font-family: 'Poppins';
+        font-size: 3vh;
+        color: #097828;
+        text-shadow: 4px 3px 3px rgba(0, 0, 0, 0.171);
+    }
+
+    .cardEvento {
+        margin-top: 3vh;
+        width: fit-content;
+        min-width: 60vw;
+        max-width: 60vw;
+        min-height: 10vh;
+        height: fit-content;
+        background-color: #FFFFFF;
+        border: 2px solid rgba(0, 0, 0, 0.02);
+        border-radius: 16px;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+        box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.25);
+        margin-bottom: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .TextCardEv {
+        font-family: 'Poppins';
+        text-align: center;
+        color: #097828;
+        height: 100%;
+    }
+}
+
+@media(min-width: 820px) {
+    .phonediv {
+        display: none;
+    }
 }
