@@ -94,8 +94,8 @@ function Eventos() {
                                         <ul className='ulCard'>
 
                                             <li className='liCard'>
-                                                <div className='espaço' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                                                    <div style={{ textAlign: 'center', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                                                <div className='espaço' >
+                                                    <div className = 'teste' >
                                                         {/* <h1 style={{  width:'330px', backgroundColor:'red', height: '50px' ,overflow:'hidden', textOverflow:'ellipsis', fontSize:'50px'}}>
                                                     {response.nomeEvento}
                                                 </h1> */}

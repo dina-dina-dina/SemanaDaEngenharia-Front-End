@@ -57,8 +57,8 @@ function FeedbackPalestra() {
                 <span id='title'>FEEDBACK DA PALESTRA:</span>
                 <div className='textpal'>{location.state.nome}</div>
                 {(idUrl == 20 || idUrl == 67)
-                    ?<div className='texto'></div>
-                : <div className='texto'>Escreva o feedback e gere seu QRCode para verificação</div>
+                    ? <div className='texto'></div>
+                    : <div className='texto'>Escreva o feedback e gere seu QRCode para verificação</div>
 
                 }
                 <div className='itensForms'>
@@ -88,3 +88,26 @@ function FeedbackPalestra() {
 }
 
 export default FeedbackPalestra;
+
+var Livia =[
+    {
+        "nomeCompleto": "Livia Duran",
+        "Altura": 1.50,
+        "ComidaFavorita": "Pizza"
+    
+    },
+    {
+        "nomeCompleto": "Livia Duran",
+        "Altura": 1.50,
+        "ComidaFavorita": "Pizza"
+    
+    },
+    {
+        "nomeCompleto": "Livia Duran",
+        "Altura": 1.50,
+        "ComidaFavorita": "Pizza"
+    
+    }
+    
+
+] 

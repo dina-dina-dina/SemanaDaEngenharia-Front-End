@@ -3,7 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+.visualização {
 
+}
 .tudoaqui {
     display: flex;
     flex-direction: column;
@@ -14,14 +16,14 @@
 }
 
 .ever {
-    width: 90vw;
-    height: 90vh;
+    width: 70vw;
+    height: 80vh;
     background-color: #0d9e36;
     border: 3px solid #000000;
     border-radius: 45px;
     display: flex;
     flex-direction: initial;
-    margin-bottom: 7vh;
+   
 }
 
 .screen {
@@ -95,7 +97,7 @@
 .evento {
     box-sizing: border-box;
     position: absolute;
-    width: 268px;
+    width: 100%;
     height: 109px;
     /* background: blue; */
     border: 3px solid #097828;
@@ -104,18 +106,43 @@
 
 .cards {
     height: 100%;
-    width: 800px;
+    width: 100%;
     /* background-color: #097828; */
-    overflow-y: scroll;
     margin-left: 80px;
+    
 }
+
 
 .pesquisar {
     height: 100%;
-    width: 800px;
-    /* background-color: #097828; */
+    width: 100%;
     overflow-y: scroll;
-    margin-left: 72px;
+    padding-left: 20%;
+    
+    clip-path: inset(0 round 45px);
+}
+
+.pesquisar::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+}
+.pesquisar::-webkit-scrollbar:horizontal {
+    height: 5%; /* Altura da barra de rolagem horizontal */
+}
+
+/* Fundo da barra de rolagem (trilha) */
+.pesquisar::-webkit-scrollbar-track {
+    background: transparent; /* Deixa a trilha transparente */
+}
+
+/* Botão da barra de rolagem */
+.pesquisar::-webkit-scrollbar-thumb {
+    background: #888; /* Cor do botão da barra de rolagem */
+    border-radius: 10px;
+}
+
+/* Botão da barra de rolagem ao passar o mouse */
+.pesquisar::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Cor do botão ao passar o mouse */
 }
 
 /* ul {
@@ -125,39 +152,42 @@
     display: inline-flex;
 } */
 
-.ulCard li {
-    width: 300px;
-    height: 240px;
-    margin: 0;
-    /* border: 1px solid red; */
-    display: flex;
-    margin-right: 80px;
-    /* background: #999; */
-    overflow: hidden;
-}
+
+/* .ulCard  {
+    width: 65%;
+    
+} */
 
 .liCard {
-    width: 330px;
-    height: 240px;
+    width: 35%;
+    height: 25vh;
     margin: 0;
     /* border: 1px solid red; */
     display: flex;
-    margin-right: 80px;
+    margin-right: 10%;
     /* background: #999; */
     overflow: hidden;
 }
 
-
-/* .espaço{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 800px;
-  } */
-
-.ulCard:nth-child(odd) {
-    float: left;
+.teste {
+    text-align: 'center';
+    overflow: 'hidden';
+    text-overflow: 'ellipsis';
 }
+
+
+.espaço {
+    display: 'flex';
+    flex-direction: 'column';
+    justify-content: 'center';
+    overflow: 'hidden';
+    text-overflow: 'ellipsis';
+    width: 100%;
+    height: 50%;
+    align-items: center;
+}
+
+
 
 .liCard:nth-child(odd) {
     float: left;
@@ -181,9 +211,9 @@
 .tituloEvento {
     display: flex;
     justify-content: center;
-    margin-right: 80px;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    width: 80%;
+    margin-top: 3vh;
+    margin-bottom: 10vh;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 900;

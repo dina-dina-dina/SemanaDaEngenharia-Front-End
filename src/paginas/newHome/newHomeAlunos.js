@@ -25,7 +25,7 @@ function NewHomeAlunos() {
     const response = await axios.get('/checkData')
         .catch(err => console.error('Error: ', err));
     if (response) setEvento(response.data);
-    console.log(response)
+    console.log(response.data)
     await localStorage.setItem('evento',response.data.idEvento)
 
 }
