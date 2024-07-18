@@ -64,7 +64,7 @@ function Eventos() {
             <div className='tudoaqui'>
                 <div className="screen">
                     <div className='acesso'>
-                        <div className="usuario">
+                        <div className="usuarios">
                             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
                             <button id='icone' class="material-symbols-outlined" type={'button'} onClick={() => logout()}>
                                 account_circle
@@ -73,10 +73,10 @@ function Eventos() {
                         </div>
                         <div className='novoEvento'>
 
-                            <button id='evento' onClick={handleClick}>Novo Evento</button>
+                            <button id='eventos' onClick={handleClick}>Novo Evento</button>
                         </div>
-                        <div className='cadastrar'>
-                            <button onClick={professor} id='evento' >Cadastrar Professor</button>
+                        <div className='cadastros'>
+                            <button onClick={professor} id='eventos' >Cadastrar Professor</button>
                         </div>
 
                     </div>

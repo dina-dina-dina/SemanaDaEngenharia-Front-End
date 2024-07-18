@@ -120,12 +120,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+ 
+
+
 }
 
 .fotohome {
     margin-top: 2%;
-    width: 30vw;
-    height: auto;
+    width: 15%;
+    height: 15%;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.596);
     padding: 2%;
     border-radius: 100vh;

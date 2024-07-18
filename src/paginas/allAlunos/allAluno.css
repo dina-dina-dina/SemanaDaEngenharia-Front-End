@@ -85,6 +85,7 @@
     transition: all 400ms ease;
 }
 
+
 #evento:hover {
     background: 0, 0, 0, 0 #36a555;
 }

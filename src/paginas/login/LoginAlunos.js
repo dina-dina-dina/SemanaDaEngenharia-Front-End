@@ -27,6 +27,7 @@ function UserLogin() {
         localStorage.setItem('token', `${token}`)
         console.log(token)
         localStorage.setItem('user', response.data.user.idUsuarios)
+        console.log(response)
         if (response.data.user.isAdmin == true) {
           navigate("/eventos")
         } else {
@@ -34,9 +35,11 @@ function UserLogin() {
         }
       }
       catch (err) {
+        console.log(err)
         alert('Senha e/ou Usuario incorreto!')
       }
     } else {
+      
       alert('Preencha todos os campos')
     }
   }

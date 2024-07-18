@@ -46,8 +46,8 @@
     background: #097828;
 }
 
-.usuario {
-    margin-left: 90px;
+.usuarios {
+    margin-left: 12vh;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
@@ -58,13 +58,18 @@
     color: #FFFFFF;
 }
 
-.cadastrar {
-    margin-right: 90px;
+.cadastros {
+    margin-right: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18%;
+    
 }
 
-#evento {
-    width: 263px;
-    height: 68px;
+#eventos {
+    width: 100%;
+    height: 9vh;
     background: #097828;
     border: 3px solid #FFFFFF;
     border-radius: 30px;
@@ -77,9 +82,16 @@
     transition: all 400ms ease;
 }
 
-#evento:hover {
+#eventos:hover {
     background: 0, 0, 0, 0 #36a555;
 }
+.novoEvento {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 27vh;
+  }
 
 #icone {
     font-size: 65px;
