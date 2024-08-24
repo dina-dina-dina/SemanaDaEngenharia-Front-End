@@ -17,16 +17,17 @@ function UserLogin() {
   const RegisterUsuario = async () => {
     if (email && senha) {
       try {
+        console.log('foi ?')
         const response = await axiosLogin.post('/authenticate', {
           "email": email,
           "senha": senha,
         })
         console.log(response)
         const token = response.data.token
-        localStorage.setItem('authenticated', 'true')
-        localStorage.setItem('token', `${token}`)
+        await localStorage.setItem('authenticated', 'true')
+        await localStorage.setItem('token', `${token}`)
         console.log(token)
-        localStorage.setItem('user', response.data.user.idUsuarios)
+        await localStorage.setItem('user', response.data.user.idUsuarios)
         console.log(response)
         if (response.data.user.isAdmin == true) {
           navigate("/eventos")
@@ -52,7 +53,7 @@ function UserLogin() {
         </div>
 
         <div className='formulario'>
-          <form>
+          <div>
             <div className='tituloide'>Login Semana da Engenharia</div>
             
             <div className='input'>
@@ -69,7 +70,7 @@ function UserLogin() {
               </div>
               
             </div>
-          </form>
+          </div>
           <div className='buttonlogin2'>
                 <button onClick={() => handleClick3()}>Cadastre-se!</button>
               </div>

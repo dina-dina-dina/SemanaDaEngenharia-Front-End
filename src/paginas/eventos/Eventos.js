@@ -3,6 +3,7 @@ import '../../paginas/eventos/Eventos.css';
 import React, { useState, useContext, useEffect } from 'react';
 import axios from '../../axios';
 import fundo from '../../assets/teste.png'
+import ClipLoader from "react-spinners/ClipLoader";
 
 
 function Eventos() {
@@ -10,10 +11,11 @@ function Eventos() {
     // const [senha, setSenha] = useState(String)
     const [eventos, setEventos] = useState(Array)
     const [evento, setEvento] = useState({})
+    let [loading, setLoading] = useState(true);
 
     const navigate = useNavigate();
 
-    const noResponse = !eventos || (eventos && eventos.length === 0);
+    // const noResponse = !eventos || (eventos && eventos.length === 0);
 
     function handleClick() {
         navigate("/novoEvento");
@@ -34,7 +36,10 @@ function Eventos() {
     const getEvento = async () => {
         const response = await axios.get('/checkData')
             .catch(err => console.error('Error: ', err));
-        if (response) setEvento(response.data);
+        if (response) {
+            setEvento(response.data);
+            if (evento) setLoading(!loading)
+        }
         console.log(response)
         await localStorage.setItem('evento', response.data.idEvento)
     }
@@ -49,7 +54,11 @@ function Eventos() {
     const getEventos = async () => {
         const response = await axios.get('/evento')
             .catch(err => console.error('Error: ', err));
-        if (response) setEventos(response.data);
+        if (response) {
+            setEventos(response.data)
+            if (eventos) setLoading(!loading)
+        } ;
+       
         console.log(response)
     }
 
@@ -61,89 +70,114 @@ function Eventos() {
 
     return (
         <>
-            <div className='tudoaqui'>
-                <div className="screen">
-                    <div className='acesso'>
-                        <div className="usuarios">
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
-                            <button id='icone' class="material-symbols-outlined" type={'button'} onClick={() => logout()}>
-                                account_circle
-                            </button>
-                            <span>Sair</span>
-                        </div>
-                        <div className='novoEvento'>
 
-                            <button id='eventos' onClick={handleClick}>Novo Evento</button>
-                        </div>
-                        <div className='cadastros'>
-                            <button onClick={professor} id='eventos' >Cadastrar Professor</button>
-                        </div>
 
-                    </div>
+
+
+
+            {loading ?
+                <div>
+                    < ClipLoader
+                        color='blue'
+                        loading={loading}
+                        size={150}
+                        aria-label="Loading Spinner"
+                        data-testid="loader"
+                    />
                 </div>
+                :
+                <div>
+                    <div className='tudoaqui'>
 
-                <div className='visualização'>
-                    <div className='ever' >
-                        <div className='pesquisar'>
-                            <div className='tituloEvento'>
-                                <h1>Eventos Atuais</h1>
+                        <div className="screen">
+                            <div className='acesso'>
+                                <div className="usuarios">
+                                    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
+                                    <button id='icone' class="material-symbols-outlined" type={'button'} onClick={() => logout()}>
+                                        account_circle
+                                    </button>
+                                    <span>Sair</span>
+                                </div>
+                                <div className='novoEvento'>
+
+                                    <button id='eventos' onClick={handleClick}>Novo Evento</button>
+                                </div>
+                                <div className='cadastros'>
+                                    <button onClick={professor} id='eventos' >Cadastrar Professor</button>
+                                </div>
+
                             </div>
-                            {!noResponse && eventos.map(function (response) {
-                                return (
-                                    <>
-                                        <ul className='ulCard'>
-
-                                            <li className='liCard'>
-                                                <div className='espaço' >
-                                                    <div className = 'teste' >
-                                                        {/* <h1 style={{  width:'330px', backgroundColor:'red', height: '50px' ,overflow:'hidden', textOverflow:'ellipsis', fontSize:'50px'}}>
-                                                    {response.nomeEvento}
-                                                </h1> */}
-                                                        <button id='botaoCard' type='button' onClick={() => redirecionar(response.idEvento)} style={{ position: 'relative', background: fundo }} className='evento'> {response.nomeEvento}</button>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </>
-                                )
-                            })
-                            }
                         </div>
-                    </div>
-                </div>
-            </div>
 
-            <div className='phonediv'>
-                <div className='headerdivp' >
-                    <div className='buttonhome2'  >
-                        <button type='button' onClick={() => logout()} style={{ backgroundColor: '#737373' }}>LOGOUT</button>
-                    </div>
-                    <div className='buttonhome2' >
-                        <button type='button' style={{ backgroundColor: '#36a555', paddingRight: '5%', paddingLeft: '5%' }} onClick={handleClick}>NOVO EVENTO</button>
-                    </div>
-                    <div className='buttonhome2' >
-                        <button type='button' onClick={professor} style={{ backgroundColor: '#65BABB', paddingRight: '5%', paddingLeft: '5%' }}>NOVO PROF.</button>
-                    </div>
-                </div>
-                <div style={{ marginTop: '2vh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <div className='title'>Evento atual:</div>
-                    <div className='subtitle'>{evento.nomeEvento}</div>
-                </div>
-                <div className='title' style={{ marginTop: '2vh', display: 'flex', flexDirection: 'column', alignItems: 'center', wordWrap: 'break-word', width: '80vw', textAlign: 'center' }}>Lista de eventos cadastrados:</div>
+                        <div className='visualização'>
+                            <div className='ever' >
+                                <div className='pesquisar'>
+                                    <div className='tituloEvento'>
+                                        <h1>Eventos Atuais</h1>
+                                    </div>
+                                    {eventos.map(function (response) {
+                                        return (
+                                            <>
+                                                <ul className='ulCard'>
 
-                {!noResponse && eventos.map(function (response) {
-                    return (
-                        <div key={eventos.nomeEvento} onClick={() => redirecionar(response.idEvento)} className='cardEvento'>
-                            <div className="TextCardEv" key={eventos.nomeEvento} >
-                                <div className='teste'>
-                                    <h2 style={{ fontSize: '3vh' }}>{response.nomeEvento}</h2>
+                                                    <li className='liCard'>
+                                                        <div className='espaço' >
+                                                            <div className='teste' >
+                                                                {/* <h1 style={{  width:'330px', backgroundColor:'red', height: '50px' ,overflow:'hidden', textOverflow:'ellipsis', fontSize:'50px'}}>
+                                    {response.nomeEvento}
+                                </h1> */}
+                                                                <button id='botaoCard' type='button' onClick={() => redirecionar(response.idEvento)} style={{ position: 'relative', background: fundo }} className='evento'> {response.nomeEvento}</button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </>
+                                        )
+                                    })
+                         
+                                    }
                                 </div>
                             </div>
                         </div>
-                    )
-                })}
-            </div>
+                    </div>
+
+                    <div className='phonediv'>
+                        <div className='headerdivp' >
+                            <div className='buttonhome2'  >
+                                <button type='button' onClick={() => logout()} style={{ backgroundColor: '#737373' }}>LOGOUT</button>
+                            </div>
+                            <div className='buttonhome2' >
+                                <button type='button' style={{ backgroundColor: '#36a555', paddingRight: '5%', paddingLeft: '5%' }} onClick={handleClick}>NOVO EVENTO</button>
+                            </div>
+                            <div className='buttonhome2' >
+                                <button type='button' onClick={professor} style={{ backgroundColor: '#65BABB', paddingRight: '5%', paddingLeft: '5%' }}>NOVO PROF.</button>
+                            </div>
+                        </div>
+                        <div style={{ marginTop: '2vh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                            <div className='title'>Evento atual:</div>
+                            <div className='subtitle'>{evento.nomeEvento}</div>
+                        </div>
+                        <div className='title' style={{ marginTop: '2vh', display: 'flex', flexDirection: 'column', alignItems: 'center', wordWrap: 'break-word', width: '80vw', textAlign: 'center' }}>Lista de eventos cadastrados:</div>
+
+                        { eventos.map(function (response) {
+                            return (
+                                <div key={eventos.nomeEvento} onClick={() => redirecionar(response.idEvento)} className='cardEvento'>
+                                    <div className="TextCardEv" key={eventos.nomeEvento} >
+                                        <div className='teste'>
+                                            <h2 style={{ fontSize: '3vh' }}>{response.nomeEvento}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
+            }
+
+
+
         </>
+
     );
 }
 

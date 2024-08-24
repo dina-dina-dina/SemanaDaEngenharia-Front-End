@@ -97,7 +97,7 @@ function CadastrarProfessor() {
     return (
         <div className='containerNew'>
 
-            <div className='formulario2'>
+            <div className='formularioEvento'>
                 <span id='title'>PROFESSOR</span>
                 <div className='itensForms'>
                     <form>
@@ -105,24 +105,25 @@ function CadastrarProfessor() {
 
                         <div className='nome'>
                             <label id='labelStyle'>Nome</label>
-                            <input id='inputStyle' onChange={(event) => setNome(event.target.value)}></input>
+                            <input id='inputStyleEvento' onChange={(event) => setNome(event.target.value)}></input>
                         </div>
                         <div className='data'>
                             <label id='labelStyle'>Email</label>
-                            <input id='inputStyle' type={'email'} onChange={(event) => setEmail(event.target.value)}></input>
+                            <input id='inputStyleEvento' type={'email'} onChange={(event) => setEmail(event.target.value)}></input>
                         </div>
 
 
                     </form>
+                    
                     <div className='materias'>
-                        <div id="title">Materias</div>
+                    <div id="title">Materias</div>
                         <div className='insert'>
 
                         </div>
                         {materiaList.map((email, index) => (
-                            <div key={index}>
+                            <div className = 'lista' key={index}>
                                 <input
-                                    id='inputStyle2'
+                                    id='inputStyleEvento'
                                     type="email"
                                     value={email}
                                     onChange={(e) => handleMateriaChange(index, e.target.value)}

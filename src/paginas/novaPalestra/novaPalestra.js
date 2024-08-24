@@ -63,28 +63,28 @@ function NovaPalestra() {
     return (
         <div className='containerNew'>
              
-            <div className='formulario2'>
-                    <span id = 'title'>EVENTO</span>
+            <div className='formularioEvento'>
+                    <span id = 'title'>PALESTRA</span>
                 <div className='itensForms'>
                     <form>
 
 
                         <div className='nome'>
                             <label id='labelStyle'>Nome</label>
-                            <input id='inputStyle' onChange={(event) => setNome(event.target.value)}></input>
+                            <input id='inputStyleEvento' onChange={(event) => setNome(event.target.value)}></input>
                         </div>
                         <div className='data'>
                             <label id='labelStyle'>Palestrante</label>
-                            <input id='inputStyle' type={'text'} onChange={(event) => setPalestrante(event.target.value)}></input>
+                            <input id='inputStyleEvento' type={'text'} onChange={(event) => setPalestrante(event.target.value)}></input>
                         </div>
                         
                         <div className='data'>
                             <label id='labelStyle'>Carga Horária</label>
-                            <input id='inputStyle' type={'number'} onChange={(event) => setCargaHoraria(event.target.value)}></input>
+                            <input id='inputStyleEvento' type={'number'} onChange={(event) => setCargaHoraria(event.target.value)}></input>
                         </div>
                         <div className='data'>
                             <label id='labelStyle'>Data de Inicio</label>
-                            <input id='inputStyle' type={'date'} onChange={(event) => setDia(event.target.value)}></input>
+                            <input id='inputStyleEvento' type={'date'} onChange={(event) => setDia(event.target.value)}></input>
                         </div>
                         <div className='botao' >
                             <button  type = 'button' onClick={()=> Envio()}>Criar Palestra</button>

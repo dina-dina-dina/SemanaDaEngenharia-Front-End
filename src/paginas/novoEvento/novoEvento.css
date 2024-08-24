@@ -13,14 +13,14 @@
 }
 
 
-.formulario2 {
+.formularioEvento {
     margin-top: 62px;
     display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    width: 90vw;
-    height: 100vh;
+    width: 40%;
+    height: 80vh;
     flex-direction: column;
 
     background: #FFFFFF;
@@ -31,12 +31,15 @@
 
 .itensForms {
     margin-bottom: 45px;
+    max-height: 60%;
+    width: 60%;
 }
 
 .nome {
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
+    
 
 }
 
@@ -46,9 +49,9 @@
     margin-bottom: 10px;
 }
 
-#inputStyle {
+#inputStyleEvento {
     width: 100%;
-    height: 10vh;
+    height: 8vh;
 
     background: #FFFFFF;
     border: 2px solid #097828;
@@ -245,6 +248,8 @@
 .materias{
     display: flex;
     flex-direction: column;
+    max-height: 35%;
+    overflow-y: scroll;
 }
 
 .insert{

@@ -60,7 +60,7 @@ function NovoEvento() {
     return (
         <div className='containerNew'>
 
-            <div className='formulario2'>
+            <div className='formularioEvento'>
                 <span id='title'>EVENTO</span>
                 <div className='itensForms'>
                     <form>
@@ -68,15 +68,15 @@ function NovoEvento() {
 
                         <div className='nome'>
                             <label id='labelStyle'>Nome</label>
-                            <input id='inputStyle' onChange={(event) => setNome(event.target.value)}></input>
+                            <input id='inputStyleEvento' onChange={(event) => setNome(event.target.value)}></input>
                         </div>
                         <div className='data'>
                             <label id='labelStyle'>Data de Inicio</label>
-                            <input id='inputStyle' type={'date'} onChange={(event) => setDataInicio(event.target.value)}></input>
+                            <input id='inputStyleEvento' type={'date'} onChange={(event) => setDataInicio(event.target.value)}></input>
                         </div>
                         <div className='data'>
                             <label id='labelStyle'>Data Final</label>
-                            <input id='inputStyle' type={'date'} onChange={(event) => setDataFinal(event.target.value)}></input>
+                            <input id='inputStyleEvento' type={'date'} onChange={(event) => setDataFinal(event.target.value)}></input>
                         </div>
                         <div className='botao'>
                             <button type={'button'} onClick={() => Envio()}>Criar Evento</button>

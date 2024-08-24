@@ -53,7 +53,7 @@ function FeedbackPalestra() {
 
     return (
         <div className='containerNew'>
-            <div className='formulario2'>
+            <div className='formularioEvento'>
                 <span id='title'>FEEDBACK DA PALESTRA:</span>
                 <div className='textpal'>{location.state.nome}</div>
                 {(idUrl == 20 || idUrl == 67)
@@ -69,7 +69,7 @@ function FeedbackPalestra() {
 
                                 : <div className='data'>
                                     <label id='labelStyle'>Feedback</label>
-                                    <input id='inputStyle' placeholder='feedback' type={'text'} onChange={(event) => setFeedback(event.target.value)}></input>
+                                    <input id='inputStyleEvento' placeholder='feedback' type={'text'} onChange={(event) => setFeedback(event.target.value)}></input>
                                 </div>}
 
 
