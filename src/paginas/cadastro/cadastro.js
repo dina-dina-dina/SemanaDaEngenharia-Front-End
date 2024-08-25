@@ -81,6 +81,13 @@ function Cadastro() {
             if (!nome) {
                 throw new Error("Insira um nome!")
             }
+            if (cursoValue === '0')  {
+                throw new Error("Selecione o curso!")
+            }
+            if (turma === 'Select')  {
+                throw new Error("Selecione a turma!")
+            }
+
 
 
             const response = await axios.post("/registerAluno", {
@@ -93,7 +100,7 @@ function Cadastro() {
                 "telefone": telefone,
                 "curso": cursoValue
 
-            }).catch(err => alert(err));
+            }).catch(err => alert(err.response.data.error));
             console.log(
                 {
                     "email": email,
@@ -111,7 +118,7 @@ function Cadastro() {
                 navigate("/");
             }
         } catch (err) {
-            alert(err)
+            alert(err.response.data.error)
         }
     }
 
