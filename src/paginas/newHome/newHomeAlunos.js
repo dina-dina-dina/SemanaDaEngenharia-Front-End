@@ -9,10 +9,12 @@ function NewHomeAlunos() {
   const images = [
     'AEAS.jpg',
     'Alura.jpg',
+    'AGI.jpeg',
     'Dinamica.jpg',
     'Fit.jpg',
     'hairu_logo.jpg',
     'Metso.jpg',
+    'P&G.jpeg',
     'Pieralisi.jpg',
     'robtica_sp_logo.jpg',
     'SEG.jpg',
