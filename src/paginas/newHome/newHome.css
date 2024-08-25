@@ -18,6 +18,7 @@
 .image img {
     max-width: 23%; /* Ajuste o tamanho conforme necessário */
     height: 10vh;
+    object-fit: contain;
    
     border-radius: 5px;
 }
