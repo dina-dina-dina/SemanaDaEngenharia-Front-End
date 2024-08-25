@@ -76,11 +76,11 @@ function Eventos() {
 
 
             {loading ?
-                <div>
+                <div className='loading'>
                     < ClipLoader
-                        color='blue'
+                        color='#097828'
                         loading={loading}
-                        size={150}
+                        size={100}
                         aria-label="Loading Spinner"
                         data-testid="loader"
                     />
