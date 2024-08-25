@@ -6,6 +6,7 @@ import jpIMG from '../../assets/SemanaEng.jpg';
 import React, { useState, useContext, useEffect } from 'react';
 import axiosLogin from '../../axiosLogin';
 import axios from '../../axios';
+import { ClipLoader } from "react-spinners";
 
 
 
@@ -13,13 +14,16 @@ function Cadastro() {
     const [email, setEmail] = useState(String)
     const [nome, setNome] = useState(String)
     const [ra, setRA] = useState(Number)
-    const [turma, setTurma] = useState(Number)
+    var [turma, setTurma] = useState(Number)
     const [estagio, setEstagio] = useState(false)
     const [senha, setSenha] = useState(String)
     const [senha2, setSenha2] = useState(String)
     const [isChecked, setIsChecked] = useState(false);
     const [telefone, setTelefone] = useState(String)
-    const [cursoValue, setCursoValue] = useState(String)
+    let [cursoValue, setCursoValue] = useState(String)
+    let [loading, setLoading] = useState(false);
+ 
+
 
     const navigate = useNavigate();
 
@@ -77,18 +81,32 @@ function Cadastro() {
             if (!validateEmail(email)) {
                 throw new Error("Email inválido!")
             }
+            if(!ra) {
+                throw new Error("Preencha o seu RA!")
+            }
+            if(!telefone) {
+                throw new Error("Preencha o seu Telefone!")
+            }
 
             if (!nome) {
                 throw new Error("Insira um nome!")
             }
-            if (cursoValue === '0')  {
+            if (!cursoValue) {
                 throw new Error("Selecione o curso!")
             }
-            if (turma === 'Select')  {
+            if (!turma) {
                 throw new Error("Selecione a turma!")
             }
-
-
+            if (cursoValue === '0') {
+                throw new Error("Selecione o curso!")
+            }
+            if (turma === 'Select') {
+                throw new Error("Selecione a turma!")
+            }
+            if (!senha) {
+                throw new Error("Coloque uma senha!")
+            }
+            setLoading(true)
 
             const response = await axios.post("/registerAluno", {
                 "email": email,
@@ -114,74 +132,97 @@ function Cadastro() {
                 }
             )
             if (response) {
+                setLoading(false)
                 alert("Aluno cadastrado com sucesso!")
                 navigate("/");
             }
         } catch (err) {
-            alert(err.response.data.error)
+            
+            alert(err)
+        }
+        finally {
+            setLoading(false)
         }
     }
 
     return (
-        <div className="containercadas">
-            <div className="logincadas">
-                <div className='formulariocadas'>
-                    <form>
-                        <span className='tituloide' style={{ textAlign: 'center' }}>Faça seu Cadastro!</span>
-                        <div className='input'>
-                            <div className='turma'>
-                                <label>Nome completo</label>
-                                <input type='text' alt="Input de nome" placeholder='Nome' onChange={(event) => setNome(event.target.value)}></input>
-                            </div>
-                            <div className='turma'>
-                                <label>RA</label>
-                                <IMaskInput type='number' placeholder='000000000' mask="000000000" onChange={(event) => setRA(event.target.value)} />
-                            </div>
-                            <div className='curso'>
-                                <label>Turma</label>
-                                {/* <IMaskInput type='number' placeholder='00' mask="00" onChange={(event) => setTurma(event.target.value)} /> */}
-                                <select onChange={(e) => setTurma(e.target.value)}>
-                                    {optionsTurma}
-                                </select>
-                            </div>
-                            <div className='turma'>
-                                <label>Telefone</label>
-                                <IMaskInput type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" mask="(00) 00000-0000" pattern="[0-9]{2}-[0-9]{3}-[0-9]{4}" required onChange={(event) => setTelefone(event.target.value)} />
-                            </div>
-                            <div className="curso">
-                                <label>Curso:</label>
-                                <select onChange={(e) => setCursoValue(e.target.value)}>
-                                    {options}
-                                </select>
-                            </div>
-                            <div className='turma'>
-                                <label>Email</label>
-                                <input type='email' alt="Input de email" placeholder='Email' onChange={(event) => setEmail(event.target.value)}></input>
-                            </div>
-                            <div className='turma'>
-                                <label>Senha</label>
-                                <input type='password' placeholder='Senha' onChange={(event) => setSenha(event.target.value)}></input>
-                            </div>
-                            <div className='turma'>
-                                <label>Confirme sua senha</label>
-                                <input type='password' placeholder='Confirme a senha' onChange={(event) => setSenha2(event.target.value)}></input>
-                            </div>
-                            <div className='estagioSuperior'>
-                                <div className='estagio'>
-                                    <label>Está estagiando?</label>
-                                    <input className={isChecked ? "checked" : ""} checked={isChecked} type='checkbox' onChange={clicker}></input>
-                                </div>
-                            </div>
-
-                            <div className='buttoncadas' >
-                                <button type='button' onClick={() => handleClick()}>ENTRAR</button>
-                            </div>
-
-                        </div>
-                    </form>
+        <>
+            {loading ?
+                <div className='loading'>
+                    <ClipLoader
+                        color='#097828'
+                        loading={loading}
+                        size={100}
+                        aria-label="Loading Spinner"
+                        data-testid="loader"
+                    />
                 </div>
-            </div>
-        </div>
+                :
+                <div className="containercadas">
+                    <div className="logincadas">
+                        <div className='formulariocadas'>
+                            <form>
+                                <span className='tituloide' style={{ textAlign: 'center' }}>Faça seu Cadastro!</span>
+                                <div className='input'>
+                                    <div className='turma'>
+                                        <label>Nome completo</label>
+                                        <input type='text' alt="Input de nome" placeholder='Nome' onChange={(event) => setNome(event.target.value)}></input>
+                                    </div>
+                                    <div className='turma'>
+                                        <label>RA</label>
+                                        <IMaskInput type='number' placeholder='000000000' mask="000000000" onChange={(event) => setRA(event.target.value)} />
+                                    </div>
+                                    <div className='curso'>
+                                        <label>Turma</label>
+                                        {/* <IMaskInput type='number' placeholder='00' mask="00" onChange={(event) => setTurma(event.target.value)} /> */}
+                                        <select onChange={(e) => setTurma(e.target.value)}>
+                                            {optionsTurma}
+                                        </select>
+                                    </div>
+                                    <div className='turma'>
+                                        <label>Telefone</label>
+                                        <IMaskInput type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" mask="(00) 00000-0000" pattern="[0-9]{2}-[0-9]{3}-[0-9]{4}" required onChange={(event) => setTelefone(event.target.value)} />
+                                    </div>
+                                    <div className="curso">
+                                        <label>Curso:</label>
+                                        <select onChange={(e) => setCursoValue(e.target.value)}>
+                                            {options}
+                                        </select>
+                                    </div>
+                                    <div className='turma'>
+                                        <label>Email</label>
+                                        <input type='email' alt="Input de email" placeholder='Email' onChange={(event) => setEmail(event.target.value)}></input>
+                                    </div>
+                                    <div className='turma'>
+                                        <label>Senha</label>
+                                        <input type='password' placeholder='Senha' onChange={(event) => setSenha(event.target.value)}></input>
+                                    </div>
+                                    <div className='turma'>
+                                        <label>Confirme sua senha</label>
+                                        <input type='password' placeholder='Confirme a senha' onChange={(event) => setSenha2(event.target.value)}></input>
+                                    </div>
+                                    <div className='estagioSuperior'>
+                                        <div className='estagio'>
+                                            <label>Está estagiando?</label>
+                                            <input className={isChecked ? "checked" : ""} checked={isChecked} type='checkbox' onChange={clicker}></input>
+                                        </div>
+                                    </div>
+
+                                    <div className='buttoncadas' >
+                                        <button type='button' onClick={() => handleClick()}>ENTRAR</button>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+
+        </>
+
     );
 }
 
