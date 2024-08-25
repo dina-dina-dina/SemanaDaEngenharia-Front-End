@@ -13,6 +13,7 @@
     flex-wrap: wrap; /* Permite que as imagens quebrem para a linha seguinte se não houver espaço suficiente */
     gap: 10px; /* Espaço entre as imagens */
     padding: 10px;
+    justify-content: center;
 }
 
 .image img {
