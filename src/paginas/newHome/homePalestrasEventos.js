@@ -80,8 +80,8 @@ function UserLogin() {
                                                 <div key={innerIndex} className='card' onClick={() => { handleClick1(item.idPalestrasEvento, item.palestra.nomePalestra) }}>
                                                     <div className="TextCard">
                                                         <div className='teste'>
-                                                            <h2 style={{ fontSize: '3vh' }}>Palestra: {item.palestra.nomePalestra}</h2>
-                                                            <h1 style={{ fontSize: '2vh', color: '#71a1f0' }}>Palestrante: {item.palestra.palestrante}</h1>
+                                                            <h2 style={{ fontSize: '3vh' }}> {item.palestra.nomePalestra}</h2>
+                                                            <h1 style={{ fontSize: '2vh', color: '#71a1f0' }}>Organizador: {item.palestra.palestrante}</h1>
                                                         </div>
                                                     </div>
                                                     <div className='confirmacao'>Clique para realizar feedback de confirmação</div>
