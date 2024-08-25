@@ -8,15 +8,17 @@
 
 }
 
+
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     align-content: center;
-    
+
 }
-.formulario{
+
+.formulario {
 
     display: flex;
     justify-content: center;
@@ -41,12 +43,13 @@
     margin-top: 100px;
     margin-bottom: 70px;
 }
+
 .email label {
     position: absolute;
     margin-left: 10px;
     font-size: 20px;
     color: #097828;
-    
+
 }
 
 
@@ -91,12 +94,13 @@
 .password {
     margin-bottom: 68px;
 }
+
 .password label {
     position: absolute;
     margin-left: 10px;
     font-size: 20px;
     color: #097828;
-    
+
 }
 
 .password input {
@@ -147,8 +151,8 @@
     min-height: 10vh;
     max-width: 70vw;
     min-width: 70vw;
-    hyphens:auto;
-    word-wrap:break-word;
+    hyphens: auto;
+    word-wrap: break-word;
     background: #097828;
     border: 3px solid #FFFFFF;
     border-radius: 30px;
@@ -168,6 +172,7 @@
     background: 0, 0, 0, 0 #e488a1;
 
 }
+
 .buttonVoltar button {
     margin-top: 10px;
     align-self: center;
@@ -193,16 +198,18 @@
     background: 0, 0, 0, 0 #706a6c;
 
 }
+
 .email {
     margin-top: 100px;
     margin-bottom: 70px;
 }
+
 .email label {
     position: absolute;
     margin-left: 10px;
     font-size: 20px;
     color: #097828;
-    
+
 }
 
 
@@ -218,7 +225,7 @@
     transition: all 400ms ease;
     outline: 0;
     margin-top: 25px;
-    text-transform: uppercase   ;
+    text-transform: uppercase;
 }
 
 .email input:focus {
@@ -233,18 +240,19 @@
 
 }
 
-.title{
+.title {
     font-size: 3vh;
     font-family: 'Poppins';
 }
-.subtitle{
+
+.subtitle {
     font-size: 2vh;
     font-family: 'Poppins';
     color: #097828;
 }
 
 .img {
-    
+
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.596);
     position: relative;
     width: 50vw;
@@ -254,22 +262,24 @@
     border: 2px solid rgba(0, 0, 0, 0.1);
     margin-bottom: 10%;
 }
-.TextCard{
+
+.TextCard {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
-    text-align:center;
+    text-align: center;
     color: #097828;
     margin-bottom: 2%;
     display: inline;
 }
-.cardfigS{
+
+.cardfigS {
     margin-top: 20px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
     line-height: 40px;
-    text-align:center;
+    text-align: center;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.308);
     background-color: #7ea37e;
     width: 34vw;
@@ -278,13 +288,14 @@
     margin-right: 10px;
     margin-left: 10px;
 }
-.cardfigN{
+
+.cardfigN {
     margin-top: 20px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
     line-height: 40px;
-    text-align:center;
+    text-align: center;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.308);
     background-color: #c95e5e;
     width: 34vw;
@@ -294,7 +305,7 @@
     margin-left: 10px;
 }
 
-.Switch{
+.Switch {
     align-items: center;
     justify-content: center;
     margin-top: 10px;
@@ -304,34 +315,35 @@
     align-items: center;
     justify-content: center;
     width: 70vw;
-    
+
 }
 
-.SwitchTextGreen{
+.SwitchTextGreen {
     color: green;
     margin-right: 10px;
-    text-shadow:1px 1px 7px black;
+    text-shadow: 1px 1px 7px black;
 }
-.SwitchTextRed{
+
+.SwitchTextRed {
     margin-left: 10px;
     color: red;
-    text-shadow:1px 1px 7px black;
+    text-shadow: 1px 1px 7px black;
 }
 
-.contador{
+.contador {
     display: flex;
     flex-direction: row;
-    
+
 }
 
-.TemosFaltam{
+.TemosFaltam {
     font-family: 'Poppins';
-    text-shadow: 1px 1px 7px black ;
+    text-shadow: 1px 1px 7px black;
 }
 
-.num{
+.num {
     font-family: 'Poppins';
-    text-shadow: 1px 1px 7px black ;
+    text-shadow: 1px 1px 7px black;
 }
 
 .card {
@@ -350,21 +362,35 @@
     margin-bottom: 5%;
 }
 
-.teste{
+.teste {
     display: flex;
     flex-direction: column;
 }
 
-.caixa{
+.caixa {
     margin: 1vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    
+
 }
-.confirmacao{
+
+.confirmacao {
     font-size: 2vh;
     text-align: center;
     font-family: 'Poppins';
+}
+
+@media(min-width: 820px) {
+    .img {
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.596);
+        position: relative;
+        width: 25vw;
+        padding: 2%;
+        border-radius: 100vh;
+        align-self: center;
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        margin-bottom: 1%;
+    }
 }

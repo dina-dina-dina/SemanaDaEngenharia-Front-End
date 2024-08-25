@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import '../../paginas/novoEvento/novoEvento.css'
+import '../../paginas/novaPalestra/novaPalestra.css'
 import React, { useState, useContext, useEffect } from 'react';
 import axios from '../../axios';
 
@@ -61,30 +61,30 @@ function NovaPalestra() {
       
 
     return (
-        <div className='containerNew'>
+        <div className='containerNewPalestra'>
              
-            <div className='formularioEvento'>
-                    <span id = 'title'>PALESTRA</span>
+            <div className='formularioPalestra'>
+                    <span id = 'titlePalestraNew'>PALESTRA</span>
                 <div className='itensForms'>
                     <form>
 
 
                         <div className='nome'>
-                            <label id='labelStyle'>Nome</label>
-                            <input id='inputStyleEvento' onChange={(event) => setNome(event.target.value)}></input>
+                            <label id='labelStylePalestraNew'>Nome</label>
+                            <input id='inputStylePalestraNew' onChange={(event) => setNome(event.target.value)}></input>
                         </div>
                         <div className='data'>
-                            <label id='labelStyle'>Palestrante</label>
-                            <input id='inputStyleEvento' type={'text'} onChange={(event) => setPalestrante(event.target.value)}></input>
+                            <label id='labelStylePalestraNew'>Palestrante</label>
+                            <input id='inputStylePalestraNew' type={'text'} onChange={(event) => setPalestrante(event.target.value)}></input>
                         </div>
                         
                         <div className='data'>
-                            <label id='labelStyle'>Carga Horária</label>
-                            <input id='inputStyleEvento' type={'number'} onChange={(event) => setCargaHoraria(event.target.value)}></input>
+                            <label id='labelStylePalestraNew'>Carga Horária</label>
+                            <input id='inputStylePalestraNew' type={'number'} onChange={(event) => setCargaHoraria(event.target.value)}></input>
                         </div>
                         <div className='data'>
-                            <label id='labelStyle'>Data de Inicio</label>
-                            <input id='inputStyleEvento' type={'date'} onChange={(event) => setDia(event.target.value)}></input>
+                            <label id='labelStylePalestraNew'>Data de Inicio</label>
+                            <input id='inputStylePalestraNew' type={'date'} onChange={(event) => setDia(event.target.value)}></input>
                         </div>
                         <div className='botao' >
                             <button  type = 'button' onClick={()=> Envio()}>Criar Palestra</button>

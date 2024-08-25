@@ -46,9 +46,7 @@ function NewHomeAlunos() {
         <div className='buttonhome'>
           <button onClick={handleClick2}>Minhas Palestras</button>
         </div>
-        <div className='buttonhome'>
-          <button onClick={handleClick3}>Minhas Matérias/Professores</button>
-        </div>
+    
       </div>
     </div>
 

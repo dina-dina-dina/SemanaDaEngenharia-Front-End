@@ -1,5 +1,5 @@
 import { useNavigate, useLocation } from 'react-router-dom';
-import '../../paginas/novoEvento/novoEvento.css'
+import '../../paginas/feedbackPalestras/feedback.css'
 import React, { useState, useContext, useEffect } from 'react';
 import axios from '../../axios';
 import Palestras from '../palestras/palestras';
@@ -53,7 +53,7 @@ function FeedbackPalestra() {
 
     return (
         <div className='containerNew'>
-            <div className='formularioEvento'>
+            <div className='formularioFeedback'>
                 <span id='title'>FEEDBACK DA PALESTRA:</span>
                 <div className='textpal'>{location.state.nome}</div>
                 {(idUrl == 20 || idUrl == 67)
@@ -89,25 +89,4 @@ function FeedbackPalestra() {
 
 export default FeedbackPalestra;
 
-var Livia =[
-    {
-        "nomeCompleto": "Livia Duran",
-        "Altura": 1.50,
-        "ComidaFavorita": "Pizza"
-    
-    },
-    {
-        "nomeCompleto": "Livia Duran",
-        "Altura": 1.50,
-        "ComidaFavorita": "Pizza"
-    
-    },
-    {
-        "nomeCompleto": "Livia Duran",
-        "Altura": 1.50,
-        "ComidaFavorita": "Pizza"
-    
-    }
-    
 
-] 

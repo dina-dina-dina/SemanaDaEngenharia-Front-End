@@ -89,13 +89,13 @@ function Palestras() {
                             <span>Sair</span>
                         </div>
                         <div className='PnovoEvento'>
-                            <button id='evento' type='button' onClick={handleClick}>Nova Palestra</button>
+                            <button id='eventoP' type='button' onClick={handleClick}>Nova Palestra</button>
                         </div>
                         <div className='PnovoEvento'>
-                            <button id='evento' type='button' onClick={Formulario}>VEN. NOS CONHECER</button>
+                            <button id='eventoP' type='button' onClick={Formulario}>VEN. NOS CONHECER</button>
                         </div>
-                        <div className='Pcadastrar'>
-                            <button onClick={professor} id='evento' >Encerrar Evento</button>
+                        <div className='PnovoEvento'>
+                            <button onClick={professor} id='eventoP' >Encerrar Evento</button>
                         </div>
                     </div>
                 </div>
@@ -173,8 +173,8 @@ function Palestras() {
                                             <td>{response.palestra.cargaHoraria ? response.palestra?.cargaHoraria : '-'}</td>
                                             <td>
                                                 <ul className="PbotoesTabEntradasVisualizar">
-                                                    <Link className="Pbtn1EntradasVisualizar" to={`/alunos?&id=${response.idPalestra}`}><img style={{ width: '15vw' }} src={botaopesquisa} alt="visualizar" /></Link>
-                                                    <li className="Pbtn3EntradasVisualizar" id="hover"><button type='button' onClick={() => deletePalestra(response.idPalestra)}><img style={{ width: '15vw' }} src={botaodelete} alt="deletar" /></button></li>
+                                                    <Link className="Pbtn1EntradasVisualizar" to={`/alunos?&id=${response.idPalestra}`}><img style={{ width: '10vw' }} src={botaopesquisa} alt="visualizar" /></Link>
+                                                    <li className="Pbtn3EntradasVisualizar" id="hover"><button type='button' onClick={() => deletePalestra(response.idPalestra)}><img style={{ width: '8vw' }} src={botaodelete} alt="deletar" /></button></li>
                                                 </ul>
                                             </td>
                                         </tr>
