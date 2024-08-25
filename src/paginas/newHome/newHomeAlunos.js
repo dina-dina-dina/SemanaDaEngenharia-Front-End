@@ -6,6 +6,21 @@ import image from '../../assets/logosemanaCentrr.png'
 
 function NewHomeAlunos() {
 
+  const images = [
+    'AEAS.jpg',
+    'Alura.jpg',
+    'Dinamica.jpg',
+    'Fit.jpg',
+    'hairu_logo.jpg',
+    'Metso.jpg',
+    'Pieralisi.jpg',
+    'robtica_sp_logo.jpg',
+    'SEG.jpg',
+    'unesp.jpg',
+    'Voith.jpg',
+    // Adicione mais imagens conforme necessário
+  ];
+
 
   const navigate = useNavigate();
 
@@ -23,12 +38,12 @@ function NewHomeAlunos() {
 
   const getEvento = async () => {
     const response = await axios.get('/checkData')
-        .catch(err => console.error('Error: ', err));
+      .catch(err => console.error('Error: ', err));
     if (response) setEvento(response.data);
     console.log(response.data)
-    await localStorage.setItem('evento',response.data.idEvento)
+    await localStorage.setItem('evento', response.data.idEvento)
 
-}
+  }
 
   useEffect(() => {
     getEvento();
@@ -46,7 +61,16 @@ function NewHomeAlunos() {
         <div className='buttonhome'>
           <button onClick={handleClick2}>Minhas Palestras</button>
         </div>
-    
+        <span id ='apoio'>APOIO</span>
+        <div className='image'>
+
+          {images.map((image, index) => (
+            <img key={index} src={process.env.PUBLIC_URL + `/image/${image}`} alt={`Imagem ${index + 1}`} />
+          ))}
+
+
+        </div>
+
       </div>
     </div>
 

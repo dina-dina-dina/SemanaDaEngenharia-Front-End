@@ -8,6 +8,20 @@
 
 }
 
+.image {
+    display: flex; /* Usando Flexbox para alinhar as imagens lado a lado */
+    flex-wrap: wrap; /* Permite que as imagens quebrem para a linha seguinte se não houver espaço suficiente */
+    gap: 10px; /* Espaço entre as imagens */
+    padding: 10px;
+}
+
+.image img {
+    max-width: 25%; /* Ajuste o tamanho conforme necessário */
+    height: 10vh;
+   
+    border-radius: 5px;
+}
+
 
 .container {
     display: flex;
@@ -392,5 +406,11 @@
         align-self: center;
         border: 2px solid rgba(0, 0, 0, 0.1);
         margin-bottom: 1%;
+    }
+    .image img {
+        max-width: 100px; /* Ajuste o tamanho conforme necessário */
+        height: 90px;
+       
+        border-radius: 5px;
     }
 }
