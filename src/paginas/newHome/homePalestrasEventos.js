@@ -81,7 +81,7 @@ function UserLogin() {
                                                     <div className="TextCard">
                                                         <div className='teste'>
                                                             <h2 style={{ fontSize: '3vh' }}> {item.palestra.nomePalestra}</h2>
-                                                            <h1 style={{ fontSize: '2vh', color: '#71a1f0' }}>Organizador: {item.palestra.palestrante}</h1>
+                                                            <h1 style={{ fontSize: '2vh', color: '#71a1f0' }}>Organização: {item.palestra.palestrante}</h1>
                                                         </div>
                                                     </div>
                                                     <div className='confirmacao'>Clique para realizar feedback de confirmação</div>

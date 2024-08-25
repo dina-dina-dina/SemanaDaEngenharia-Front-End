@@ -54,7 +54,7 @@ function FeedbackPalestra() {
     return (
         <div className='containerNew'>
             <div className='formularioFeedback'>
-                <span id='title'>FEEDBACK DA PALESTRA:</span>
+                <span id='title'>FEEDBACK DA ATIVIDADE:</span>
                 <div className='textpal'>{location.state.nome}</div>
                 {(idUrl == 20 || idUrl == 67)
                     ? <div className='texto'></div>
