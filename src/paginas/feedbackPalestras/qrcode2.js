@@ -64,23 +64,25 @@ function Qrcode2() {
         <>
 
             <div className='containerNew'>
-                <div className='formularioFeedback'>
+                <div className='formularioQr'>
 
-                    <span id='title'>APRESENTE PARA UM MONITOR!</span>
-                    <span id='title'>{location.state.nome}</span>
-                    <span id='title'>QR CODE GERADO POR:</span>
-                    <span id='title'>{nome}</span>
+                    <span id='titleQrcode'>APRESENTE PARA UM MONITOR!</span>
+                    <span id='titleQrcode'>{location.state.nome}</span>
+                    <span id='titleQrcode'>QR CODE GERADO POR:</span>
+                    <span id='titleQrcode'>{nome}</span>
+                    <div className='qrcode'>
+                        <QRCode
+                            title=""
+                            value={object}
+                            bgColor={back}
+                            fgColor={fore}
+                            size={size === '' ? 0 : size}
+                        />
+                    </div>
 
-                    <QRCode
-                        title=""
-                        value={object}
-                        bgColor={back}
-                        fgColor={fore}
-                        size={size === '' ? 0 : size}
-                    />
                     <div className='botao' >
-                            <button  type = 'button' onClick={() => {handleClick()}}>Feito!</button>
-                        </div>
+                        <button type='button' onClick={() => { handleClick() }}>Feito!</button>
+                    </div>
                     <div className='itensForms'>
                         <form>
 
