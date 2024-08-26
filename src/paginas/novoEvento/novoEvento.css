@@ -8,7 +8,7 @@
     height: 100vh;
 }
 
-.ajuste {
+.ajuste{
     margin-left: 10%;
 }
 
@@ -29,23 +29,6 @@
 
 }
 
-.formularioQr {
-    margin-top: 2vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    width: 95%;
-    height: 80vh;
-    flex-direction: column;
-
-    background: #FFFFFF;
-    border: 3px solid #097828;
-    border-radius: 45px;
-
-}
-
-
 .itensForms {
     margin-bottom: 45px;
     max-height: 60%;
@@ -56,7 +39,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
-
+    
 
 }
 
@@ -154,25 +137,6 @@
 
 }
 
-#titleQrcode {
-    width: 100%;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 15px;
-    line-height: 36px;
-    margin-bottom: 5%;
-    color: #097828;
-    word-wrap: break-word;
-    /* Permite que palavras grandes quebrem para a linha seguinte */
-    overflow-wrap: break-word;
-    /* Para navegadores mais modernos */
-    max-width: 100%;
-    /* Garante que o texto não ultrapasse os limites do contêiner */
-
-}
-
 .feedback {
     display: flex;
     flex-direction: column;
@@ -260,7 +224,6 @@
 
     color: #FFFFFF;
 }
-
 .tatu2 {
     display: flex;
     justify-content: center;
@@ -268,7 +231,7 @@
 
 .tatu2 button {
     box-sizing: border-box;
-    max-width: 70%;
+    max-width:70%;
     width: fit-content;
     height: fit-content;
     flex-wrap: wrap;
@@ -282,70 +245,97 @@
 
     color: #FFFFFF;
 }
-
-.materias {
+.materias{
     display: flex;
     flex-direction: column;
     max-height: 35%;
     overflow-y: scroll;
 }
 
-.insert {
+.insert{
     display: flex;
     flex-direction: row;
 }
 
-.qrcode {
+
+#titleApresente {
     display: flex;
-    align-items: center;
     justify-content: center;
-    width: 30%;
-    /* Define uma largura fixa */
-    height: 10vh;
-    /* Define uma altura fixa */
-    margin-top: 20px;
-    /* Espaçamento superior para separação do texto */
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 36px;
+    margin-bottom: 5%;
+    color: #097828;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+
+
 }
+#titlePalestraQr {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 13px;
+    line-height: 36px;
+    margin-bottom: 5%;
+    color: #097828;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
 
+
+}
+#titleQrcodeGerado {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 36px;
+    margin-bottom: 5%;
+    color: #097828;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+
+
+}
+#titleQrcodeNome {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 15px;
+    line-height: 36px;
+    margin-bottom: 5%;
+    color: #097828;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+
+
+}
 @media(min-width: 820px) {
-    .qrcode {
-        width: 20vw;
-        margin-bottom: 15vh;
-
-    }
-
-    #titleQrcode {
-        width: 100%;
-        text-align: center;
-        font-family: 'Poppins', sans-serif;
-        font-style: normal;
-        font-weight: 900;
-        font-size: 18px;
-        line-height: 36px;
-        margin-bottom: 3vh;
-        color: #097828;
-        word-wrap: normal;
-        /* Permite que palavras grandes quebrem para a linha seguinte */
-        overflow-wrap: normal;
-        /* Para navegadores mais modernos */
-       width: 80%;
-        /* Garante que o texto não ultrapasse os limites do contêiner */
-
-    }
-
-    .formularioQr {
-        margin-top: 2vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-sizing: border-box;
-        width: 95%;
-        height: 80vh;
-        flex-direction: column;
-    
-        background: #FFFFFF;
-        border: 3px solid #097828;
-        border-radius: 45px;
-    
+    .phonediv {
+        display: none;
     }
 }
