@@ -7,7 +7,7 @@ const axios = Axios.create({
     // baseURL: "http://dinamicaengjr.kinghost.net:21191/",
     // baseURL: "http://localhost:21191/",
     headers: { Auth: 'Simple AUTH'},
-    timeout: 10000
+    timeout: 50000
 })
 
 export default axios
