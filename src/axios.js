@@ -3,7 +3,7 @@ import Axios from "axios";
 
 const axios = Axios.create({
     baseURL: "https://semanaback.onrender.com/",
-    timeout: 10000
+    timeout: 50000
 });
 
 axios.interceptors.request.use(
