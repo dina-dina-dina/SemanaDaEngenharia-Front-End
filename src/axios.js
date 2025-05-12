@@ -2,7 +2,7 @@
 import Axios from "axios";
 
 const axios = Axios.create({
-    baseURL: "https://semanaback.onrender.com/",
+    baseURL: "http://localhost:21191/",
     timeout: 50000
 });
 
