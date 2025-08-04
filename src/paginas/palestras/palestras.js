@@ -35,10 +35,11 @@ function Palestras() {
     }
 
     async function finalizar() {
+        console.log("Finalizando evento com ID: ", idUrl);
         const response = await axios.post('/contabilizar/gerarFinal', {
             "idEvento": idUrl
         })
-        alert(response.data)
+        alert(JSON.stringify(response.data, null, 2));
     }
 
     const deletePalestra = async (id) => {
@@ -94,6 +95,9 @@ function Palestras() {
                         <div className='PnovoEvento'>
                             <button id='eventoP' type='button' onClick={Formulario}>VEN. NOS CONHECER</button>
                         </div>
+                        <div className="PnovoEvento">
+                            <button type="button" onClick={finalizar} id="eventoP">Gerar Certificados</button>
+                        </div>
                         <div className='PnovoEvento'>
                             <button onClick={professor} id='eventoP' >Encerrar Evento</button>
                         </div>
@@ -145,6 +149,7 @@ function Palestras() {
                     <div className='buttonhome3' >
                         <button type='button' style={{ backgroundColor: '#36a555', paddingRight: '5%', paddingLeft: '5%' }} onClick={handleClick}>NOVA PALESTRA</button>
                     </div>
+                    
                     <div className='buttonhome3' >
                         <button type='button' onClick={() => finalizar()} style={{ backgroundColor: '#65BABB', paddingRight: '5%', paddingLeft: '5%' }}>FIN. EVENTO</button>
                     </div>
