@@ -55,7 +55,8 @@ function Cadastro() {
         { value: 19, text: 19 },
         { value: 20, text: 20 },
         { value: 21, text: 21 },
-        { value: 22, text: 22 }
+        { value: 22, text: 22 },
+        { value: 23, text: 23 }
     ]
 
     const optionsTurma = turmas.map((option) => {
