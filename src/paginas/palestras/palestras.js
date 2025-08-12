@@ -39,7 +39,8 @@ function Palestras() {
         const response = await axios.post('/contabilizar/gerarFinal', {
             "idEvento": idUrl
         })
-        alert(JSON.stringify(response.data, null, 2));
+        // alert(response.data)
+        alert("Certificados gerados com sucesso!")
     }
 
     const deletePalestra = async (id) => {
@@ -48,6 +49,19 @@ function Palestras() {
             await get();
         }
     }
+
+    const deleteEvento = async () => {
+        console.log("Delete Chamado")
+        if (window.confirm("Tem certeza que deseja encerrar este evento?")) {
+            try {
+            await axios.delete(`/evento/${idUrl}`);
+            alert("Evento encerrado com sucesso!");
+            navigate("/"); // redireciona para home ou onde quiser
+            } catch (err) {
+            alert("Erro ao encerrar evento: " + err.message);
+            }
+        }
+        };
 
     useEffect(() => {
         if (localStorage.getItem('authenticated') !== 'true') navigate('/');
@@ -99,7 +113,7 @@ function Palestras() {
                             <button type="button" onClick={finalizar} id="eventoP">Gerar Certificados</button>
                         </div>
                         <div className='PnovoEvento'>
-                            <button onClick={professor} id='eventoP' >Encerrar Evento</button>
+                            <button type="button" onClick={deleteEvento} id='eventoP' >Encerrar Evento</button>
                         </div>
                     </div>
                 </div>
