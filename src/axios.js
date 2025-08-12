@@ -2,7 +2,8 @@
 import Axios from "axios";
 
 const axios = Axios.create({
-    baseURL: "http://localhost:21191/",
+    // baseURL: "http://localhost:21191/",
+    baseURL: "https://semanadaengenharia-back.onrender.com",
     timeout: 50000
 });
 
