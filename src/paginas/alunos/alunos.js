@@ -131,13 +131,13 @@ function Alunos() {
                                 <th className="PcabecalhoEntradasVisualizar">CURSO</th>
                                 <th className="PcabecalhoEntradasVisualizar">TURMA</th>
                                 <th className="PcabecalhoEntradasVisualizar">RA</th>
-                                <th className="PcabecalhoEntradasVisualizar">FEEDBACK</th>
+                                <th className="PcabecalhoEntradasVisualizar">F.B.</th>
+                                <th className="PcabecalhoEntradasVisualizar">SCAN</th>
                                 <th className="PcabecalhoEntradasVisualizar">AÇÕES</th>
                             </tr>
                         </thead>
                         {!noResponse && Array.isArray(response) && response.map(function (entry) {
                             console.log(entry)
-
                             return (
                                 <tbody key={entry.idAluno}>
                                     <tr>
@@ -149,6 +149,7 @@ function Alunos() {
 
                                         <td>{entry.ra ? entry.ra : '-'}</td>
                                         <td>{entry.feedback ? entry.feedback : '-'}</td>
+                                        <td>{entry.validadoPorEmail ? entry.validadoPorEmail : '-'}</td>
 
                                         <td style={{ width: '30px' }}>
                                             <ul style={{ width: '110px' }} className="PbotoesTabEntradasVisualizar">
@@ -206,6 +207,7 @@ function Alunos() {
                                         <td>{entry.idTurma ? entry.idTurma : '-'}</td>
 
                                         <td>{entry.ra ? entry.ra : '-'}</td>
+                                        <td>{entry.feedback ? entry.feedback : '-'}</td>
                                         <td>{entry.feedback ? entry.feedback : '-'}</td>
 
                                         <td style={{ width: '30px' }}>
