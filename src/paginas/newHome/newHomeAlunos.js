@@ -7,19 +7,19 @@ import image from '../../assets/logosemanaCentrr.png'
 function NewHomeAlunos() {
 
   const images = [
-    'AEAS.jpg',
-    'Alura.jpg',
-    'AGI.png',
+    //'AEAS.jpg',
+    //'Alura.jpg',
+    //'AGI.png',
     'Dinamica.jpg',
-    'Fit.jpg',
-    'hairu_logo.jpg',
-    'Metso.jpg',
-    'P&G.png',
-    'Pieralisi.jpg',
-    'robtica_sp_logo.jpg',
-    'SEG.jpg',
-    'unesp.jpg',
-    'Voith.jpg',
+    //'Fit.jpg',
+    //'hairu_logo.jpg',
+    //'Metso.jpg',
+    //'P&G.png',
+    //'Pieralisi.jpg',
+    //'robtica_sp_logo.jpg',
+    //'SEG.jpg',
+    //'unesp.jpg',
+    //'Voith.jpg',
     // Adicione mais imagens conforme necessário
   ];
 
