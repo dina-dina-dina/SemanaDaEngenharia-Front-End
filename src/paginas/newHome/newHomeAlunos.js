@@ -10,7 +10,7 @@ function NewHomeAlunos() {
     //'AEAS.jpg',
     //'Alura.jpg',
     //'AGI.png',
-    'Dinamica.jpg',
+    //'Dinamica.jpg',
     //'Fit.jpg',
     //'hairu_logo.jpg',
     //'Metso.jpg',
@@ -63,7 +63,7 @@ function NewHomeAlunos() {
         <div className='buttonhome'>
           <button onClick={handleClick2}>Minhas Palestras</button>
         </div>
-        <span id ='apoio'>APOIO</span>
+        <span id ='apoio'></span>
         <div className='image'>
 
           {images.map((image, index) => (
